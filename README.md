@@ -34,6 +34,7 @@ for running your own copy with your own AI key. It's free for you to host; the
 - [🔄 Updating](#-updating)
 - [🛟 If something's not working](#-if-somethings-not-working)
 - [💡 Good to know](#-good-to-know)
+- [💬 Feedback and bugs](#-feedback-and-bugs)
 - [📜 License](#-license)
 - [🤝 Contributing](#-contributing)
 
@@ -227,6 +228,19 @@ dashboard to wake it up.
   (you pay your AI provider directly), open sign-up, and the app opens
   straight to your projects.
 
+## 💬 Feedback and bugs
+
+| | Where |
+|---|---|
+| 🐞 **Something's broken** | [Report a bug](https://github.com/sakhnenko/storymode-community/issues/new?template=bug_report.yml). The form asks for what's needed to track it down. |
+| 💡 **Ideas and feedback** | [Ideas](https://github.com/sakhnenko/storymode-community/discussions/categories/ideas) in Discussions. |
+| 🙋 **Stuck setting up** | [Q&A](https://github.com/sakhnenko/storymode-community/discussions/categories/q-a) in Discussions, where other writers can help too. |
+| 🔒 **A security problem** | [Report it privately](https://github.com/sakhnenko/storymode-community/security/advisories/new), not in public. See [SECURITY.md](SECURITY.md). |
+
+Everything is read, though StoryMode is made by one person, so there's no
+promise of a reply or a fix date. Never post keys, tokens or passwords: issues
+and discussions are public.
+
 ## 📜 License
 
 [Functional Source License 1.1, Apache 2.0 future license](LICENSE.md). You can
@@ -238,5 +252,6 @@ it's published.
 
 ## 🤝 Contributing
 
-This repository doesn't accept contributions; see [CONTRIBUTING.md](CONTRIBUTING.md).
-Forks are welcome.
+This repository doesn't accept pull requests; see [CONTRIBUTING.md](CONTRIBUTING.md).
+Bug reports and ideas are welcome (see [above](#-feedback-and-bugs)), and so
+are forks.

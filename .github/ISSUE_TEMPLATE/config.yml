@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💡 Ideas and feedback
+    url: https://github.com/sakhnenko/storymode-community/discussions/categories/ideas
+    about: Suggest a feature or tell us what you think.
+  - name: 🙋 Setup help and questions
+    url: https://github.com/sakhnenko/storymode-community/discussions/categories/q-a
+    about: Stuck setting up your own copy? Ask here; other writers can help too.
+  - name: 🔒 Report a security problem
+    url: https://github.com/sakhnenko/storymode-community/security/advisories/new
+    about: Please report security problems privately, not in a public issue.

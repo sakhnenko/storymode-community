@@ -1,0 +1,68 @@
+name: 🐞 Bug report
+description: Something in StoryMode or the setup wizard isn't working.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time. Every report is read, though there's no promise of a reply or a fix date.
+        For questions about setting up your own copy, [ask in Q&A](https://github.com/sakhnenko/storymode-community/discussions/categories/q-a) instead.
+        **Never paste keys, tokens or passwords here**: this is public.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you expect, and what did you see instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: How to make it happen
+      placeholder: |
+        1. Open a chapter
+        2. Ask the AI Editor to …
+        3. …
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where in StoryMode?
+      options:
+        - Setup wizard (npm run setup)
+        - Sign-up, sign-in or emails
+        - Chapters and drafts
+        - AI Editor
+        - Folios and notebooks
+        - Maps and AI Draw
+        - Timeline
+        - Codex
+        - Admin
+        - Something else
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: "The date of your copy: run `git log -1 --format=%cd` in your StoryMode folder."
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and device
+      placeholder: Chrome 140 on macOS
+  - type: textarea
+    id: details
+    attributes:
+      label: Screenshots, errors or logs
+      description: |
+        Error messages from the page, the browser console, or Supabase → Edge Functions → Logs help a lot.
+        Check them for keys and personal details before posting.
+  - type: checkboxes
+    id: searched
+    attributes:
+      label: Before you send it
+      options:
+        - label: I looked through the open issues and this isn't one of them.
+          required: true
