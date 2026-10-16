@@ -31,3 +31,6 @@ dist-ssr
 supabase/functions/.env
 .storymode-setup.json
 .vercel
+# The Supabase CLI's cache of the linked project
+supabase/.temp
+supabase/.branches
