@@ -26,7 +26,9 @@ import { cn } from '@/lib/utils';
 // Only admins who open the tab download the benchmark and its test book.
 const EditorBenchmarkSection = lazy(() => import('@/components/admin/EditorBenchmarkSection'));
 // AI model choices only apply to a self-hosted install on OpenRouter.
-const TABS = (SELF_HOSTED ? ['users', 'models', 'flags', 'editor'] : ['users', 'flags', 'editor']) as readonly ('users' | 'models' | 'flags' | 'editor')[];
+// Self-hosted installs pick their AI models here, and skip the AI editor tab:
+// its usage numbers and benchmark are for tuning the hosted app.
+const TABS = (SELF_HOSTED ? ['users', 'models', 'flags'] : ['users', 'flags', 'editor']) as readonly ('users' | 'models' | 'flags' | 'editor')[];
 
 interface AdminUser {
   id: string;
@@ -594,11 +596,13 @@ export default function AdminPage() {
             <TabsContent value="flags" className="mt-0">
               <FeatureFlagsSection />
             </TabsContent>
-            <TabsContent value="editor" className="mt-0">
-              <Suspense fallback={<Skeleton className="h-40 w-full" />}>
-                <EditorBenchmarkSection />
-              </Suspense>
-            </TabsContent>
+            {!SELF_HOSTED && (
+              <TabsContent value="editor" className="mt-0">
+                <Suspense fallback={<Skeleton className="h-40 w-full" />}>
+                  <EditorBenchmarkSection />
+                </Suspense>
+              </TabsContent>
+            )}
           </Tabs>
         </div>
       </div>

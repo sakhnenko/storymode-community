@@ -185,8 +185,12 @@ function choose(question, options) {
 
 const confirm = async (question) => (await choose(question, [{ label: "Yes", value: true }, { label: "No", value: false }]));
 
-/** Runs a command with a spinner; its output goes to a log shown only on failure. */
-function task(label, command, cmdArgs, { env = {}, input } = {}) {
+/**
+ * Runs a command with a spinner; its output goes to a log shown only on failure.
+ * With `clear`, the spinner line just disappears when it's done, for checks
+ * whose result the caller reports itself.
+ */
+function task(label, command, cmdArgs, { env = {}, input, clear = false } = {}) {
   return new Promise((resolve) => {
     const frames = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"];
     let frame = 0;
@@ -196,15 +200,15 @@ function task(label, command, cmdArgs, { env = {}, input } = {}) {
       process.stdout.write(`\r\x1b[2K${cyan(frames[frame++ % frames.length])} ${label} ${dim(`${seconds}s`)}`);
     }, 100);
     const child = spawn(command, cmdArgs, { cwd: root, env: { ...process.env, ...env }, stdio: ["pipe", "pipe", "pipe"] });
-    let log = "";
-    child.stdout.on("data", (d) => { log += d; });
+    let log = "", stdout = "";
+    child.stdout.on("data", (d) => { log += d; stdout += d; });
     child.stderr.on("data", (d) => { log += d; });
     if (input) child.stdin.write(input);
     child.stdin.end();
     child.on("close", (code) => {
       clearInterval(tick);
-      process.stdout.write(`\r\x1b[2K${code === 0 ? green("✓") : red("✗")} ${label}\n`);
-      resolve({ ok: code === 0, log });
+      process.stdout.write(clear ? "\r\x1b[2K" : `\r\x1b[2K${code === 0 ? green("✓") : red("✗")} ${label}\n`);
+      resolve({ ok: code === 0, log, stdout });
     });
   });
 }
@@ -442,6 +446,44 @@ async function publicKey(state, secrets) {
     ?? keys.find((k) => k.name === "anon")?.api_key ?? null;
 }
 
+/**
+ * The Vercel project to deploy to. Linking a name that's taken would take over
+ * that project, replacing its settings and its live site, so an existing
+ * project is only used without asking when it's this install's own: linked in
+ * this folder, or chosen in an earlier run.
+ */
+async function vercelProject(state, vercel) {
+  try {
+    const linked = JSON.parse(fs.readFileSync(path.join(root, ".vercel", "project.json"), "utf8"));
+    if (linked?.projectName) return linked.projectName;
+  } catch { /* not linked here yet */ }
+
+  let name = state.vercelProject ?? "storymode";
+  for (;;) {
+    const found = await task(`Looking for a Vercel project called ${name}`, ...vercel(["project", "inspect", name]), { clear: true });
+    if (!found.ok) {
+      if (!/project_not_found/.test(found.log)) { showLog(found.log); throw new Error("Couldn't check your Vercel projects"); }
+      out(`${green("✓")} A new Vercel project, ${bold(name)}, will be created`);
+      break;
+    }
+    if (name === state.vercelProject) break;
+    const where = found.log.match(/Found Project (\S+)/)?.[1] ?? name;
+    const pick = await choose(`You already have a Vercel project called ${where}. Deploy StoryMode there?`, [
+      { label: "No, create a new project", value: "new" },
+      { label: `Yes, use ${name}`, value: "use", hint: "replaces its settings and its live site" },
+    ]);
+    if (pick === "use") break;
+    for (;;) {
+      const next = (await ask("Name for the new project:", { fallback: `storymode-${Math.random().toString(36).slice(2, 6)}` })).trim().toLowerCase();
+      if (/^[a-z0-9][a-z0-9-]{0,99}$/.test(next) && !next.includes("---")) { name = next; break; }
+      fail("Use lowercase letters, numbers and dashes, starting with a letter or number");
+    }
+  }
+  state.vercelProject = name;
+  saveState(state);
+  return name;
+}
+
 async function vercelStep(state, secrets) {
   const url = `https://${state.ref}.supabase.co`;
   const key = await publicKey(state, secrets);
@@ -474,16 +516,18 @@ async function vercelStep(state, secrets) {
   }
 
   const vercel = (cliArgs) => npx("vercel@latest", cliArgs);
-  const who = spawnSync(...vercel(["whoami"]), { cwd: root, encoding: "utf8" });
-  if (who.status !== 0) {
+  // The first run of npx downloads the Vercel CLI, which takes a while: show it.
+  const who = await task("Checking your Vercel sign-in", ...vercel(["whoami"]), { clear: true });
+  if (!who.ok) {
     note("Signing in to Vercel (it opens your browser)…");
     const login = spawnSync(...vercel(["login"]), { cwd: root, stdio: "inherit" });
     if (login.status !== 0) throw new Error("Vercel sign-in didn't finish");
   } else {
-    out(`${green("✓")} Signed in to Vercel as ${bold(who.stdout.trim().split("\n").pop())}`);
+    out(`${green("✓")} Signed in to Vercel as ${bold(who.stdout.trim().split("\n").pop().trim())}`);
   }
 
-  const [lcmd, largs] = vercel(["link", "--yes", "--project", "storymode"]);
+  const project = await vercelProject(state, vercel);
+  const [lcmd, largs] = vercel(["link", "--yes", "--project", project]);
   const link = await task("Creating the Vercel project", lcmd, largs);
   if (!link.ok) { showLog(link.log); throw new Error("Couldn't create the Vercel project"); }
   for (const [name, value] of [["VITE_SUPABASE_URL", url], ["VITE_SUPABASE_PUBLISHABLE_KEY", key]]) {
@@ -498,8 +542,8 @@ async function vercelStep(state, secrets) {
 
   // The stable production address (project.vercel.app), not the one-off deployment URL.
   const deployUrl = deploy.log.match(/https:\/\/[^\s]+\.vercel\.app/g)?.pop();
-  const inspect = deployUrl ? spawnSync(...vercel(["inspect", deployUrl]), { cwd: root, encoding: "utf8" }) : null;
-  const aliases = `${inspect?.stdout ?? ""}${inspect?.stderr ?? ""}`.match(/https:\/\/[a-z0-9-]+\.vercel\.app/g) ?? [];
+  const inspect = deployUrl ? await task("Finding your site's address", ...vercel(["inspect", deployUrl]), { clear: true }) : null;
+  const aliases = (inspect?.log ?? "").match(/https:\/\/[a-z0-9-]+\.vercel\.app/g) ?? [];
   state.site = aliases.sort((a, b) => a.length - b.length)[0] ?? deployUrl;
   if (!state.site) state.site = (await ask("Paste your site's address from the Vercel dashboard:")).replace(/\/+$/, "");
   saveState(state);

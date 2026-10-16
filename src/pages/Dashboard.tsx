@@ -27,6 +27,10 @@ const Dashboard = () => {
   const { verifyCanCreate, refetch: refetchPlan } = useUserPlan();
   const [showUpgrade, setShowUpgrade] = useState(false);
   const [showWelcome, setShowWelcome] = useState(false);
+  // Until the first-run check below decides, show the spinner, not the
+  // projects: a first visit jumps to the welcome chat, and drawing the
+  // projects first made them flash.
+  const [checkingFirstRun, setCheckingFirstRun] = useState(true);
   const [background] = useState(() => pickRandomBackground());
   useBackgroundPreload(background.url);
 
@@ -67,21 +71,33 @@ const Dashboard = () => {
     let cancelled = false;
     (async () => {
       try {
-        if (localStorage.getItem(welcomeKey) === "1") return;
+        if (localStorage.getItem(welcomeKey) === "1") {
+          setCheckingFirstRun(false);
+          return;
+        }
       } catch {
         // ignore
       }
-      const [{ data }, { data: onboarding }] = await Promise.all([
-        supabase.from("profiles").select("welcome_seen_at").eq("user_id", user.id).maybeSingle(),
-        supabase
-          .from("user_onboarding" as never)
-          .select("completed_at, dismissed_at")
-          .eq("user_id", user.id)
-          .maybeSingle(),
-      ]);
+      let data: { welcome_seen_at: string | null } | null = null;
+      let onboarding: unknown = null;
+      try {
+        const [profile, onboardingRow] = await Promise.all([
+          supabase.from("profiles").select("welcome_seen_at").eq("user_id", user.id).maybeSingle(),
+          supabase
+            .from("user_onboarding" as never)
+            .select("completed_at, dismissed_at")
+            .eq("user_id", user.id)
+            .maybeSingle(),
+        ]);
+        data = profile.data;
+        onboarding = onboardingRow.data;
+      } catch {
+        // Can't tell: show the projects rather than a spinner forever.
+      }
       if (cancelled) return;
       if (data?.welcome_seen_at) {
         try { localStorage.setItem(welcomeKey, "1"); } catch { /* ignore */ }
+        setCheckingFirstRun(false);
         return;
       }
       // New members who haven't finished (or declined) the welcome chat go back to it.
@@ -99,6 +115,7 @@ const Dashboard = () => {
         return;
       }
       setShowWelcome(true);
+      setCheckingFirstRun(false);
     })();
     return () => { cancelled = true; };
   }, [user, welcomeKey, loading, navigate, projects.length]);
@@ -148,7 +165,7 @@ const Dashboard = () => {
     }
   };
 
-  if (authLoading) {
+  if (authLoading || (user && checkingFirstRun)) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <SpinnerGap weight="duotone" className="w-8 h-8 animate-spin text-primary" />
