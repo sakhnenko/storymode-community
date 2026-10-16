@@ -1,0 +1,1 @@
+ALTER TABLE public.waitlist ADD COLUMN IF NOT EXISTS name text, ADD COLUMN IF NOT EXISTS writing_about text;

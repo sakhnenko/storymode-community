@@ -1,0 +1,1 @@
+REVOKE EXECUTE ON FUNCTION public.sync_credits_on_plan_change() FROM PUBLIC, anon, authenticated;

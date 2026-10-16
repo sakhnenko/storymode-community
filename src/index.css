@@ -1,0 +1,1336 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&family=Lato:wght@400;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Merriweather:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Vollkorn:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+
+@font-face {
+  font-family: 'Boulder Mono';
+  src: url('/fonts/BoulderMono-Thin.woff2') format('woff2'),
+       url('/fonts/BoulderMono-Thin.woff') format('woff'),
+       url('/fonts/BoulderMono-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Boulder Mono';
+  src: url('/fonts/BoulderMono-Medium.woff2') format('woff2'),
+       url('/fonts/BoulderMono-Medium.woff') format('woff'),
+       url('/fonts/BoulderMono-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'MM Meta';
+  src: url('/fonts/meta-normal.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 209 40% 96%;
+    --foreground: 222 47% 11%;
+
+    --card: 210 40% 98%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 214 31% 91%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 347 77.1654% 49.8039%;
+    --primary-foreground: 204 100% 97%;
+
+    --secondary: 215 24% 26%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 20% 65%;
+    --muted-foreground: 222 47% 11%;
+
+    --accent: 210 20% 94%;
+    --accent-foreground: 215 25% 30%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 85% 97%;
+
+    --border: 212 26% 83%;
+    --input: 212 26% 83%;
+    --ring: 200 98% 39%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 200 98% 39%;
+    --sidebar-primary-foreground: 204 100% 97%;
+    --sidebar-accent: 215 24% 26%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 212 26% 83%;
+    --sidebar-ring: 200 98% 39%;
+
+    /* Notepad theme variables */
+    --notepad-bg: 0 0% 100%;
+    --notepad-fg: 220 25% 15%;
+    --notepad-border: 220 15% 85%;
+    --notepad-border-focus: 230 65% 55%;
+
+    /* Fonts */
+    --font-inter: 'Inter', sans-serif;
+    --font-source-sans: 'Source Sans 3', sans-serif;
+    --font-lato: 'Lato', sans-serif;
+    --font-atkinson: 'Atkinson Hyperlegible', sans-serif;
+    --font-serif: 'Libre Baskerville', ui-serif, Georgia, serif;
+    --font-lora: 'Lora', serif;
+    --font-source: 'Source Serif 4', serif;
+    --font-merriweather: 'Merriweather', serif;
+    --font-garamond: 'EB Garamond', serif;
+    --font-crimson: 'Crimson Pro', serif;
+    --font-spectral: 'Spectral', serif;
+    --font-vollkorn: 'Vollkorn', serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+    --font-jetbrains: 'JetBrains Mono', monospace;
+    --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    --chart-1: 198 93% 59%;
+    --chart-2: 213 93% 67%;
+    --chart-3: 215 20% 65%;
+    --chart-4: 215 16% 46%;
+    --chart-5: 215 19% 34%;
+    --sidebar: 210 40% 98%;
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
+    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+    --tracking-normal: 0em;
+    --spacing: 0.25rem;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 217 32% 17%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 215 24% 26%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 198 93% 59%;
+    --primary-foreground: 204 80% 15%;
+
+    --secondary: 212 26% 83%;
+    --secondary-foreground: 228 84% 4%;
+
+    --muted: 215 16% 46%;
+    --muted-foreground: 210 40% 98%;
+
+    --accent: 215 20% 25%;
+    --accent-foreground: 210 25% 80%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 85% 97%;
+
+    --border: 215 19% 34%;
+    --input: 215 19% 34%;
+    --ring: 198 93% 59%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 198 93% 59%;
+    --sidebar-primary-foreground: 204 80% 15%;
+    --sidebar-accent: 215 20% 65%;
+    --sidebar-accent-foreground: 228 84% 4%;
+    --sidebar-border: 215 19% 34%;
+    --sidebar-ring: 198 93% 59%;
+
+    --notepad-bg: 222 25% 12%;
+    --notepad-fg: 210 30% 92%;
+    --notepad-border: 220 20% 22%;
+    --notepad-border-focus: 230 70% 65%;
+    --font-sans: Montserrat, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    --chart-1: 199 95% 73%;
+    --chart-2: 211 96% 78%;
+    --chart-3: 215 20% 65%;
+    --chart-4: 215 16% 46%;
+    --chart-5: 215 19% 34%;
+    --sidebar: 217 32% 17%;
+    --radius: 0rem;
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
+    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'MM Meta', 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+/* Soften Phosphor duotone secondary path for a more elegant feel */
+svg path[opacity="0.2"] {
+  opacity: 0.1;
+}
+
+/* Side panels (chapter list, AI editor sidebar) sit a tiny bit darker than
+   the writing canvas so the panels read as a distinct surface without
+   breaking the theme. Derived from the theme's --notepad-bg via relative
+   color syntax (hue/saturation preserved, lightness -3) so panels stay
+   tinted instead of washing out toward gray. */
+.notepad-themed {
+  --notepad-panel-bg: hsl(from hsl(var(--notepad-bg)) h s calc(l - 3));
+}
+
+/* Notepad theme classes - Light themes (vibrant, used by Folios) */
+.notepad-theme-clean-white {
+  --notepad-bg: 0 0% 100%;
+  --notepad-fg: 220 15% 18%;
+  --notepad-border-focus: 220 10% 55%;
+  --notepad-link: 215 40% 42%;
+}
+
+.notepad-theme-soft-gray {
+  --notepad-bg: 220 20% 94%;
+  --notepad-fg: 220 12% 22%;
+  --notepad-border-focus: 220 12% 55%;
+  --notepad-link: 215 35% 42%;
+}
+
+.notepad-theme-cream {
+  --notepad-bg: 43 70% 96%;
+  --notepad-fg: 35 25% 20%;
+  --notepad-border-focus: 40 30% 55%;
+  --notepad-link: 30 35% 38%;
+}
+
+.notepad-theme-sepia {
+  --notepad-bg: 40 55% 90%;
+  --notepad-fg: 35 30% 18%;
+  --notepad-border-focus: 38 25% 50%;
+  --notepad-link: 28 38% 38%;
+}
+
+.notepad-theme-warm-amber {
+  --notepad-bg: 42 65% 90%;
+  --notepad-fg: 35 30% 18%;
+  --notepad-border-focus: 38 25% 52%;
+  --notepad-link: 30 40% 38%;
+}
+
+.notepad-theme-soft-blue {
+  --notepad-bg: 210 60% 93%;
+  --notepad-fg: 215 35% 22%;
+  --notepad-border-focus: 210 30% 55%;
+  --notepad-link: 210 45% 42%;
+}
+
+.notepad-theme-sage-green {
+  --notepad-bg: 140 35% 91%;
+  --notepad-fg: 150 30% 18%;
+  --notepad-border-focus: 145 25% 50%;
+  --notepad-link: 160 35% 34%;
+}
+
+.notepad-theme-lavender {
+  --notepad-bg: 265 70% 94%;
+  --notepad-fg: 265 30% 22%;
+  --notepad-border-focus: 265 25% 55%;
+  --notepad-link: 262 40% 48%;
+}
+
+.notepad-theme-blush {
+  --notepad-bg: 350 60% 94%;
+  --notepad-fg: 350 30% 22%;
+  --notepad-border-focus: 350 25% 55%;
+  --notepad-link: 348 40% 46%;
+}
+
+.notepad-theme-mint {
+  --notepad-bg: 170 55% 91%;
+  --notepad-fg: 175 35% 18%;
+  --notepad-border-focus: 170 30% 50%;
+  --notepad-link: 172 40% 34%;
+}
+
+/* Notepad theme classes - Dark themes (vibrant, used by Folios) */
+.notepad-theme-midnight {
+  --notepad-bg: 222 50% 12%;
+  --notepad-fg: 215 30% 85%;
+  --notepad-border-focus: 215 25% 50%;
+  --notepad-link: 205 55% 72%;
+}
+
+.notepad-theme-charcoal {
+  --notepad-bg: 240 8% 14%;
+  --notepad-fg: 240 10% 85%;
+  --notepad-border-focus: 240 10% 48%;
+  --notepad-link: 220 35% 72%;
+}
+
+.notepad-theme-navy {
+  --notepad-bg: 215 50% 18%;
+  --notepad-fg: 210 30% 86%;
+  --notepad-border-focus: 210 25% 52%;
+  --notepad-link: 203 50% 74%;
+}
+
+.notepad-theme-forest {
+  --notepad-bg: 155 40% 13%;
+  --notepad-fg: 150 25% 84%;
+  --notepad-border-focus: 152 25% 48%;
+  --notepad-link: 158 40% 70%;
+}
+
+.notepad-theme-plum {
+  --notepad-bg: 265 40% 16%;
+  --notepad-fg: 265 25% 86%;
+  --notepad-border-focus: 265 25% 52%;
+  --notepad-link: 268 40% 78%;
+}
+
+.notepad-theme-slate {
+  --notepad-bg: 215 30% 22%;
+  --notepad-fg: 213 20% 86%;
+  --notepad-border-focus: 212 20% 52%;
+  --notepad-link: 205 45% 74%;
+}
+
+.notepad-theme-obsidian {
+  --notepad-bg: 0 0% 6%;
+  --notepad-fg: 0 0% 87%;
+  --notepad-border-focus: 0 0% 40%;
+  --notepad-link: 0 0% 75%;
+}
+
+.notepad-theme-mocha {
+  --notepad-bg: 25 45% 14%;
+  --notepad-fg: 35 25% 85%;
+  --notepad-border-focus: 32 25% 48%;
+  --notepad-link: 34 45% 74%;
+}
+
+/* Story editor: muted variants of the same themes. Saturation is dialed
+   halfway between the original flat palette and the later punchier pass,
+   so themes show subtle personality without overpowering the writing. */
+.notepad-themed.notepad-theme-clean-white,
+.notepad-themed .notepad-theme-clean-white {
+  --notepad-bg: 0 0% 100%;
+  --notepad-fg: 220 11% 20%;
+  --notepad-border-focus: 220 9% 55%;
+  --notepad-link: 215 36% 42%;
+}
+
+.notepad-themed.notepad-theme-soft-gray,
+.notepad-themed .notepad-theme-soft-gray {
+  --notepad-bg: 220 16% 96%;
+  --notepad-fg: 220 10% 24%;
+  --notepad-border-focus: 220 9% 55%;
+  --notepad-link: 215 32% 42%;
+}
+
+.notepad-themed.notepad-theme-cream,
+.notepad-themed .notepad-theme-cream {
+  --notepad-bg: 40 32% 96%;
+  --notepad-fg: 31 11% 23%;
+  --notepad-border-focus: 36 17% 55%;
+  --notepad-link: 26 29% 40%;
+}
+
+.notepad-themed.notepad-theme-sepia,
+.notepad-themed .notepad-theme-sepia {
+  --notepad-bg: 38 26% 92%;
+  --notepad-fg: 31 15% 21%;
+  --notepad-border-focus: 33 16% 52%;
+  --notepad-link: 25 30% 38%;
+}
+
+.notepad-themed.notepad-theme-warm-amber,
+.notepad-themed .notepad-theme-warm-amber {
+  --notepad-bg: 42 36% 93%;
+  --notepad-fg: 33 15% 22%;
+  --notepad-border-focus: 37 18% 52%;
+  --notepad-link: 29 33% 38%;
+}
+
+.notepad-themed.notepad-theme-soft-blue,
+.notepad-themed .notepad-theme-soft-blue {
+  --notepad-bg: 210 31% 95%;
+  --notepad-fg: 215 20% 24%;
+  --notepad-border-focus: 210 17% 54%;
+  --notepad-link: 210 38% 42%;
+}
+
+.notepad-themed.notepad-theme-sage-green,
+.notepad-themed .notepad-theme-sage-green {
+  --notepad-bg: 140 16% 94%;
+  --notepad-fg: 154 14% 21%;
+  --notepad-border-focus: 149 14% 50%;
+  --notepad-link: 160 28% 34%;
+}
+
+.notepad-themed.notepad-theme-lavender,
+.notepad-themed .notepad-theme-lavender {
+  --notepad-bg: 265 31% 96%;
+  --notepad-fg: 265 13% 25%;
+  --notepad-border-focus: 265 15% 55%;
+  --notepad-link: 262 31% 46%;
+}
+
+.notepad-themed.notepad-theme-blush,
+.notepad-themed .notepad-theme-blush {
+  --notepad-bg: 1 31% 96%;
+  --notepad-fg: 350 12% 24%;
+  --notepad-border-focus: 352 16% 55%;
+  --notepad-link: 348 29% 44%;
+}
+
+.notepad-themed.notepad-theme-mint,
+.notepad-themed .notepad-theme-mint {
+  --notepad-bg: 170 21% 94%;
+  --notepad-fg: 175 17% 21%;
+  --notepad-border-focus: 172 15% 50%;
+  --notepad-link: 172 29% 34%;
+}
+
+.notepad-themed.notepad-theme-midnight,
+.notepad-themed .notepad-theme-midnight {
+  --notepad-bg: 222 26% 12%;
+  --notepad-fg: 215 17% 83%;
+  --notepad-border-focus: 215 16% 46%;
+  --notepad-link: 205 43% 69%;
+}
+
+.notepad-themed.notepad-theme-charcoal,
+.notepad-themed .notepad-theme-charcoal {
+  --notepad-bg: 240 5% 14%;
+  --notepad-fg: 240 5% 83%;
+  --notepad-border-focus: 240 6% 46%;
+  --notepad-link: 213 27% 71%;
+}
+
+.notepad-themed.notepad-theme-navy,
+.notepad-themed .notepad-theme-navy {
+  --notepad-bg: 215 27% 18%;
+  --notepad-fg: 210 19% 85%;
+  --notepad-border-focus: 210 18% 49%;
+  --notepad-link: 203 40% 71%;
+}
+
+.notepad-themed.notepad-theme-forest,
+.notepad-themed .notepad-theme-forest {
+  --notepad-bg: 155 20% 13%;
+  --notepad-fg: 150 13% 83%;
+  --notepad-border-focus: 152 16% 46%;
+  --notepad-link: 158 30% 67%;
+}
+
+.notepad-themed.notepad-theme-plum,
+.notepad-themed .notepad-theme-plum {
+  --notepad-bg: 265 21% 16%;
+  --notepad-fg: 265 13% 85%;
+  --notepad-border-focus: 265 16% 51%;
+  --notepad-link: 268 32% 75%;
+}
+
+.notepad-themed.notepad-theme-slate,
+.notepad-themed .notepad-theme-slate {
+  --notepad-bg: 215 16% 22%;
+  --notepad-fg: 213 14% 85%;
+  --notepad-border-focus: 212 14% 51%;
+  --notepad-link: 205 35% 73%;
+}
+
+.notepad-themed.notepad-theme-obsidian,
+.notepad-themed .notepad-theme-obsidian {
+  --notepad-bg: 0 0% 6%;
+  --notepad-fg: 0 0% 87%;
+  --notepad-border-focus: 0 0% 40%;
+  --notepad-link: 0 0% 75%;
+}
+
+.notepad-themed.notepad-theme-mocha,
+.notepad-themed .notepad-theme-mocha {
+  --notepad-bg: 25 19% 14%;
+  --notepad-fg: 35 15% 83%;
+  --notepad-border-focus: 32 16% 46%;
+  --notepad-link: 34 33% 71%;
+}
+
+/* Re-bind common semantic tokens inside themed story/notepad surfaces
+   so muted/foreground/border/primary derive from the active theme's
+   --notepad-fg / --notepad-bg, ensuring accessible contrast in both
+   light and dark themes. Scoped to `.notepad-themed` (a single class
+   added by the StoryView root) so the selectors are cheap to match
+   and don't trigger expensive style recalcs on every layout shift. */
+.notepad-themed {
+  --foreground: var(--notepad-fg);
+  --background: var(--notepad-bg);
+  --muted-foreground: var(--notepad-fg);
+  --muted: var(--notepad-fg);
+  --accent: var(--notepad-fg);
+  --accent-foreground: var(--notepad-fg);
+  --border: var(--notepad-fg);
+  --input: var(--notepad-fg);
+  --primary: var(--notepad-fg);
+  --primary-foreground: var(--notepad-bg);
+  --card: var(--notepad-bg);
+  --card-foreground: var(--notepad-fg);
+  --popover: var(--notepad-bg);
+  --popover-foreground: var(--notepad-fg);
+  --secondary: var(--notepad-fg);
+  --secondary-foreground: var(--notepad-fg);
+}
+/* Soften the re-bound tokens that are normally used as backgrounds so
+   they read as subtle tints rather than full-strength foreground. */
+.notepad-themed .bg-muted {
+  background-color: hsl(var(--notepad-fg) / 0.08);
+}
+.notepad-themed .hover\:bg-muted:hover {
+  background-color: hsl(var(--notepad-fg) / 0.12);
+}
+.notepad-themed .bg-accent,
+.notepad-themed .hover\:bg-accent:hover {
+  background-color: hsl(var(--notepad-fg) / 0.1);
+}
+.notepad-themed .border-border {
+  border-color: hsl(var(--notepad-fg) / 0.12);
+}
+.notepad-themed .text-muted-foreground {
+  color: hsl(var(--notepad-fg) / 0.65);
+}
+
+/* Notepad font classes */
+.notepad-font-inter {
+  font-family: var(--font-inter);
+}
+
+.notepad-font-source-sans {
+  font-family: var(--font-source-sans);
+}
+
+.notepad-font-lato {
+  font-family: var(--font-lato);
+}
+
+.notepad-font-atkinson {
+  font-family: var(--font-atkinson);
+}
+
+.notepad-font-serif {
+  font-family: var(--font-serif);
+}
+
+.notepad-font-lora {
+  font-family: var(--font-lora);
+}
+
+.notepad-font-source {
+  font-family: var(--font-source);
+}
+
+.notepad-font-merriweather {
+  font-family: var(--font-merriweather);
+}
+
+.notepad-font-garamond {
+  font-family: var(--font-garamond);
+}
+
+.notepad-font-crimson {
+  font-family: var(--font-crimson);
+}
+
+.notepad-font-spectral {
+  font-family: var(--font-spectral);
+}
+
+.notepad-font-vollkorn {
+  font-family: var(--font-vollkorn);
+}
+
+.notepad-font-mono {
+  font-family: var(--font-mono);
+}
+
+.notepad-font-jetbrains {
+  font-family: var(--font-jetbrains);
+}
+
+.notepad-font-boulder {
+  font-family: 'Boulder Mono', monospace;
+}
+
+/* Notepad font size classes */
+.notepad-size-xs {
+  font-size: 11px;
+}
+
+.notepad-size-small {
+  font-size: 13px;
+}
+
+.notepad-size-medium {
+  font-size: 15px;
+}
+
+.notepad-size-large {
+  font-size: 17px;
+}
+
+.notepad-size-xl {
+  font-size: 20px;
+}
+
+/* Markdown styling in notepads - using em units so headings scale with font size */
+.notepad-content h1 {
+  font-size: 1.5em;
+  @apply font-bold mb-3 mt-4;
+}
+
+.notepad-content h2 {
+  font-size: 1.25em;
+  @apply font-semibold mb-2 mt-3;
+}
+
+.notepad-content h3 {
+  font-size: 1.1em;
+  @apply font-semibold mb-2 mt-3;
+}
+
+.notepad-content p {
+  @apply mb-5 leading-relaxed;
+}
+
+.notepad-content ul,
+.notepad-content ol {
+  @apply mb-3 pl-5;
+}
+
+.notepad-content ul {
+  @apply list-disc;
+}
+
+.notepad-content ol {
+  @apply list-decimal;
+}
+
+.notepad-content li {
+  @apply mb-2;
+}
+
+.notepad-content blockquote {
+  @apply border-l-4 border-primary/30 pl-4 italic my-3 opacity-80;
+}
+
+.notepad-content code {
+  @apply px-1.5 py-0.5 rounded text-sm;
+  background-color: hsl(var(--notepad-fg) / 0.1);
+}
+
+.notepad-content pre {
+  @apply p-3 rounded-lg overflow-x-auto my-3;
+  background-color: hsl(var(--notepad-fg) / 0.1);
+}
+
+.notepad-content pre code {
+  @apply bg-transparent p-0;
+}
+
+.notepad-content a {
+  @apply text-primary underline underline-offset-2;
+}
+
+.notepad-content strong {
+  @apply font-semibold;
+}
+
+.notepad-content em {
+  @apply italic;
+}
+
+/* Table styling */
+.notepad-content table {
+  @apply w-full border-collapse my-3;
+}
+
+.notepad-content th,
+.notepad-content td {
+  @apply px-3 py-2 text-left;
+  border: 1px solid currentColor;
+  border-opacity: 0.2;
+  border-color: color-mix(in srgb, currentColor 20%, transparent);
+}
+
+.notepad-content th {
+  @apply font-semibold;
+  background-color: color-mix(in srgb, currentColor 5%, transparent);
+}
+
+.notepad-content tr:nth-child(even) td {
+  background-color: color-mix(in srgb, currentColor 2%, transparent);
+}
+
+/* Strikethrough and task lists */
+.notepad-content del {
+  @apply line-through opacity-60;
+}
+
+.notepad-content input[type="checkbox"] {
+  @apply mr-2 cursor-pointer;
+  accent-color: hsl(var(--notepad-link));
+  width: 1em;
+  height: 1em;
+}
+
+/* Keep the WYSIWYG editing surface on the exact same vertical rhythm as the
+   rendered markdown view, so text doesn't shift when entering edit mode. */
+.notepad-content .ProseMirror {
+  line-height: inherit;
+}
+
+.notepad-content .ProseMirror p {
+  @apply mb-5 leading-relaxed;
+}
+
+.notepad-content .ProseMirror h1 {
+  font-size: 1.5em;
+  @apply font-bold mb-3 mt-4;
+}
+
+.notepad-content .ProseMirror h2 {
+  font-size: 1.25em;
+  @apply font-semibold mb-2 mt-3;
+}
+
+.notepad-content .ProseMirror h3 {
+  font-size: 1.1em;
+  @apply font-semibold mb-2 mt-3;
+}
+
+.notepad-content .ProseMirror ul,
+.notepad-content .ProseMirror ol {
+  @apply mb-3 pl-5;
+}
+
+.notepad-content .ProseMirror li {
+  @apply mb-2;
+}
+
+/* Tiptap wraps list-item text in an internal paragraph, while the rendered
+   markdown uses text directly inside the <li>. Do not apply the standalone
+   paragraph spacing to that structural wrapper. */
+.notepad-content .ProseMirror li > p {
+  margin-bottom: 0;
+  line-height: inherit;
+}
+
+/* Empty paragraphs keep a line's worth of height in both modes */
+.notepad-content .ProseMirror p:empty::before {
+  content: '';
+  display: inline-block;
+}
+
+/* No stray leading/trailing gap in either mode */
+.notepad-content > *:first-child,
+.notepad-content .ProseMirror > *:first-child {
+  margin-top: 0;
+}
+
+.notepad-content > *:last-child,
+.notepad-content .ProseMirror > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Smooth transitions for notepad themes */
+.notepad-transition {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Scrollbar visibility utilities with fade animation */
+.scrollbar-hidden {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-hidden::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.scrollbar-hidden::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.scrollbar-hidden:hover,
+.hover\:scrollbar-auto:hover {
+  scrollbar-color: hsl(var(--notepad-fg) / 0.25) transparent;
+  -ms-overflow-style: auto;
+}
+
+.scrollbar-hidden:hover::-webkit-scrollbar-thumb,
+.hover\:scrollbar-auto:hover::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--notepad-fg) / 0.25);
+}
+
+.scrollbar-hidden:hover::-webkit-scrollbar-thumb:hover,
+.hover\:scrollbar-auto:hover::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--notepad-fg) / 0.4);
+}
+
+/* Auto-show scrollbar while actively scrolling (used in chapter editor) */
+.scrollbar-auto {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.scrollbar-auto::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scrollbar-auto::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.scrollbar-auto::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 10px;
+  transition: background-color 0.25s ease;
+}
+
+.scrollbar-auto.scrollbar-visible {
+  scrollbar-color: hsl(var(--notepad-fg, var(--foreground)) / 0.35) transparent;
+}
+
+.scrollbar-auto.scrollbar-visible::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--notepad-fg, var(--foreground)) / 0.35);
+}
+
+.scrollbar-auto:hover {
+  scrollbar-color: hsl(var(--notepad-fg, var(--foreground)) / 0.22) transparent;
+}
+
+.scrollbar-auto:hover::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--notepad-fg, var(--foreground)) / 0.22);
+}
+
+.scrollbar-auto.scrollbar-visible:hover {
+  scrollbar-color: hsl(var(--notepad-fg, var(--foreground)) / 0.42) transparent;
+}
+
+.scrollbar-auto.scrollbar-visible:hover::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--notepad-fg, var(--foreground)) / 0.42);
+}
+
+/* ----------------------------------------------------------------- */
+/* Global themed, auto-hiding scrollbars                             */
+/* Applies everywhere: sidebars, notebooks, chat, dialogs, etc.      */
+/* Scrollbar is invisible at rest and fades in on hover/focus.       */
+/* ----------------------------------------------------------------- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 10px;
+  transition: background-color 0.25s ease;
+}
+
+/* Reveal on hover / focus / active scrolling within the container */
+*:hover::-webkit-scrollbar-thumb,
+*:focus-within::-webkit-scrollbar-thumb,
+*:active::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--notepad-fg, var(--foreground)) / 0.28);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--notepad-fg, var(--foreground)) / 0.45);
+}
+
+*:hover,
+*:focus-within {
+  scrollbar-color: hsl(var(--notepad-fg, var(--foreground)) / 0.28) transparent;
+}
+
+/* Opt-out helper for surfaces that must never show a scrollbar */
+.no-scrollbar,
+.no-scrollbar * {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar,
+.no-scrollbar *::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* Theme-aware scrollbar for Edit Mode textarea */
+.notepad-transition textarea {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--notepad-fg) / 0.25) transparent;
+}
+
+.notepad-transition textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+.notepad-transition textarea::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--notepad-fg) / 0.25);
+  border-radius: 4px;
+}
+
+.notepad-transition textarea::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--notepad-fg) / 0.4);
+}
+
+.notepad-transition textarea::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+@keyframes explode-particle {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(calc(-50% + var(--ex-x)), calc(-50% + var(--ex-y))) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes folio-toast-in {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0) scale(0.82) rotate(2deg);
+  }
+  58% {
+    opacity: 1;
+    transform: translate3d(0, -7px, 0) scale(1.025) rotate(-0.5deg);
+  }
+  78% {
+    transform: translate3d(0, 2px, 0) scale(0.99) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes folio-toast-out {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+  }
+  30% {
+    transform: translate3d(0, 3px, 0) scale(1.02) rotate(-0.5deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(70px, 16px, 0) scale(0.76) rotate(4deg);
+  }
+}
+
+@keyframes folio-toast-icon-pop {
+  0% { opacity: 0; transform: scale(0.25) rotate(-35deg); }
+  55% { opacity: 1; transform: scale(1.18) rotate(12deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+.folio-save-toast[data-state='open'] {
+  animation: folio-toast-in 680ms cubic-bezier(0.2, 0.9, 0.2, 1.2) both;
+}
+
+.folio-save-toast[data-state='closed'],
+.folio-save-toast[data-swipe='end'] {
+  animation: folio-toast-out 360ms cubic-bezier(0.4, 0, 0.8, 0.2) both;
+}
+
+.folio-save-toast::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 13% 18%, rgb(110 231 183 / 0.20) 0 2px, transparent 3px),
+    radial-gradient(circle at 89% 24%, rgb(253 224 71 / 0.18) 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 77% 82%, rgb(167 139 250 / 0.16) 0 2px, transparent 3px),
+    linear-gradient(120deg, transparent 15%, rgb(255 255 255 / 0.055) 48%, transparent 80%);
+}
+
+.folio-save-toast > * {
+  position: relative;
+  z-index: 1;
+}
+
+.folio-save-toast-icon {
+  animation: folio-toast-icon-pop 720ms 120ms cubic-bezier(0.2, 0.9, 0.2, 1.25) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .folio-save-toast[data-state='open'],
+  .folio-save-toast[data-state='closed'],
+  .folio-save-toast[data-swipe='end'],
+  .folio-save-toast-icon {
+    animation-duration: 1ms;
+    animation-delay: 0ms;
+  }
+}
+/* Tiptap chapter editor */
+.tiptap-chapter {
+  outline: none;
+  white-space: pre-wrap;
+  tab-size: 4;
+}
+/* The chapter selection is painted by the CSS Custom Highlight API
+   (storymode-kept-selection) so it keeps a constant height whether the native
+   selection is alive or has been collapsed by focusing the AI chat box. */
+@supports selector(::highlight(x)) {
+  .tiptap-chapter ::selection,
+  .tiptap-chapter::selection {
+    background: transparent;
+  }
+}
+/* Always define the kept-selection paint here (index.css is loaded on every
+   route) so the passage can never end up with the highlight text colour but
+   no highlight background — which made selected prose look black. */
+::highlight(storymode-kept-selection) {
+  background-color: #f2c53d;
+  color: #16130e;
+}
+
+.tiptap-chapter p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: hsl(var(--notepad-fg, var(--foreground)) / 0.4);
+  font-style: italic;
+  pointer-events: none;
+  height: 0;
+}
+.tiptap-chapter p,
+.tiptap-chapter li,
+.tiptap-chapter blockquote,
+.tiptap-chapter h1,
+.tiptap-chapter h2,
+.tiptap-chapter h3,
+.tiptap-chapter h4 {
+  white-space: pre-wrap;
+  tab-size: 4;
+}
+.tiptap-chapter p { margin: 0 0 1.1em 0; }
+.tiptap-chapter strong { font-weight: 700; }
+.tiptap-chapter em { font-style: italic; }
+.tiptap-chapter h1, .tiptap-chapter h2, .tiptap-chapter h3, .tiptap-chapter h4 {
+  font-weight: 600;
+  margin: 1.4em 0 0.5em;
+  color: inherit;
+}
+.tiptap-chapter h1 { font-size: 1.6em; }
+.tiptap-chapter h2 { font-size: 1.35em; }
+.tiptap-chapter h3 { font-size: 1.15em; }
+.tiptap-chapter blockquote {
+  padding-left: 2em;
+  margin: 1em 0;
+}
+.tiptap-chapter ul, .tiptap-chapter ol { padding-left: 1.5em; margin: 0.5em 0 1em; }
+.tiptap-chapter ul { list-style: disc; }
+.tiptap-chapter ol { list-style: decimal; }
+.tiptap-chapter code {
+  background: hsl(var(--notepad-fg, var(--foreground)) / 0.08);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+.tiptap-chapter .ProseMirror,
+.tiptap-chapter.ProseMirror {
+  min-height: inherit;
+  white-space: inherit;
+}
+
+/* Story focus mode: hide global app header */
+body.story-focus-mode header {
+  display: none !important;
+}
+
+/* Review highlight marks inside the chapter editor */
+.review-hl {
+  border-radius: 2px;
+  padding: 0 0.1em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  cursor: pointer;
+  transition: background-color 120ms ease, box-shadow 120ms ease;
+}
+.review-hl[data-review-intent="sounds_wrong"] {
+  background-color: hsl(var(--destructive) / 0.20);
+  box-shadow: inset 0 -1px 0 0 hsl(var(--destructive) / 0.55);
+}
+.review-hl[data-review-intent="needs_ideas"] {
+  background-color: hsl(45 90% 55% / 0.22);
+  box-shadow: inset 0 -1px 0 0 hsl(45 90% 45% / 0.65);
+}
+.review-hl[data-review-intent="mark_for_review"] {
+  background-color: hsl(var(--primary) / 0.18);
+  box-shadow: inset 0 -1px 0 0 hsl(var(--primary) / 0.55);
+}
+.review-hl:hover {
+  filter: brightness(1.08);
+}
+
+/* Transient "sent to AI Editor" / "jump to quote" flash — fades itself out */
+@keyframes review-flash {
+  0% { background-color: hsl(var(--primary) / 0); box-shadow: inset 0 -1px 0 0 hsl(var(--primary) / 0); }
+  12% { background-color: hsl(var(--primary) / 0.28); box-shadow: inset 0 -1px 0 0 hsl(var(--primary) / 0.7); }
+  70% { background-color: hsl(var(--primary) / 0.22); box-shadow: inset 0 -1px 0 0 hsl(var(--primary) / 0.55); }
+  100% { background-color: hsl(var(--primary) / 0); box-shadow: inset 0 -1px 0 0 hsl(var(--primary) / 0); }
+}
+.review-hl[data-review-intent="flash"] {
+  cursor: inherit;
+  /* No horizontal padding: adding/removing the mark must not reflow text
+     (that caused a side-to-side twitch when the flash faded). */
+  padding: 0;
+  animation: review-flash 2600ms ease-out forwards;
+}
+
+/* AI Draw iridescent overlay */
+@keyframes iridescent-shift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+@keyframes iridescent-pulse {
+  0%, 100% { opacity: 0.95; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.015); }
+}
+@keyframes sparkle-drift {
+  0% { background-position: 10% 20%, 80% 70%, 40% 60%, 90% 10%, 20% 90%, 60% 40%; }
+  25% { background-position: 80% 30%, 20% 80%, 70% 50%, 30% 20%, 90% 60%, 50% 90%; }
+  50% { background-position: 50% 80%, 60% 10%, 10% 40%, 70% 90%, 40% 30%, 20% 60%; }
+  75% { background-position: 30% 50%, 90% 40%, 80% 20%, 50% 70%, 10% 80%, 70% 10%; }
+  100% { background-position: 10% 20%, 80% 70%, 40% 60%, 90% 10%, 20% 90%, 60% 40%; }
+}
+@keyframes sparkle-twinkle {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+@keyframes sparkle-pop {
+  0% { transform: scale(0) rotate(0deg); opacity: 0; }
+  20% { transform: scale(1) rotate(45deg); opacity: 1; }
+  40% { transform: scale(1.2) rotate(90deg); opacity: 0.9; }
+  100% { transform: scale(0) rotate(180deg); opacity: 0; }
+}
+@keyframes sparkle-glow {
+  0%, 100% { opacity: 0; transform: scale(0.2); }
+  30% { opacity: 1; transform: scale(1); }
+  70% { opacity: 0.6; transform: scale(0.8); }
+}
+.iridescent-overlay {
+  position: fixed;
+  box-shadow:
+    0 0 0 1px hsl(240 40% 75% / 0.45),
+    0 0 18px 1px hsl(240 50% 70% / 0.28),
+    0 0 40px 4px hsl(260 60% 75% / 0.15);
+  transition: opacity 600ms ease-out;
+}
+.iridescent-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    hsl(230 55% 70% / 0.28),
+    hsl(260 50% 72% / 0.32),
+    hsl(200 55% 72% / 0.28),
+    hsl(280 50% 74% / 0.30),
+    hsl(230 55% 70% / 0.28)
+  );
+  background-size: 200% 200%;
+  animation: iridescent-shift 4s linear infinite, iridescent-pulse 2.4s ease-in-out infinite;
+  pointer-events: none;
+}
+.iridescent-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image:
+    radial-gradient(circle at center, hsl(220 80% 92% / 0.9) 0%, transparent 50%),
+    radial-gradient(circle at center, hsl(260 80% 90% / 0.85) 0%, transparent 45%),
+    radial-gradient(circle at center, hsl(200 80% 92% / 0.9) 0%, transparent 50%),
+    radial-gradient(circle at center, hsl(280 80% 90% / 0.85) 0%, transparent 45%),
+    radial-gradient(circle at center, hsl(240 80% 92% / 0.9) 0%, transparent 50%),
+    radial-gradient(circle at center, hsl(220 80% 90% / 0.85) 0%, transparent 45%);
+  background-size: 6px 6px, 5px 5px, 7px 7px, 4px 4px, 5px 5px, 6px 6px;
+  background-repeat: no-repeat;
+  animation: sparkle-drift 5s ease-in-out infinite, sparkle-twinkle 2s ease-in-out infinite;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  filter: blur(0.4px);
+}
+.iridescent-overlay .sparkle-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: radial-gradient(circle, hsl(220 100% 95% / 1) 0%, hsl(260 100% 92% / 0.6) 40%, transparent 70%);
+  box-shadow: 0 0 4px 1px hsl(240 80% 90% / 0.7), 0 0 8px 2px hsl(260 80% 88% / 0.4);
+  pointer-events: none;
+  animation: sparkle-glow var(--sparkle-duration, 2s) ease-in-out var(--sparkle-delay, 0s) infinite;
+}
+.iridescent-overlay .sparkle-star {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  pointer-events: none;
+  animation: sparkle-pop var(--sparkle-duration, 2.5s) ease-in-out var(--sparkle-delay, 0s) infinite;
+}
+.iridescent-overlay .sparkle-star::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, hsl(220 100% 96% / 1) 0%, transparent 60%);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.iridescent-overlay.fading {
+  opacity: 0;
+}
+
+/* Story view panel border glimmer */
+.story-panel-border {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--notepad-fg, var(--foreground)) / 0.07),
+    hsl(var(--notepad-fg, var(--foreground)) / 0.03)
+  );
+}
+
+/* Paragraph rail: hidden while writing in focus mode */
+body.story-focus-mode .paragraph-rail { display: none; }
+
+/* Leading non-breaking spaces used to store paragraph indentation are hidden;
+   the whole block is shifted with a left margin instead. */
+.md-block-indent-lead {
+  font-size: 0;
+  letter-spacing: 0;
+}
+
+/* Codex: the chapter being read burns in the brand color, and what it
+   finds flies out of it to the cards. */
+:root, .dark {
+  /* The brand color, kept here because notepad themes redefine --primary. */
+  --codex-brand: var(--primary);
+  --codex-brand-foreground: var(--primary-foreground);
+}
+.codex-burning {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: hsl(var(--codex-brand));
+  color: hsl(var(--codex-brand-foreground));
+}
+.codex-burning::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  /* Three rows of flame tongues drifting at different speeds over an ember glow. */
+  background-image:
+    radial-gradient(9px 16px at 50% 100%, hsl(50 100% 76% / 0.85), transparent 75%),
+    radial-gradient(14px 24px at 50% 100%, hsl(38 100% 60% / 0.6), transparent 75%),
+    radial-gradient(20px 32px at 50% 100%, hsl(22 100% 56% / 0.45), transparent 75%),
+    linear-gradient(to top, hsl(40 100% 62% / 0.35), transparent 60%);
+  background-size: 38px 100%, 53px 100%, 71px 100%, 100% 100%;
+  background-repeat: repeat-x;
+  filter: blur(0.6px);
+  mix-blend-mode: screen;
+  transform-origin: bottom;
+  animation: codex-flames 2.6s linear infinite, codex-flicker 0.3s ease-in-out infinite alternate;
+}
+@keyframes codex-flames {
+  from { background-position: 0 100%, 0 100%, 0 100%, 0 0; }
+  to { background-position: 38px 100%, -53px 100%, 71px 100%, 0 0; }
+}
+@keyframes codex-flicker {
+  from { opacity: 0.6; transform: scaleY(0.92); }
+  to { opacity: 0.95; transform: scaleY(1.06); }
+}
+@keyframes codex-flare {
+  0% { opacity: 0.55; }
+  100% { opacity: 0; }
+}
+@keyframes codex-pulse {
+  0% { box-shadow: 0 0 0 0 hsl(var(--codex-brand) / 0.45); }
+  100% { box-shadow: 0 0 0 10px hsl(var(--codex-brand) / 0); }
+}
+@keyframes codex-arrive {
+  0% { transform: scale(0.85); opacity: 0; }
+  60% { transform: scale(1.04); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .codex-motion, .codex-motion *, .codex-burning::before { animation: none !important; }
+}
+
+/* AI status lines: a highlight sweeps across the words while the editor works. */
+.text-shimmer {
+  background: linear-gradient(
+    100deg,
+    hsl(var(--muted-foreground)) 0%,
+    hsl(var(--muted-foreground)) 40%,
+    hsl(var(--foreground)) 50%,
+    hsl(var(--muted-foreground)) 60%,
+    hsl(var(--muted-foreground)) 100%
+  );
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: text-shimmer 2.2s linear infinite;
+}
+@keyframes text-shimmer {
+  from { background-position: 100% 0; }
+  to { background-position: -150% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .text-shimmer { animation: none; color: hsl(var(--muted-foreground)); background: none; }
+}

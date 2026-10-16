@@ -1,0 +1,482 @@
+{
+  "passage-review|fast|text": {
+    "model": "google/gemini-2.5-flash",
+    "context": "selection",
+    "inputTokens": 7525
+  },
+  "passage-review|fast|memory": {
+    "model": "google/gemini-2.5-flash",
+    "context": "selection",
+    "inputTokens": 8862
+  },
+  "passage-review|thoughtful|text": {
+    "model": "google/gemini-3.6-flash",
+    "context": "selection",
+    "inputTokens": 7449
+  },
+  "passage-review|thoughtful|memory": {
+    "model": "google/gemini-3.6-flash",
+    "context": "selection",
+    "inputTokens": 8786
+  },
+  "passage-review|creative|text": {
+    "model": "openai/gpt-6-astra",
+    "context": "selection",
+    "inputTokens": 11489
+  },
+  "passage-review|creative|memory": {
+    "model": "openai/gpt-6-astra",
+    "context": "selection",
+    "inputTokens": 12641
+  },
+  "passage-spelling|fast|text": {
+    "model": "google/gemini-2.5-flash",
+    "context": "selection",
+    "inputTokens": 5434
+  },
+  "passage-spelling|fast|memory": {
+    "model": "google/gemini-2.5-flash",
+    "context": "selection",
+    "inputTokens": 5434
+  },
+  "passage-spelling|thoughtful|text": {
+    "model": "google/gemini-3.6-flash",
+    "context": "selection",
+    "inputTokens": 5358
+  },
+  "passage-spelling|thoughtful|memory": {
+    "model": "google/gemini-3.6-flash",
+    "context": "selection",
+    "inputTokens": 5358
+  },
+  "passage-spelling|creative|text": {
+    "model": "openai/gpt-6-astra",
+    "context": "selection",
+    "inputTokens": 10903
+  },
+  "passage-spelling|creative|memory": {
+    "model": "openai/gpt-6-astra",
+    "context": "selection",
+    "inputTokens": 10903
+  },
+  "passage-flow|fast|text": {
+    "model": "google/gemini-2.5-flash",
+    "context": "selection",
+    "inputTokens": 5441
+  },
+  "passage-flow|fast|memory": {
+    "model": "google/gemini-2.5-flash",
+    "context": "selection",
+    "inputTokens": 5441
+  },
+  "passage-flow|thoughtful|text": {
+    "model": "google/gemini-3.6-flash",
+    "context": "selection",
+    "inputTokens": 5365
+  },
+  "passage-flow|thoughtful|memory": {
+    "model": "google/gemini-3.6-flash",
+    "context": "selection",
+    "inputTokens": 5365
+  },
+  "passage-flow|creative|text": {
+    "model": "openai/gpt-6-astra",
+    "context": "selection",
+    "inputTokens": 10936
+  },
+  "passage-flow|creative|memory": {
+    "model": "openai/gpt-6-astra",
+    "context": "selection",
+    "inputTokens": 10936
+  },
+  "passage-continuity|fast|text": {
+    "model": "google/gemini-2.5-flash",
+    "context": "book-full",
+    "inputTokens": 31797
+  },
+  "passage-continuity|fast|memory": {
+    "model": "google/gemini-2.5-flash",
+    "context": "book-focused",
+    "inputTokens": 12033
+  },
+  "passage-continuity|thoughtful|text": {
+    "model": "google/gemini-3.6-flash",
+    "context": "book-full",
+    "inputTokens": 31721
+  },
+  "passage-continuity|thoughtful|memory": {
+    "model": "google/gemini-3.6-flash",
+    "context": "book-focused",
+    "inputTokens": 11957
+  },
+  "passage-continuity|creative|text": {
+    "model": "openai/gpt-6-astra",
+    "context": "book-full",
+    "inputTokens": 31721
+  },
+  "passage-continuity|creative|memory": {
+    "model": "openai/gpt-6-astra",
+    "context": "book-focused",
+    "inputTokens": 11957
+  },
+  "chapter-review|fast|text": {
+    "model": "google/gemini-2.5-flash",
+    "context": "chapter",
+    "inputTokens": 8308
+  },
+  "chapter-review|fast|memory": {
+    "model": "google/gemini-2.5-flash",
+    "context": "chapter",
+    "inputTokens": 8308
+  },
+  "chapter-review|thoughtful|text": {
+    "model": "google/gemini-3.6-flash",
+    "context": "chapter",
+    "inputTokens": 8232
+  },
+  "chapter-review|thoughtful|memory": {
+    "model": "google/gemini-3.6-flash",
+    "context": "chapter",
+    "inputTokens": 8232
+  },
+  "chapter-review|creative|text": {
+    "model": "openai/gpt-6-astra",
+    "context": "chapter",
+    "inputTokens": 8232
+  },
+  "chapter-review|creative|memory": {
+    "model": "openai/gpt-6-astra",
+    "context": "chapter",
+    "inputTokens": 8232
+  },
+  "chapter-brainstorm|fast|text": {
+    "model": "google/gemini-2.5-flash",
+    "context": "chapter",
+    "inputTokens": 8296
+  },
+  "chapter-brainstorm|fast|memory": {
+    "model": "google/gemini-2.5-flash",
+    "context": "chapter",
+    "inputTokens": 8296
+  },
+  "chapter-brainstorm|thoughtful|text": {
+    "model": "google/gemini-3.6-flash",
+    "context": "chapter",
+    "inputTokens": 8220
+  },
+  "chapter-brainstorm|thoughtful|memory": {
+    "model": "google/gemini-3.6-flash",
+    "context": "chapter",
+    "inputTokens": 8220
+  },
+  "chapter-brainstorm|creative|text": {
+    "model": "openai/gpt-6-astra",
+    "context": "chapter",
+    "inputTokens": 8220
+  },
+  "chapter-brainstorm|creative|memory": {
+    "model": "openai/gpt-6-astra",
+    "context": "chapter",
+    "inputTokens": 8220
+  },
+  "chapter-local|fast|text": {
+    "model": "google/gemini-2.5-flash",
+    "context": "chapter",
+    "inputTokens": 8308
+  },
+  "chapter-local|fast|memory": {
+    "model": "google/gemini-2.5-flash",
+    "context": "chapter",
+    "inputTokens": 9087
+  },
+  "chapter-local|thoughtful|text": {
+    "model": "google/gemini-3.6-flash",
+    "context": "chapter",
+    "inputTokens": 8232
+  },
+  "chapter-local|thoughtful|memory": {
+    "model": "google/gemini-3.6-flash",
+    "context": "chapter",
+    "inputTokens": 9011
+  },
+  "chapter-local|creative|text": {
+    "model": "openai/gpt-6-astra",
+    "context": "chapter",
+    "inputTokens": 8232
+  },
+  "chapter-local|creative|memory": {
+    "model": "openai/gpt-6-astra",
+    "context": "chapter",
+    "inputTokens": 9011
+  },
+  "book-eyes|fast|text": {
+    "model": "google/gemini-2.5-flash",
+    "context": "book-full",
+    "inputTokens": 31646
+  },
+  "book-eyes|fast|memory": {
+    "model": "google/gemini-2.5-flash",
+    "context": "book-focused",
+    "inputTokens": 10494
+  },
+  "book-eyes|thoughtful|text": {
+    "model": "google/gemini-3.6-flash",
+    "context": "book-full",
+    "inputTokens": 31570
+  },
+  "book-eyes|thoughtful|memory": {
+    "model": "google/gemini-3.6-flash",
+    "context": "book-focused",
+    "inputTokens": 10418
+  },
+  "book-eyes|creative|text": {
+    "model": "openai/gpt-6-astra",
+    "context": "book-full",
+    "inputTokens": 31570
+  },
+  "book-eyes|creative|memory": {
+    "model": "openai/gpt-6-astra",
+    "context": "book-focused",
+    "inputTokens": 10418
+  },
+  "book-age|fast|text": {
+    "model": "google/gemini-2.5-flash",
+    "context": "book-full",
+    "inputTokens": 31641
+  },
+  "book-age|fast|memory": {
+    "model": "google/gemini-2.5-flash",
+    "context": "book-focused",
+    "inputTokens": 10608
+  },
+  "book-age|thoughtful|text": {
+    "model": "google/gemini-3.6-flash",
+    "context": "book-full",
+    "inputTokens": 31565
+  },
+  "book-age|thoughtful|memory": {
+    "model": "google/gemini-3.6-flash",
+    "context": "book-focused",
+    "inputTokens": 10532
+  },
+  "book-age|creative|text": {
+    "model": "openai/gpt-6-astra",
+    "context": "book-full",
+    "inputTokens": 31565
+  },
+  "book-age|creative|memory": {
+    "model": "openai/gpt-6-astra",
+    "context": "book-focused",
+    "inputTokens": 10532
+  },
+  "book-injury|fast|text": {
+    "model": "google/gemini-2.5-flash",
+    "context": "book-full",
+    "inputTokens": 31645
+  },
+  "book-injury|fast|memory": {
+    "model": "google/gemini-2.5-flash",
+    "context": "book-focused",
+    "inputTokens": 10531
+  },
+  "book-injury|thoughtful|text": {
+    "model": "google/gemini-3.6-flash",
+    "context": "book-full",
+    "inputTokens": 31569
+  },
+  "book-injury|thoughtful|memory": {
+    "model": "google/gemini-3.6-flash",
+    "context": "book-focused",
+    "inputTokens": 10455
+  },
+  "book-injury|creative|text": {
+    "model": "openai/gpt-6-astra",
+    "context": "book-full",
+    "inputTokens": 31569
+  },
+  "book-injury|creative|memory": {
+    "model": "openai/gpt-6-astra",
+    "context": "book-focused",
+    "inputTokens": 10455
+  },
+  "book-mention|fast|text": {
+    "model": "google/gemini-2.5-flash",
+    "context": "book-full",
+    "inputTokens": 31639
+  },
+  "book-mention|fast|memory": {
+    "model": "google/gemini-2.5-flash",
+    "context": "book-focused",
+    "inputTokens": 9677
+  },
+  "book-mention|thoughtful|text": {
+    "model": "google/gemini-3.6-flash",
+    "context": "book-full",
+    "inputTokens": 31563
+  },
+  "book-mention|thoughtful|memory": {
+    "model": "google/gemini-3.6-flash",
+    "context": "book-focused",
+    "inputTokens": 9601
+  },
+  "book-mention|creative|text": {
+    "model": "openai/gpt-6-astra",
+    "context": "book-full",
+    "inputTokens": 31563
+  },
+  "book-mention|creative|memory": {
+    "model": "openai/gpt-6-astra",
+    "context": "book-focused",
+    "inputTokens": 9601
+  },
+  "book-named-chapter|fast|text": {
+    "model": "google/gemini-2.5-flash",
+    "context": "book-full",
+    "inputTokens": 31638
+  },
+  "book-named-chapter|fast|memory": {
+    "model": "google/gemini-2.5-flash",
+    "context": "book-focused",
+    "inputTokens": 13551
+  },
+  "book-named-chapter|thoughtful|text": {
+    "model": "google/gemini-3.6-flash",
+    "context": "book-full",
+    "inputTokens": 31562
+  },
+  "book-named-chapter|thoughtful|memory": {
+    "model": "google/gemini-3.6-flash",
+    "context": "book-focused",
+    "inputTokens": 13475
+  },
+  "book-named-chapter|creative|text": {
+    "model": "openai/gpt-6-astra",
+    "context": "book-full",
+    "inputTokens": 31562
+  },
+  "book-named-chapter|creative|memory": {
+    "model": "openai/gpt-6-astra",
+    "context": "book-focused",
+    "inputTokens": 13475
+  },
+  "book-reported|fast|text": {
+    "model": "google/gemini-2.5-flash",
+    "context": "book-full",
+    "inputTokens": 31647
+  },
+  "book-reported|fast|memory": {
+    "model": "google/gemini-2.5-flash",
+    "context": "book-focused",
+    "inputTokens": 10305
+  },
+  "book-reported|thoughtful|text": {
+    "model": "google/gemini-3.6-flash",
+    "context": "book-full",
+    "inputTokens": 31571
+  },
+  "book-reported|thoughtful|memory": {
+    "model": "google/gemini-3.6-flash",
+    "context": "book-focused",
+    "inputTokens": 10229
+  },
+  "book-reported|creative|text": {
+    "model": "openai/gpt-6-astra",
+    "context": "book-full",
+    "inputTokens": 31571
+  },
+  "book-reported|creative|memory": {
+    "model": "openai/gpt-6-astra",
+    "context": "book-focused",
+    "inputTokens": 10229
+  },
+  "book-ending|fast|text": {
+    "model": "google/gemini-2.5-flash",
+    "context": "book-full",
+    "inputTokens": 31654
+  },
+  "book-ending|fast|memory": {
+    "model": "google/gemini-2.5-flash",
+    "context": "book-full",
+    "inputTokens": 31654
+  },
+  "book-ending|thoughtful|text": {
+    "model": "google/gemini-3.6-flash",
+    "context": "book-full",
+    "inputTokens": 31578
+  },
+  "book-ending|thoughtful|memory": {
+    "model": "google/gemini-3.6-flash",
+    "context": "book-full",
+    "inputTokens": 31578
+  },
+  "book-ending|creative|text": {
+    "model": "openai/gpt-6-astra",
+    "context": "book-full",
+    "inputTokens": 31578
+  },
+  "book-ending|creative|memory": {
+    "model": "openai/gpt-6-astra",
+    "context": "book-full",
+    "inputTokens": 31578
+  },
+  "book-craft|fast|text": {
+    "model": "google/gemini-2.5-flash",
+    "context": "book-full",
+    "inputTokens": 31638
+  },
+  "book-craft|fast|memory": {
+    "model": "google/gemini-2.5-flash",
+    "context": "book-full",
+    "inputTokens": 31638
+  },
+  "book-craft|thoughtful|text": {
+    "model": "google/gemini-3.6-flash",
+    "context": "book-full",
+    "inputTokens": 31562
+  },
+  "book-craft|thoughtful|memory": {
+    "model": "google/gemini-3.6-flash",
+    "context": "book-full",
+    "inputTokens": 31562
+  },
+  "book-craft|creative|text": {
+    "model": "openai/gpt-6-astra",
+    "context": "book-full",
+    "inputTokens": 31562
+  },
+  "book-craft|creative|memory": {
+    "model": "openai/gpt-6-astra",
+    "context": "book-full",
+    "inputTokens": 31562
+  },
+  "book-plot-holes|fast|text": {
+    "model": "google/gemini-2.5-flash",
+    "context": "book-full",
+    "inputTokens": 31638
+  },
+  "book-plot-holes|fast|memory": {
+    "model": "google/gemini-2.5-flash",
+    "context": "book-full",
+    "inputTokens": 31638
+  },
+  "book-plot-holes|thoughtful|text": {
+    "model": "google/gemini-3.6-flash",
+    "context": "book-full",
+    "inputTokens": 31562
+  },
+  "book-plot-holes|thoughtful|memory": {
+    "model": "google/gemini-3.6-flash",
+    "context": "book-full",
+    "inputTokens": 31562
+  },
+  "book-plot-holes|creative|text": {
+    "model": "openai/gpt-6-astra",
+    "context": "book-full",
+    "inputTokens": 31562
+  },
+  "book-plot-holes|creative|memory": {
+    "model": "openai/gpt-6-astra",
+    "context": "book-full",
+    "inputTokens": 31562
+  }
+}

@@ -1,0 +1,1 @@
+ALTER TABLE public.map_canvas ADD COLUMN placed_notebooks jsonb NOT NULL DEFAULT '[]'::jsonb;

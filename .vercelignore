@@ -1,0 +1,6 @@
+# Kept out of `vercel deploy` uploads: local settings and setup progress.
+.env
+.storymode-setup.json
+supabase/.temp
+node_modules
+dist

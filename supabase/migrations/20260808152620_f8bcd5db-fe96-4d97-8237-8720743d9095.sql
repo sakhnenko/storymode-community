@@ -1,0 +1,1 @@
+UPDATE public.story_chapter_drafts SET name = NULL WHERE name LIKE 'story.draft%';
