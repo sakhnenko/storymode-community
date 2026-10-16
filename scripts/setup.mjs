@@ -462,7 +462,12 @@ async function vercelProject(state, vercel) {
   for (;;) {
     const found = await task(`Looking for a Vercel project called ${name}`, ...vercel(["project", "inspect", name]), { clear: true });
     if (!found.ok) {
-      if (!/project_not_found/.test(found.log)) { showLog(found.log); throw new Error("Couldn't check your Vercel projects"); }
+      // Vercel CLI versions word "no such project" differently: as JSON
+      // (project_not_found) or as text (There is no project for "storymode").
+      if (!/project_not_found|no project (for|found)|project not found/i.test(found.log)) {
+        showLog(found.log);
+        throw new Error("Couldn't check your Vercel projects");
+      }
       out(`${green("✓")} A new Vercel project, ${bold(name)}, will be created`);
       break;
     }
