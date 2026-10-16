@@ -17,6 +17,7 @@ import { useTranslation } from 'react-i18next';
 import { UserStatsSheet } from '@/components/admin/UserStatsSheet';
 import { FeatureFlagsSection } from '@/components/admin/FeatureFlagsSection';
 import { AiModelsSection } from '@/components/admin/AiModelsSection';
+import { SignupsSection } from '@/components/admin/SignupsSection';
 import { SELF_HOSTED } from '@/lib/self-hosted';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ADMIN_SCOPE, LABEL, PILL, TAB, TABLE, TABS_LIST, TITLE } from '@/components/admin/admin-ui';
@@ -282,6 +283,7 @@ export default function AdminPage() {
               </TabsList>
             </div>
             <TabsContent value="users" className="mt-0">
+              {SELF_HOSTED && <SignupsSection />}
               {/* Waitlist Section */}
               <div className="mb-12">
                 <div className="mb-3 flex items-baseline gap-2">

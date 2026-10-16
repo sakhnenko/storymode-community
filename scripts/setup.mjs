@@ -68,7 +68,7 @@ const STEPS = [
   ["secrets", "Save your AI key on Supabase"],
   ["vercel", "Deploy the web app"],
   ["site", "Point sign-in at your site"],
-  ["email", "Email for sign-ups (Resend)"],
+  ["email", "Who can sign up"],
 ];
 
 function checklist(state, current) {
@@ -521,26 +521,65 @@ async function siteStep(state, secrets) {
  * Sign-up and password emails through Resend. Supabase's built-in sender only
  * reaches your own Supabase team, so other writers need this to sign up.
  */
+/** Turns Supabase's confirmation emails on or off for new accounts. */
+async function setAutoconfirm(state, secrets, on) {
+  const resp = await supabaseApi(secrets.token, `/projects/${state.ref}/config/auth`, {
+    method: "PATCH",
+    body: JSON.stringify({ mailer_autoconfirm: on }),
+  });
+  if (!resp.ok) throw new Error(`Supabase didn't accept the sign-up settings (${resp.status})`);
+}
+
+/**
+ * Who can create an account, and so how sign-up email works. Everyone with an
+ * account can use AI on the owner's OpenRouter credit, so sign-ups start
+ * closed: only the first account (the admin) and the addresses the admin adds
+ * in Admin → Sign-ups can join, until the admin opens them.
+ */
 async function emailStep(state, secrets) {
+  await guide([
+    bold("Who will use this StoryMode?"),
+    "",
+    "Everyone with an account can use AI on your OpenRouter credit, so",
+    "sign-ups start {closed}: only you, and the people you add later in",
+    "{Admin → Sign-ups}. That also decides whether you need email:",
+    "Supabase's built-in email only reaches your own Supabase address.",
+  ]);
+  const who = await choose("Who will use it?", [
+    { label: "Just me", value: "me", hint: "no email setup" },
+    { label: "Me and a few people I add", value: "invited", hint: "no email; accounts work right away" },
+    { label: "Anyone I open sign-ups to", value: "anyone", hint: "connects Resend for emails" },
+  ]);
+  state.access = who;
+
+  if (who === "me") {
+    await setAutoconfirm(state, secrets, false);
+    state.email = "supabase";
+    saveState(state);
+    out(`${green("✓")} Sign up with the email you use for ${bold("supabase.com")}: its confirmation email reaches you.`);
+    return;
+  }
+  if (who === "invited") {
+    await setAutoconfirm(state, secrets, true);
+    state.email = "none";
+    saveState(state);
+    out(`${green("✓")} New accounts work right away, without a confirmation email.`);
+    note("After you sign up, add each person's address in Admin → Sign-ups.");
+    note("Without email, nobody can reset a forgotten password: choose this step's");
+    note("third option later (npm run setup → Start over) if you need that.");
+    return;
+  }
+
   await guide([
     bold("Email lets other writers sign up and reset their passwords."),
     "",
-    "Supabase's built-in email only reaches you, so we'll connect {Resend}:",
+    "We'll connect {Resend}:",
     "1. Sign up at {resend.com} (free for 3,000 emails a month).",
     "2. To email anyone, add and verify a {domain} you own (Domains).",
     "   Without one, Resend only delivers to your own address.",
     "3. Create an {API key} (we'll open that page next).",
   ]);
-  const how = await choose("Set up email now?", [
-    { label: "Yes, connect Resend", value: "resend", hint: "recommended" },
-    { label: "Skip for now", value: "skip", hint: "only you can sign up until you do" },
-  ]);
-  if (how === "skip") {
-    state.email = "skipped";
-    saveState(state);
-    note("Skipped. Run npm run setup and choose Start over to add it later.");
-    return;
-  }
+  await setAutoconfirm(state, secrets, false);
 
   let key, domains = null;
   for (;;) {
@@ -598,6 +637,7 @@ async function emailStep(state, secrets) {
   state.email = sender;
   saveState(state);
   out(`${green("✓")} Sign-up emails now come from ${bold(sender)}`);
+  note("Sign-ups stay closed until you open them in Admin → Sign-ups.");
 }
 
 /**
@@ -721,9 +761,13 @@ async function main() {
     `${bold("The first account becomes the admin.")}`,
     "",
     dim("Admin → AI models: pick Google, OpenAI or Claude per tier."),
-    ...(state.email && state.email !== "skipped"
-      ? [dim(`Sign-up emails come from ${state.email}.`)]
-      : [dim("Other writers can sign up once email is set up: run"), dim("npm run setup and choose Start over.")]),
+    ...(state.access === "me" || state.email === "supabase"
+      ? [dim("Sign up with the email you use for supabase.com.")]
+      : state.access === "invited"
+        ? [dim("Then add the people you invite in Admin → Sign-ups.")]
+        : state.email && !["skipped", "none"].includes(state.email)
+          ? [dim(`Sign-up emails come from ${state.email}.`), dim("Open sign-ups in Admin → Sign-ups when you're ready.")]
+          : [dim("Sign-ups are closed to others: see Admin → Sign-ups.")]),
   ], { color: green });
   if (state.site && await confirm("Open your site now?")) openUrl(state.site);
 }

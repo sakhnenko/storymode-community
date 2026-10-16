@@ -31,6 +31,7 @@ for running your own copy with your own AI key. It's free for you to host; the
 - [🚀 Set it up in about 10 minutes](#-set-it-up-in-about-10-minutes)
 - [🔑 Where to find each key](#-where-to-find-each-key)
 - [🧱 How it fits together](#-how-it-fits-together)
+- [👥 Who can sign up](#-who-can-sign-up)
 - [🔄 Updating](#-updating)
 - [🛟 If something's not working](#-if-somethings-not-working)
 - [💡 Good to know](#-good-to-know)
@@ -70,7 +71,7 @@ You'll need [Node.js 18 or newer](https://nodejs.org), plus free accounts with:
 | 🟢 | [Supabase](https://supabase.com) | Database, sign-in, file storage and server functions |
 | 🟣 | [OpenRouter](https://openrouter.ai) | One key for every AI model: Google, OpenAI and Claude |
 | ▲ | [Vercel](https://vercel.com) | Hosts the website |
-| ✉️ | [Resend](https://resend.com) *(optional)* | Sends sign-up and password emails |
+| ✉️ | [Resend](https://resend.com) *(only if other writers sign up themselves)* | Sends their confirmation and password emails |
 
 The setup wizard helps you create any you don't have yet. Then:
 
@@ -94,14 +95,15 @@ It walks you through nine steps and checks each answer before moving on:
 6. **Save your AI key on Supabase**, where only the server can read it.
 7. **Deploy the web app** with the Vercel CLI (it signs you in through your browser), or gives you the two values to deploy it anywhere.
 8. **Point sign-in at your site**, so sign-up emails link to it.
-9. **Email (optional)**: connects Resend, so other writers can sign up and reset their passwords.
+9. **Who can sign up**: just you, people you add, or anyone you open sign-ups to. Only the last one needs Resend ([more below](#-who-can-sign-up)).
 
 > [!TIP]
 > Your secrets are never shown as you type and never saved on your computer.
 > If you stop halfway, run `npm run setup` again: it picks up where you left off.
 
 When it's done, open your site and sign up. **The first account becomes the
-admin.**
+admin.** If you chose *Just me*, sign up with the email you use for
+supabase.com, and pick a new password just for StoryMode.
 
 <details>
 <summary>▲ <b>Prefer the Vercel button?</b></summary>
@@ -127,7 +129,7 @@ The wizard opens these pages for you, but in case you want them:
 | 🟢 Supabase access token | [Account → Access Tokens](https://supabase.com/dashboard/account/tokens): your organization, **7 days**, **Full access**. Only setup and updates use it; revoke it afterwards if you like. |
 | 🟣 OpenRouter credit | [Settings → Credits](https://openrouter.ai/settings/credits), or your own OpenAI / Anthropic / Google key under [Settings → Integrations](https://openrouter.ai/settings/integrations). |
 | 🟣 OpenRouter key | [Settings → Keys](https://openrouter.ai/settings/keys) → **Create Key**, with **no expiration** (StoryMode uses it for every AI request). Starts with `sk-or-`. A monthly credit limit on it is a good idea. |
-| ✉️ Resend key *(optional)* | [resend.com/api-keys](https://resend.com/api-keys). To email anyone, verify a domain under [Domains](https://resend.com/domains) first. |
+| ✉️ Resend key *(only for open sign-ups)* | [resend.com/api-keys](https://resend.com/api-keys). To email anyone, verify a domain under [Domains](https://resend.com/domains) first. |
 
 ## 🧱 How it fits together
 
@@ -147,6 +149,25 @@ The wizard opens these pages for you, but in case you want them:
 
 Your writing lives in your own Supabase project. AI requests go from your
 server functions to OpenRouter with your key, which never reaches the browser.
+
+## 👥 Who can sign up
+
+Everyone with an account can use AI on your OpenRouter credit, so **sign-ups
+start closed**. The first account (you, the admin) can always sign up. After
+that, only the addresses you add in **Admin → Sign-ups** can, until you switch
+it to **Anyone**.
+
+Your choice also decides whether you need an email service, since Supabase's
+built-in email only reaches the address you use for supabase.com:
+
+| Who will use it | Email | How people join |
+|---|---|---|
+| 🧑 **Just me** | Supabase's built-in email | Sign up with your Supabase account's email. |
+| 👥 **Me and a few people I add** | None: accounts work without confirming | Add their address in **Admin → Sign-ups**; they sign up on your site. Nobody can reset a forgotten password. |
+| 🌍 **Anyone I open sign-ups to** | [Resend](https://resend.com) | Switch **Admin → Sign-ups** to **Anyone** when you're ready. |
+
+The setup wizard asks which one. To change your mind later, run `npm run setup`,
+choose **Start over**, and pick another option at the last step.
 
 ## 🔄 Updating
 
@@ -168,8 +189,20 @@ and database password ready: setup never saves them.
 
 Supabase asks new accounts to confirm their email: look for the confirmation
 link in your inbox (and spam). Clicking it signs you in. If nothing arrives,
-**Supabase → Logs → Auth** says why. Usually it's the sender address in
-**Authentication → Emails → SMTP Settings**.
+**Supabase → Logs → Auth** says why. Usually it's either an address
+Supabase's built-in email can't reach (see [Who can sign up](#-who-can-sign-up)),
+or the sender address in **Authentication → Emails → SMTP Settings**.
+
+</details>
+
+<details>
+<summary>🚪 <b>"Sign-ups are closed"</b></summary>
+
+<br>
+
+Sign-ups start closed, so only the admin and the addresses added in
+**Admin → Sign-ups** can create an account. Add the address there, or switch it
+to **Anyone**.
 
 </details>
 
@@ -210,8 +243,8 @@ dashboard to wake it up.
 ## 💡 Good to know
 
 - 📬 **Email.** Supabase's built-in email only reaches people on your Supabase
-  team, so signing yourself up works right away. For other writers, the
-  wizard's email step connects Resend.
+  team, a couple of messages an hour. That's enough for you; for anyone else,
+  see [Who can sign up](#-who-can-sign-up).
 - 🧠 **AI models and your own keys.** In **Admin → AI models** you choose which
   provider serves each tier (Fast, Thoughtful, Creative and Images): Google,
   OpenAI or Claude. If you've added that provider's key in OpenRouter, it's

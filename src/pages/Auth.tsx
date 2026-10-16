@@ -120,6 +120,15 @@ export default function Auth() {
           }
         }
       } else {
+        // Self-hosted sign-ups can be closed to all but the addresses the admin
+        // added; the database enforces it, this just says so in plain words.
+        if (SELF_HOSTED) {
+          const { data: allowed, error: checkError } = await supabase.rpc('signup_allowed', { _email: email.trim() });
+          if (!checkError && allowed === false) {
+            toast({ title: t('auth.signupsClosed'), description: t('auth.signupsClosedDesc'), variant: "destructive" });
+            return;
+          }
+        }
         const { error } = await signUp(email, password);
         if (error) {
           // On a server error (5xx) the auth library has no message to show (it

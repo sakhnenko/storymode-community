@@ -357,7 +357,9 @@
     "signUpServerError": "The sign-up service had a problem (error {{status}}). This usually means the confirmation email couldn't be sent. Please try again in a moment.",
     "confirmSent": "We sent a confirmation link to {{email}}. Open it to finish creating your account (check your spam folder too).",
     "resendConfirmation": "Send it again",
-    "confirmationResent": "We sent the confirmation link again."
+    "confirmationResent": "We sent the confirmation link again.",
+    "signupsClosed": "Sign-ups are closed",
+    "signupsClosedDesc": "This StoryMode only lets in people its owner has added. Ask them to add your email address."
   },
   "header": {
     "story": "Story",
@@ -1431,6 +1433,25 @@
       "checkOwnKey": "Works · using your own key",
       "checkCredit": "Works · paid from your OpenRouter credit",
       "checkFailed": "Didn't work: {{error}}"
+    },
+    "signups": {
+      "title": "Sign-ups",
+      "description": "Who can create an account here. Everyone with an account can use AI on your OpenRouter credit.",
+      "loading": "Loading…",
+      "loadFailed": "Couldn't load the sign-up settings.",
+      "saveFailed": "Couldn't save the sign-up settings",
+      "notSetUp": "Sign-ups aren't restricted yet: run npm run setup → Update to the latest version.",
+      "whoLabel": "Who can sign up",
+      "closed": "Only people I add",
+      "open": "Anyone",
+      "closedDescription": "Only you and the addresses below can create an account.",
+      "openDescription": "Anyone with your site's address can create an account and use AI on your credit.",
+      "allowedTitle": "People you've added",
+      "allowedDescription": "They sign up on your site with this address. If your StoryMode doesn't send email, their account works without confirming it.",
+      "addLabel": "Email address to add",
+      "add": "Add",
+      "remove": "Remove",
+      "noneAllowed": "No one yet"
     }
   },
   "projects": {

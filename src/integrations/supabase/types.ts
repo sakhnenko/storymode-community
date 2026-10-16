@@ -1023,6 +1023,30 @@ export type Database = {
         }
         Relationships: []
       }
+      signup_settings: {
+        Row: {
+          allowed_emails: string[]
+          open: boolean
+          singleton: boolean
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          allowed_emails?: string[]
+          open?: boolean
+          singleton?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          allowed_emails?: string[]
+          open?: boolean
+          singleton?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: []
+      }
       starter_template_config: {
         Row: {
           configured_at: string
@@ -1687,6 +1711,7 @@ export type Database = {
         Returns: boolean
       }
       owns_chapter: { Args: { _chapter_id: string }; Returns: boolean }
+      signup_allowed: { Args: { _email: string }; Returns: boolean }
       owns_grid: { Args: { _grid_id: string }; Returns: boolean }
       owns_project: { Args: { _project_id: string }; Returns: boolean }
       plan_credit_defaults: { Args: { _plan: string }; Returns: number }

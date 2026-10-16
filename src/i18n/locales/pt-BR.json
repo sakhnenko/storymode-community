@@ -357,7 +357,9 @@
     "signUpServerError": "O serviço de cadastro teve um problema (erro {{status}}). Isso geralmente significa que o e-mail de confirmação não pôde ser enviado. Tente novamente em instantes.",
     "confirmSent": "Enviamos um link de confirmação para {{email}}. Abra-o para terminar de criar sua conta (confira também a pasta de spam).",
     "resendConfirmation": "Enviar de novo",
-    "confirmationResent": "Enviamos o link de confirmação de novo."
+    "confirmationResent": "Enviamos o link de confirmação de novo.",
+    "signupsClosed": "Cadastros fechados",
+    "signupsClosedDesc": "Este StoryMode só aceita pessoas adicionadas pelo dono. Peça para adicionarem seu e-mail."
   },
   "header": {
     "story": "História",
@@ -1431,6 +1433,25 @@
       "checkOwnKey": "Funciona · usando sua própria chave",
       "checkCredit": "Funciona · pago com seu crédito do OpenRouter",
       "checkFailed": "Não funcionou: {{error}}"
+    },
+    "signups": {
+      "title": "Cadastros",
+      "description": "Quem pode criar uma conta aqui. Todos com conta podem usar a IA com o seu crédito do OpenRouter.",
+      "loading": "Carregando…",
+      "loadFailed": "Não foi possível carregar as configurações de cadastro.",
+      "saveFailed": "Não foi possível salvar as configurações de cadastro",
+      "notSetUp": "Os cadastros ainda não têm restrição: rode npm run setup → Update to the latest version.",
+      "whoLabel": "Quem pode se cadastrar",
+      "closed": "Só quem eu adicionar",
+      "open": "Qualquer pessoa",
+      "closedDescription": "Só você e os endereços abaixo podem criar uma conta.",
+      "openDescription": "Qualquer pessoa com o endereço do seu site pode criar uma conta e usar a IA com o seu crédito.",
+      "allowedTitle": "Pessoas adicionadas",
+      "allowedDescription": "Elas se cadastram no seu site com este endereço. Se o seu StoryMode não envia e-mails, a conta funciona sem confirmação.",
+      "addLabel": "E-mail para adicionar",
+      "add": "Adicionar",
+      "remove": "Remover",
+      "noneAllowed": "Ninguém ainda"
     }
   },
   "projects": {
