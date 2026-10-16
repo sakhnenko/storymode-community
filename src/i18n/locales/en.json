@@ -1408,7 +1408,7 @@
     "planUpdated": "Plan updated to {{plan}}",
     "aiModels": {
       "title": "AI models",
-      "description": "Choose which AI provider serves each tier. If you've added that provider's key in OpenRouter (Settings → Integrations), your key is used; otherwise the requests are paid from your OpenRouter credit.",
+      "description": "Choose which AI provider serves each tier. If you've added that provider's key in OpenRouter (Settings → Integrations), your key is used; otherwise the requests are paid from your OpenRouter credit. Your own keys need a paid OpenRouter account: buy credit once (Settings → Credits).",
       "loading": "Loading model settings…",
       "loadFailed": "Could not load the model settings.",
       "saved": "Model choice saved",

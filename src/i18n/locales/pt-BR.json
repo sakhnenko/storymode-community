@@ -1408,7 +1408,7 @@
     "planUpdated": "Plano atualizado para {{plan}}",
     "aiModels": {
       "title": "Modelos de IA",
-      "description": "Escolha qual provedor de IA atende cada nível. Se você adicionou a chave desse provedor no OpenRouter (Settings → Integrations), sua chave é usada; caso contrário, as solicitações são pagas com seu crédito do OpenRouter.",
+      "description": "Escolha qual provedor de IA atende cada nível. Se você adicionou a chave desse provedor no OpenRouter (Settings → Integrations), sua chave é usada; caso contrário, as solicitações são pagas com seu crédito do OpenRouter. Suas próprias chaves exigem uma conta paga no OpenRouter: compre crédito uma vez (Settings → Credits).",
       "loading": "Carregando configurações de modelos…",
       "loadFailed": "Não foi possível carregar as configurações de modelos.",
       "saved": "Escolha de modelo salva",

@@ -23,6 +23,21 @@ export function aiProvider(): AiProvider {
   return "lovable";
 }
 
+/**
+ * What every AI function tells the writer when the AI provider turns a request
+ * down for lack of credit (HTTP 402). On OpenRouter (self-hosted installs)
+ * that's the owner's OpenRouter balance, which is needed even with their own
+ * provider key added there: OpenRouter's free plan can't use your own keys.
+ * On the hosted app it's StoryMode's own gateway balance, nothing the writer
+ * can fix (running out of their StoryMode credits is caught earlier, by the
+ * AI gate), so it reads as an outage.
+ */
+export function outOfCreditMessage(): string {
+  return aiProvider() === "openrouter"
+    ? "Your OpenRouter account is out of credit. Buy credit at openrouter.ai/settings/credits: it's needed even if you've added your own OpenAI, Anthropic or Google key there."
+    : "StoryMode's AI is temporarily unavailable. Please try again later.";
+}
+
 const PROVIDERS: Record<AiProvider, { base: string; keyName: string; headers?: () => Record<string, string> }> = {
   lovable: { base: "https://ai.gateway.lovable.dev/v1", keyName: "LOVABLE_API_KEY" },
   openrouter: {

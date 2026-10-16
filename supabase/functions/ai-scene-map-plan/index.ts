@@ -1,7 +1,7 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { enforceAiGate, chargeUsage, releaseAiReservation } from "../_shared/ai-gate.ts";
 import { estimateTokens, usageFromResponse } from "../_shared/ai-cost.ts";
-import { typedDecisionRoute } from "../_shared/ai-provider.ts";
+import { outOfCreditMessage, typedDecisionRoute } from "../_shared/ai-provider.ts";
 import { chatRouteFor } from "../_shared/model-choice.ts";
 import { asRecord, cleanText, parseJsonObject, plainTextFromHtml } from "../_shared/ai-json.ts";
 import {
@@ -317,7 +317,7 @@ ${mustConsider}`;
       const message = response.status === 429
         ? "Rate limit exceeded. Try again shortly."
         : response.status === 402
-          ? "AI credits exhausted. Add credits to continue."
+          ? outOfCreditMessage()
           : "The AI could not analyze this chapter. Try again.";
       return new Response(JSON.stringify({ error: message }), {
         status,

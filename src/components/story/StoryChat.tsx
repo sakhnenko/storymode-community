@@ -1548,7 +1548,8 @@ function StoryChatInner({ projectId, activeChapterId, activeChapterTitle, review
         let payload: { error?: string; code?: string; credits_exhausted?: boolean } | null = null;
         try { payload = await resp.json(); } catch { /* ignore */ }
         if (payload?.error) errMsg = payload.error;
-        if (resp.status === 402 || payload?.credits_exhausted) {
+        // The writer's own StoryMode credits ran out (the AI gate says so).
+        if (payload?.credits_exhausted) {
           throw new ChatError(
             errMsg && !/chat failed/i.test(errMsg)
               ? errMsg
@@ -1556,6 +1557,9 @@ function StoryChatInner({ projectId, activeChapterId, activeChapterTitle, review
             'credits',
           );
         }
+        // The AI provider's own balance ran out: StoryMode's gateway on the
+        // hosted app, the owner's OpenRouter account on a self-hosted one.
+        if (resp.status === 402) throw new ChatError(errMsg, 'blocked');
         if (resp.status === 403 || payload?.code === 'ai_blocked') {
           throw new ChatError(
             errMsg && !/chat failed/i.test(errMsg)

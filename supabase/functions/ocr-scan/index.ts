@@ -2,6 +2,7 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { enforceAiGate, chargeUsage, releaseAiReservation } from "../_shared/ai-gate.ts";
 import { usageFromResponse, estimateTokens } from "../_shared/ai-cost.ts";
 import { chatRouteFor } from "../_shared/model-choice.ts";
+import { outOfCreditMessage } from "../_shared/ai-provider.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -84,7 +85,7 @@ Rules:
       if (ocrResponse.status === 429) {
         friendly = "We're being rate-limited by the AI provider. Please wait a minute and try again.";
       } else if (ocrResponse.status === 402 || gwType === "credit_limit_reached") {
-        friendly = "This workspace has run out of AI credits. Ask the workspace owner to top up to keep scanning documents.";
+        friendly = outOfCreditMessage();
       } else if (ocrResponse.status === 403) {
         friendly = gwMessage
           ? `AI provider refused the request: ${gwMessage}`

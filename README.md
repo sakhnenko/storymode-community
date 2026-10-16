@@ -127,7 +127,7 @@ The wizard opens these pages for you, but in case you want them:
 |---|---|
 | 🟢 Supabase project | [database.new](https://database.new). Supabase asks you to create an organization first if you don't have one; Free is fine. Keep the **database password** you set. |
 | 🟢 Supabase access token | [Account → Access Tokens](https://supabase.com/dashboard/account/tokens): your organization, **7 days**, **Full access**. Only setup and updates use it; revoke it afterwards if you like. |
-| 🟣 OpenRouter credit | [Settings → Credits](https://openrouter.ai/settings/credits), or your own OpenAI / Anthropic / Google key under [Settings → Integrations](https://openrouter.ai/settings/integrations). |
+| 🟣 OpenRouter credit | [Settings → Credits](https://openrouter.ai/settings/credits). Buy some even if you'll use your own OpenAI / Anthropic / Google key ([Settings → Integrations](https://openrouter.ai/settings/integrations)): OpenRouter's free plan can't use your own keys. Once you've bought credit, your own keys cost nothing extra for the first $25,000 a month. |
 | 🟣 OpenRouter key | [Settings → Keys](https://openrouter.ai/settings/keys) → **Create Key**, with **no expiration** (StoryMode uses it for every AI request). Starts with `sk-or-`. A monthly credit limit on it is a good idea. |
 | ✉️ Resend key *(only for open sign-ups)* | [resend.com/api-keys](https://resend.com/api-keys). To email anyone, verify a domain under [Domains](https://resend.com/domains) first. |
 
@@ -211,11 +211,13 @@ to **Anyone**.
 
 <br>
 
-OpenRouter turned the request down for lack of credit. Either add credit at
-[Settings → Credits](https://openrouter.ai/settings/credits), or, if you've
-added your own provider key in OpenRouter, open **Admin → AI models** in
-StoryMode and pick that provider for each tier. **Check** shows whether your
-own key is being used.
+OpenRouter turned the request down for lack of credit:
+- **No credit bought yet?** Buy some at [Settings → Credits](https://openrouter.ai/settings/credits).
+  You need to even when you've added your own provider key, because
+  OpenRouter's free plan can't use your own keys.
+- **Using your own key?** Open **Admin → AI models** in StoryMode and pick that
+  provider for each tier; tiers on another provider are paid from your credit.
+  **Check** shows whether your own key is being used.
 
 </details>
 
@@ -248,7 +250,9 @@ dashboard to wake it up.
 - 🧠 **AI models and your own keys.** In **Admin → AI models** you choose which
   provider serves each tier (Fast, Thoughtful, Creative and Images): Google,
   OpenAI or Claude. If you've added that provider's key in OpenRouter, it's
-  used; otherwise requests come out of your OpenRouter credit. The prompts were
+  used; otherwise requests come out of your OpenRouter credit. Your own keys
+  need a paid OpenRouter account: buy credit once, and they're free of
+  OpenRouter fees for the first $25,000 a month. The prompts were
   tuned on GPT and Gemini, so Claude's answers may read a little differently.
 - 💸 **Costs.** Supabase and Vercel are free for personal use. AI is
   pay-as-you-go with OpenRouter (or your provider).

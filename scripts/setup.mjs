@@ -370,8 +370,9 @@ async function openRouterStep(state, secrets, { again = false } = {}) {
     bold("OpenRouter gives StoryMode one key for every AI model it uses."),
     "",
     "1. Sign up at {openrouter.ai}.",
-    "2. Add a few dollars of credit ({Settings → Credits}), or add your own",
-    "   OpenAI / Anthropic / Google key ({Settings → Integrations}).",
+    "2. Add a few dollars of credit ({Settings → Credits}). Even to use",
+    "   your own OpenAI / Anthropic / Google key ({Settings → Integrations}),",
+    "   OpenRouter needs one credit purchase: its free plan has no own keys.",
     "3. Create a key under {Settings → Keys}. It starts with sk-or-.",
   ], "https://openrouter.ai/settings/keys");
 
@@ -391,8 +392,9 @@ async function openRouterStep(state, secrets, { again = false } = {}) {
     }
     out(`${green("✓")} OpenRouter key works${info.label ? dim(` (${info.label})`) : ""}`);
     if (info.is_free_tier) {
-      note("This account has no credit yet. StoryMode's models are paid: add credit");
-      note("at openrouter.ai/settings/credits, or your own provider key under Integrations.");
+      note("This account has no credit yet, so StoryMode's AI won't work. Buy a little");
+      note("at openrouter.ai/settings/credits: OpenRouter's free plan can't use your own");
+      note("provider keys either, so that's needed even if you've added one.");
       if (!await confirm("Continue anyway?")) { secrets.openRouterKey = ""; continue; }
     }
     state.openRouterChecked = true;

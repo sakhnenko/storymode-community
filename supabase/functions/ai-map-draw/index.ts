@@ -1,7 +1,7 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { decode, Image } from "https://deno.land/x/imagescript@1.2.17/mod.ts";
 import { enforceAiGate, chargeUsage, releaseAiReservation } from "../_shared/ai-gate.ts";
-import { imageRoute } from "../_shared/ai-provider.ts";
+import { imageRoute, outOfCreditMessage } from "../_shared/ai-provider.ts";
 import { pickImageModel } from "../_shared/model-choice.ts";
 import { clusterBorderColors, findStickerInteriorTransparency, selectBackdropKeys } from "./bg-key.ts";
 import { wantsRepeatedDiscreteSubjects } from "./repetition.ts";
@@ -732,7 +732,7 @@ ${mode === "sticker"
 
     if (!imgResp.ok) {
       if (imgResp.status === 429) return new Response(JSON.stringify({ error: "Rate limit exceeded. Try again shortly." }), { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } });
-      if (imgResp.status === 402) return new Response(JSON.stringify({ error: "AI image generation is temporarily unavailable. Please try again later.", service_unavailable: true }), { status: 402, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+      if (imgResp.status === 402) return new Response(JSON.stringify({ error: outOfCreditMessage(), service_unavailable: true }), { status: 402, headers: { ...corsHeaders, "Content-Type": "application/json" } });
       const t = await imgResp.text();
       console.error("ai-map-draw img error", imgResp.status, t.slice(0, 400));
       if (imgResp.status === 403 && t.includes("credit_limit_reached")) {

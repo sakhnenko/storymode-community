@@ -3,6 +3,7 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { enforceAiGate, chargeUsage, releaseAiReservation } from "../_shared/ai-gate.ts";
 import { meterSseStream, estimateTokens, creditsForUsage } from "../_shared/ai-cost.ts";
 import { chatRouteFor } from "../_shared/model-choice.ts";
+import { outOfCreditMessage } from "../_shared/ai-provider.ts";
 import { type ProjectMemory } from "../_shared/project-memory.ts";
 import { keepAnswer } from "./keep-answer.ts";
 import { buildEditorPrompt, editorModel, planEditorRequest, stripStaleSelections, type ContextMode } from "./editor-request.ts";
@@ -326,7 +327,7 @@ serve(async (req) => {
         });
       }
       if (resp.status === 402) {
-        return new Response(JSON.stringify({ error: "AI credits exhausted. Add credits in workspace settings." }), {
+        return new Response(JSON.stringify({ error: outOfCreditMessage() }), {
           status: 402, headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
       }
