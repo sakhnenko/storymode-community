@@ -1,0 +1,2337 @@
+{
+  "memory": {
+    "title": "Memória do projeto",
+    "pilot": "Piloto",
+    "description": "Fatos com fontes para o Editor IA. Fatos extraídos podem ser usados automaticamente; capítulos e cadernos nunca são reescritos.",
+    "flagDescription": "Teste perfis de escrita e memória de capítulos com fontes. Cada projeto também precisa ativar o recurso.",
+    "profile": "Perfil de escrita",
+    "enable": "Usar a memória do projeto nas revisões da IA",
+    "enableFirst": "Ative a memória do projeto e salve o perfil para começar.",
+    "register": "Tipo de escrita",
+    "genre": "Gênero ou área (opcional)",
+    "guidance": "Preferências editoriais (opcional)",
+    "profileHint": "Não é preciso preencher: o gênero vem das suas respostas no cadastro ou dos capítulos lidos, e o Automático adapta o tipo de escrita a cada trecho. As preferências ficam nos bastidores e não alteram seu texto.",
+    "profileSaved": "Perfil de escrita salvo.",
+    "unsavedProfile": "Salve ou cancele as alterações do perfil antes de fechar.",
+    "unsavedCorrection": "Salve ou cancele a correção aberta antes de sair dela.",
+    "coverage": "{{count}} de {{total}} capítulos têm memória atualizada. A extração é seletiva, não uma auditoria completa.",
+    "refresh": "Atualizar status",
+    "chapter": "Memória do capítulo",
+    "selectChapter": "Escolha um capítulo salvo",
+    "cost": "A análise manual usa créditos de IA pela tarifa habitual ou sua própria chave de API. Um capítulo salvo por solicitação, com até 35.000 caracteres. Não há análise paga automática em segundo plano. O processamento pode gerar cobrança mesmo se a validação falhar ou o capítulo mudar durante a análise.",
+    "acceptUsage": "Entendo que analisar este capítulo usa créditos de IA ou minha conta de API.",
+    "analyze": "Analisar capítulo salvo",
+    "analyzing": "Analisando…",
+    "cached": "Memória atualizada",
+    "analyzed": "{{count}} fatos com fontes foram salvos. {{rejected}} entradas sem fonte válida ou duplicadas foram omitidas.",
+    "pending": "Aguarde as edições pendentes serem salvas antes de analisar. O rascunho local não é enviado ao extrator.",
+    "stale": "O capítulo ou seu rascunho ativo mudou. Estes fatos não serão usados nas revisões até uma nova análise.",
+    "staleEvidence": "Este trecho pertence a uma versão anterior e pode não existir mais no capítulo.",
+    "previousFailed": "A análise anterior não terminou. A memória existente foi preservada; você pode tentar novamente.",
+    "detected": "Tipo de escrita detectado",
+    "empty": "Analise um capítulo salvo para ver seus fatos com fontes aqui.",
+    "recorded": "Registrado neste capítulo",
+    "noFacts": "Nenhum fato útil com fonte foi extraído desta versão.",
+    "evidence": "Trecho de apoio",
+    "openChapter": "Abrir capítulo de origem",
+    "original": "Extração original",
+    "correction": "Sua correção",
+    "correctionHint": "Salva separadamente como sua afirmação. A extração original e a citação continuam visíveis; uma nova análise não sobrescreverá a correção para a mesma evidência.",
+    "confirm": "Confirmar",
+    "correct": "Corrigir",
+    "exclude": "Excluir das revisões",
+    "restore": "Usar novamente",
+    "resetFact": "Desfazer correção",
+    "saveFailed": "Não foi possível salvar. Seu texto foi mantido; tente novamente.",
+    "unavailable": "A memória do projeto está indisponível. O piloto exige a migração do banco e a função de backend implantadas pelo Lovable, além de acesso ao seu próprio projeto.",
+    "retry": "Tentar novamente",
+    "status": {
+      "extracted": "Extraído · não confirmado",
+      "confirmed": "Confirmado pelo autor",
+      "corrected": "Correção do autor",
+      "excluded": "Excluído"
+    },
+    "basis": {
+      "stated": "Declarado na fonte",
+      "reported": "Relato ou crença atribuída",
+      "inferred": "Inferência da IA · incerta"
+    },
+    "kind": {
+      "person": "Pessoa",
+      "place": "Lugar",
+      "organization": "Organização",
+      "object": "Objeto",
+      "system": "Sistema",
+      "concept": "Conceito",
+      "event": "Evento"
+    },
+    "registers": {
+      "auto": "Automático — adaptar ao trecho",
+      "literary": "Ficção",
+      "nonfiction": "Memórias e não ficção",
+      "script": "Roteiro (cinema, TV, vídeo, teatro, HQ)",
+      "worldbuilding": "Construção de mundo e jogos",
+      "academic": "Acadêmico",
+      "technical": "Técnico",
+      "general": "Indeterminado"
+    },
+    "errors": {
+      "failed": "A análise falhou. Seu texto e a memória existente foram preservados. Tente novamente.",
+      "unavailable": "O backend ainda está indisponível ou a conexão falhou. Implante a migração e a função project-memory pelo Lovable e tente novamente.",
+      "forbidden": "A memória não está ativada para este projeto ou esta conta.",
+      "busy": "Outra solicitação de IA ainda está em andamento. Aguarde alguns minutos e tente de novo.",
+      "credits": "Não há créditos de IA suficientes para analisar este capítulo.",
+      "empty": "O capítulo salvo não tem texto suficiente para análise.",
+      "tooLong": "Este capítulo tem mais de 180.000 caracteres. Divida-o em capítulos menores para analisá-lo.",
+      "citations": "A análise não encontrou fatos que pudessem ser ligados a citações exatas do capítulo. Nada foi salvo; tente novamente.",
+      "provider": "O provedor de IA não conseguiu concluir a análise. Tente novamente.",
+      "billing": "Não foi possível confirmar o uso; a nova memória não foi publicada. Tente mais tarde.",
+      "sourceChanged": "O capítulo mudou durante a análise. Os resultados antigos não foram publicados; analise novamente a versão salva.",
+      "publish": "Não foi possível publicar a análise. A memória existente não mudou. Tente novamente.",
+      "invalidRequest": "Escolha um capítulo salvo e aceite o aviso de uso antes de analisar."
+    },
+    "upgrade": "Reanalisar para adicionar conexões",
+    "time": {
+      "scene": "Nesta cena",
+      "past": "Passado",
+      "future": "Planejado ou esperado",
+      "ongoing": "Contínuo"
+    }
+  },
+  "codex": {
+    "title": "Códice",
+    "search": "Buscar no Códice",
+    "noMatches": "Nada no Códice corresponde a essa busca.",
+    "kinds": {
+      "person": "Pessoas",
+      "place": "Lugares",
+      "organization": "Organizações",
+      "event": "Eventos",
+      "object": "Objetos",
+      "system": "Sistemas",
+      "concept": "Conceitos"
+    },
+    "aka": "também {{names}}",
+    "sameAs": "Mesmo que…",
+    "alsoCalled": "Também chamado",
+    "noFactsMentioned": "Ainda sem fatos próprios. Aparece em:",
+    "insideOf": "Dentro de…",
+    "insidePlace": "Dentro de {{name}}",
+    "insideSearch": "Encontrar um lugar",
+    "insideNone": "Nenhum outro lugar ainda.",
+    "insideNothing": "Não está dentro de nada",
+    "mentionedIn": "Mencionado em {{chapters}}",
+    "sameAsSearch": "Encontrar entrada",
+    "sameAsNone": "Nenhuma outra entrada deste tipo.",
+    "showAs": "Mostrar como",
+    "join": "Juntar",
+    "joined": "Mesmo que {{name}}, juntado por você",
+    "revealed": "Mesmo que {{name}}, revelado em {{chapter}}",
+    "separate": "Separar",
+    "tabs": {
+      "facts": "Fatos",
+      "connections": "Conexões",
+      "locations": "Locais"
+    },
+    "noFacts": "Ainda sem fatos próprios.",
+    "noConnections": "Nenhuma conexão ainda.",
+    "noLocations": "Nenhum lugar ligado ainda.",
+    "outOfDate": "Desatualizado",
+    "factOutOfDate": "Desatualizado: o capítulo mudou depois da análise",
+    "appearsIn": "Aparece em",
+    "path": "Caminho pela história",
+    "locationUnknown": "local desconhecido",
+    "presence": {
+      "onstage": "em cena",
+      "mentioned": "mencionado"
+    },
+    "unavailableTitle": "O Códice não está disponível aqui",
+    "unavailable": "O Códice é montado a partir da memória do projeto, que está em um piloto limitado e só está disponível para o dono do projeto.",
+    "disabledTitle": "Comece seu Códice",
+    "disabled": "O Códice reúne as pessoas, lugares e eventos da sua história a partir dos seus capítulos. Ative-o neste projeto para começar.",
+    "setUp": "Configurar a memória do projeto",
+    "emptyTitle": "Seu Códice está vazio",
+    "empty": "Leia seus capítulos e todas as pessoas, lugares e coisas que eles mencionam aparecem aqui, com uma citação do capítulo para cada fato.",
+    "links": {
+      "out": {
+        "family": "Família: {{name}}",
+        "romance": "Romance: {{name}}",
+        "ally": "Aliado: {{name}}",
+        "conflict": "Conflito: {{name}}",
+        "member": "Membro de {{name}}",
+        "leads": "Lidera {{name}}",
+        "located_in": "Em {{name}}",
+        "at": "Em {{name}}",
+        "has": "Tem {{name}}",
+        "part_of": "Parte de {{name}}",
+        "participates": "Participa de {{name}}",
+        "related": "Relacionado: {{name}}"
+      },
+      "in": {
+        "member": "Membro: {{name}}",
+        "leads": "Liderado por {{name}}",
+        "located_in": "Contém {{name}}",
+        "at": "Aqui: {{name}}",
+        "has": "Com {{name}}",
+        "part_of": "Inclui {{name}}",
+        "participates": "Participante: {{name}}"
+      }
+    },
+    "catchUp": {
+      "title": "Atualizar Códice",
+      "reason": {
+        "edited": "Editado desde a última leitura",
+        "new": "Ainda não lido",
+        "format": "Lido antes das conexões e caminhos"
+      },
+      "group": {
+        "edited": "Editados desde a última leitura",
+        "new": "Ainda não lidos",
+        "format": "Formato antigo"
+      },
+      "reading_one": "Lendo… {{count}} encontrado",
+      "reading_other": "Lendo… {{count}} encontrados",
+      "waiting": "Na fila",
+      "cached": "Já está atualizado",
+      "done_one": "Lido · {{count}} fato salvo",
+      "done_other": "Lido · {{count}} fatos salvos",
+      "errors": {
+        "busy": "Outra solicitação de IA estava em andamento",
+        "credits": "Créditos insuficientes",
+        "empty": "Curto demais para ler",
+        "tooLong": "Longo demais para ler (mais de 180.000 caracteres)",
+        "failed": "Não foi possível ler"
+      },
+      "readingTitle": "Lendo {{title}}",
+      "behind_one": "{{count}} capítulo para atualizar",
+      "behind_other": "{{count}} capítulos para atualizar",
+      "upToDate": "O Códice está atualizado",
+      "upToDateHint": "Edite um capítulo e ele aparece aqui para ser lido de novo.",
+      "progress": "{{found}} encontrados · {{facts}} fatos",
+      "readNow": "Atualizados agora",
+      "position": "Capítulo {{index}} de {{total}}",
+      "stop": "Parar depois deste capítulo",
+      "stopping": "Parando depois deste capítulo…",
+      "read_one": "Ler {{count}} capítulo · cerca de {{credits}} créditos",
+      "read_other": "Ler {{count}} capítulos · cerca de {{credits}} créditos",
+      "costHint": "Usa créditos de IA ou sua própria chave de API. Capítulos mais longos custam mais.",
+      "settings": "Configurações da memória",
+      "pillReading": "Atualizando {{index}} de {{total}}",
+      "pillBehind_one": "{{count}} capítulo para atualizar",
+      "pillBehind_other": "{{count}} capítulos para atualizar",
+      "pillUpToDate": "Atualizado",
+      "new": "Novo",
+      "justFound": "Recém-encontrado",
+      "selectAll": "Selecionar todos ({{count}})",
+      "creating": "Criando a memória de “{{name}}”…"
+    },
+    "view": {
+      "label": "Visão do Códice",
+      "cards": "Cartões",
+      "journeys": "Jornadas"
+    },
+    "journeys": {
+      "characters": "Personagens exibidos",
+      "emptyTitle": "Ainda sem jornadas",
+      "empty": "As jornadas vêm de capítulos lidos no formato mais recente, que registra onde cada personagem está. Atualize seus capítulos para ver quem vai para onde.",
+      "unread": {
+        "new": "Ainda não lido",
+        "format": "Lido antes de os lugares serem registrados"
+      },
+      "nobody": "Ninguém está em algum lugar neste capítulo.",
+      "limit": "Até 15 por vez",
+      "summary": "Jornadas de {{count}} personagens por {{places}} lugares",
+      "pick_one": "{{count}} personagem",
+      "pick_other": "{{count}} personagens",
+      "find": "Encontrar personagem",
+      "top": "Os {{count}} mais conectados",
+      "none": "Limpar tudo",
+      "links_one": "{{count}} conexão",
+      "links_other": "{{count}} conexões",
+      "hide": "Ocultar {{name}}",
+      "show": "Mostrar {{name}}",
+      "move": "Mover {{name}}: arraste ao lado de um lugar para reordenar ou sobre ele para colocar dentro; ou use as setas",
+      "events": "Eventos",
+      "moreEvents": "+{{count}} mais",
+      "with": "com {{names}}",
+      "offShort": "oculto",
+      "hiddenPlaces": "Locais ocultos:",
+      "collapse": "Recolher {{name}}",
+      "expand": "Expandir {{name}}",
+      "resize": "Redimensionar a coluna de lugares (clique duplo para restaurar)"
+    },
+    "stale": {
+      "tip_one": "{{chapters}} foi editado depois que o Códice o leu, então parte disto pode estar desatualizada. Clique para atualizar.",
+      "tip_other": "{{chapters}} foram editados depois que o Códice os leu, então parte disto pode estar desatualizada. Clique para atualizar.",
+      "fact": "De {{chapter}}, editado depois que o Códice o leu"
+    },
+    "turnOn": "Ativar o Códice"
+  },
+  "common": {
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "delete": "Excluir",
+    "edit": "Editar",
+    "create": "Criar",
+    "close": "Fechar",
+    "loading": "Carregando…",
+    "back": "Voltar",
+    "confirm": "Confirmar",
+    "yes": "Sim",
+    "no": "Não",
+    "ok": "OK",
+    "search": "Pesquisar",
+    "settings": "Configurações",
+    "share": "Compartilhar",
+    "new": "Novo",
+    "rename": "Renomear",
+    "untitled": "Sem título",
+    "error": "Erro",
+    "tryAgain": "Tentar novamente",
+    "saving": "Salvando…",
+    "saved": "Salvo",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "more": "Mais",
+    "open": "Abrir",
+    "language": "Idioma",
+    "english": "English",
+    "portuguese_br": "Português (Brasil)"
+  },
+  "auth": {
+    "signIn": "Entrar",
+    "signUp": "Cadastrar-se",
+    "signOut": "Sair",
+    "email": "E-mail",
+    "password": "Senha",
+    "confirmPassword": "Confirmar senha",
+    "forgotPassword": "Esqueceu a senha?",
+    "myProfile": "Meu Perfil",
+    "admin": "Admin",
+    "continueWithGoogle": "Continuar com o Google",
+    "continueWithApple": "Continuar com a Apple",
+    "or": "ou",
+    "createAccount": "Criar Conta",
+    "orContinueWith": "ou continue com",
+    "noAccount": "Não tem uma conta?",
+    "hasAccount": "Já tem uma conta?",
+    "joinWishlist": "Entrar na lista de espera",
+    "backToHome": "← Voltar ao início",
+    "showPassword": "Mostrar senha",
+    "hidePassword": "Ocultar senha",
+    "passwordHint": "Deve conter pelo menos uma letra, um número e um símbolo.",
+    "emailPlaceholder": "voce@exemplo.com",
+    "loginFailed": "Falha no login",
+    "invalidCredentials": "E-mail ou senha inválidos. Por favor, tente novamente.",
+    "accountExists": "Conta já existe",
+    "emailAlreadyRegistered": "Este e-mail já está cadastrado. Por favor, faça login.",
+    "signUpFailed": "Falha no cadastro",
+    "accountCreated": "Conta criada!",
+    "accountCreatedDesc": "Agora você pode começar a usar seus cadernos de pesquisa.",
+    "oauthFailed": "Falha no login com {{provider}}",
+    "openingProvider": "Abrindo {{provider}}…",
+    "waitingProvider": "Aguardando confirmação do provedor…",
+    "returningToApp": "Retornando ao StoryMode…",
+    "validEmail": "Por favor, insira um e-mail válido",
+    "minPassword": "A senha deve ter pelo menos 6 caracteres",
+    "mustContainLetter": "Deve conter pelo menos uma letra",
+    "mustContainNumber": "Deve conter pelo menos um número",
+    "enterYourName": "Digite seu nome",
+    "mustContainSymbol": "Deve conter pelo menos um símbolo",
+    "passwordsNoMatch": "As senhas não coincidem",
+    "couldntSetPassword": "Não foi possível definir a senha",
+    "resetExpired": "Link de redefinição expirado",
+    "inviteExpired": "Convite expirado",
+    "resetExpiredBody": "Este link de redefinição de senha não é mais válido. Solicite um novo na tela de login.",
+    "inviteExpiredBody": "Este convite não é mais válido. Peça ao administrador para enviar outro.",
+    "goToSignIn": "Ir para o login",
+    "chooseNewPassword": "Escolha uma nova senha para sua conta.",
+    "invitedIntro": "Você foi convidado(a). Conclua a configuração da sua conta abaixo.",
+    "yourName": "Seu nome",
+    "namePlaceholder": "Maria Silva",
+    "updatePassword": "Atualizar senha",
+    "setPasswordContinue": "Definir senha e continuar",
+    "couldntSendReset": "Não foi possível enviar o e-mail de redefinição",
+    "checkYourEmail": "Verifique seu e-mail",
+    "resetSent": "Enviamos um link de redefinição de senha para {{email}}.",
+    "signUpServerError": "O serviço de cadastro teve um problema (erro {{status}}). Isso geralmente significa que o e-mail de confirmação não pôde ser enviado. Tente novamente em instantes.",
+    "confirmSent": "Enviamos um link de confirmação para {{email}}. Abra-o para terminar de criar sua conta (confira também a pasta de spam).",
+    "resendConfirmation": "Enviar de novo",
+    "confirmationResent": "Enviamos o link de confirmação de novo.",
+    "signupsClosed": "Cadastros fechados",
+    "signupsClosedDesc": "Este StoryMode só aceita pessoas adicionadas pelo dono. Peça para adicionarem seu e-mail."
+  },
+  "header": {
+    "story": "História",
+    "folios": "Fólios",
+    "timeline": "Linha do Tempo",
+    "maps": "Mapas",
+    "notebook": "Caderno",
+    "projectVisibility": "Visibilidade do projeto",
+    "visibility": "Visibilidade",
+    "moreActions": "Mais ações",
+    "accountMenu": "Conta",
+    "shareProject": "Compartilhar este projeto",
+    "editFolio": "Editar título do fólio",
+    "editProject": "Editar título do projeto",
+    "deleteFolio": "Excluir fólio",
+    "deleteProject": "Excluir projeto",
+    "addColumn": "Adicionar coluna",
+    "errorUpdatingTitle": "Erro ao atualizar título",
+    "errorUpdatingIcon": "Erro ao atualizar ícone",
+    "errorDeletingFolio": "Erro ao excluir fólio",
+    "errorDeletingProject": "Erro ao excluir projeto",
+    "errorUpdatingVisibility": "Erro ao atualizar visibilidade",
+    "errorUpdatingLanguage": "Erro ao atualizar idioma",
+    "deleteEntityTitle": "Excluir \"{{title}}\"?",
+    "deleteFolioDescription": "Isso excluirá permanentemente este fólio e todos os seus cadernos. Esta ação não pode ser desfeita.",
+    "deleteProjectDescription": "Isso excluirá permanentemente este projeto e todos os seus fólios, cadernos e mapas. Esta ação não pode ser desfeita.",
+    "codex": "Códice"
+  },
+  "dashboard": {
+    "title": "Meus Projetos",
+    "newProject": "Novo Projeto",
+    "newFolio": "Novo Fólio",
+    "noFolios": "Nenhum fólio ainda",
+    "noFoliosOwner": "Crie seu primeiro fólio para começar",
+    "noFoliosReader": "Este projeto não tem fólios",
+    "noProjects": "Nenhum projeto ainda",
+    "createFirst": "Crie seu primeiro projeto"
+  },
+  "project": {
+    "settings": "Configurações do Projeto",
+    "projectLanguage": "Idioma do Projeto",
+    "aiLanguage": "A IA responde em",
+    "aiLanguageHint": "Idioma usado pela IA no chat da História, na revisão de capítulos e no desenho de mapas para este projeto.",
+    "deleteTitle": "Excluir {{entity}}?",
+    "deleteDescription": "Esta ação não pode ser desfeita."
+  },
+  "story": {
+    "title": "História",
+    "chapters": "Capítulos",
+    "newChapter": "Novo capítulo",
+    "renameChapter": "Renomear capítulo",
+    "deleteChapter": "Excluir capítulo",
+    "wordCount": "{{count}} palavras",
+    "askAi": "Perguntar à IA",
+    "selectedText": "Texto selecionado",
+    "spellingGrammar": "Ortografia e Gramática",
+    "editorialReview": "Editorial",
+    "readingFlow": "Fluidez",
+    "sceneMap": {
+      "action": "Gerar mapa da cena",
+      "title": "Gerar um mapa da cena",
+      "description": "Escolha os lugares nomeados de “{{chapter}}” que deseja incluir. O StoryMode deduzirá suas posições e criará um mapa editável.",
+      "chooseChapterDescription": "Escolha um capítulo, selecione seus lugares nomeados e gere um mapa editável.",
+      "chapter": "Capítulo para mapear",
+      "loadingChapters": "Carregando capítulos…",
+      "noChapters": "Nenhum capítulo disponível",
+      "noChaptersDetail": "Escreva e salve um capítulo antes de gerar um mapa com IA.",
+      "chooseChapterError": "Escolha um capítulo para mapear.",
+      "namedPlaces": "Lugares nomeados",
+      "namedPlacesDetail": "Selecione todos os lugares que o StoryMode deve posicionar e desenhar.",
+      "selectAll": "Selecionar todos",
+      "clearAll": "Limpar",
+      "discovering": "Lendo o capítulo e encontrando lugares nomeados…",
+      "discoveryFailed": "O StoryMode não conseguiu identificar os lugares nomeados deste capítulo.",
+      "noNamedPlaces": "Nenhum lugar nomeado em escala de mapa foi encontrado neste capítulo.",
+      "landmarkCount": "Máximo de adesivos de pontos de interesse",
+      "artStyle": "Estilo do mapa",
+      "style": {
+        "painterly": "Pintado",
+        "flat": "Plano",
+        "pixelart": "Pixel"
+      },
+      "estimate": "Cerca de {{credits}} créditos para as imagens",
+      "estimateDetail": "Isso cria {{images}} imagens: uma pintura do terreno e os adesivos. A análise do capítulo usa alguns créditos adicionais. Seu saldo atual no StoryMode é de {{balance}} créditos; chaves de API pessoais usam sua conta da OpenAI.",
+      "analyze": "Revisar e confirmar",
+      "analyzing": "Lendo e planejando…",
+      "analysisFailed": "A IA não conseguiu planejar este mapa da cena.",
+      "plannerOutdated": "O planejador de mapas publicado está desatualizado. Publique a função ai-scene-map-plan mais recente antes de gerar um mapa.",
+      "terrain": "Terreno geral",
+      "mapLabels": "Rótulos do mapa",
+      "confirmCost": "Gerar {{images}} imagens por cerca de {{credits}} créditos",
+      "confirmDetail": "A cobrança exata depende do provedor de imagens. O mapa gerado continua totalmente editável.",
+      "selectionCostDetail": "Uma imagem de terreno mais {{places}} adesivos dos lugares selecionados. A descoberta e o planejamento de posições usam alguns créditos adicionais. Seu saldo é de {{balance}} créditos.",
+      "generateSelected": "Gerar mapa selecionado",
+      "positioning": "Calculando como os lugares selecionados se posicionam uns em relação aos outros…",
+      "positioningShort": "Posicionando lugares…",
+      "generate": "Gerar mapa",
+      "generating": "Gerando…",
+      "preparingMap": "Preparando o mapa editável…",
+      "paintingTerrain": "Pintando o terreno geral…",
+      "drawingLandmark": "Desenhando {{current}} de {{total}} · {{label}}",
+      "keepOpen": "Mantenha esta janela aberta enquanto o StoryMode cria e salva cada imagem.",
+      "progressCount": "Imagem {{current}} / {{total}}",
+      "createFailed": "O StoryMode não conseguiu criar o novo mapa.",
+      "terrainFailed": "A pintura do terreno não produziu células de mapa utilizáveis.",
+      "landmarkFailed": "O modelo de imagem não retornou um adesivo para {{label}}.",
+      "generationFailed": "Falha ao gerar o mapa da cena.",
+      "partialFailure": "A geração parou: {{message}} Todas as imagens concluídas foram salvas em um mapa parcial.",
+      "openPartial": "Abrir mapa parcial"
+    },
+    "mapRelationshipTest": {
+      "title": "Relações do mapa",
+      "description": "Teste textual com Jev. Identifica a geografia do capítulo e pode usar conhecimento geográfico geral para lugares reais reconhecidos.",
+      "action": "Gerar esboço",
+      "open": "Abrir esboço",
+      "regenerate": "Analisar novamente",
+      "running": "Lendo…",
+      "failed": "O StoryMode não conseguiu testar as relações do mapa neste capítulo.",
+      "modalTitle": "Esboço do mapa do capítulo",
+      "modalDescription": "Um esboço espacial em texto baseado no capítulo, com conhecimento geográfico geral para lugares reais reconhecidos. Nada aqui é adicionado ao projeto nem salvo como mapa.",
+      "landmarks": "Geografia da cena",
+      "relationships": "Relações",
+      "asciiMap": "Mapa ASCII",
+      "asciiHint": "Aproximado · norte para cima",
+      "noLandmarks": "Nenhum ponto de interesse em escala de mapa foi identificado com confiança.",
+      "noRelationships": "Nenhuma relação de direção ou distância foi sustentada pelo capítulo ou por geografia confiável do mundo real.",
+      "between": "{{place}} fica entre {{from}} e {{to}}",
+      "directional": "{{to}} fica a {{direction}} de {{from}}",
+      "inside": "{{to}} fica dentro de {{from}}",
+      "contains": "{{to}} contém ou circunda {{from}}",
+      "sameArea": "{{to}} e {{from}} ocupam a mesma área",
+      "distanceOnly": "{{to}} fica {{distance}} de {{from}}",
+      "confidence": "{{value}}% de confiança",
+      "kind": {
+        "settlement": "assentamento",
+        "region": "planície ou região",
+        "forest": "floresta",
+        "mountain": "montanha ou serra",
+        "water": "formação aquática",
+        "structure": "estrutura importante"
+      },
+      "direction": {
+        "north": "norte",
+        "northeast": "nordeste",
+        "east": "leste",
+        "southeast": "sudeste",
+        "south": "sul",
+        "southwest": "sudoeste",
+        "west": "oeste",
+        "northwest": "noroeste"
+      },
+      "distance": {
+        "same_site": "no mesmo local",
+        "adjacent": "ao lado",
+        "nearby": "perto",
+        "moderate_journey": "a uma viagem moderada de distância",
+        "distant": "distante",
+        "unknown": "a uma distância desconhecida"
+      }
+    },
+    "loadingStory": "Carregando história…",
+    "themeAndTypography": "Tema e tipografia",
+    "hideChapters": "Ocultar capítulos",
+    "showChapters": "Mostrar capítulos",
+    "deleteChapterConfirm": "Clique novamente para excluir o capítulo",
+    "wordsAndPages": "{{words}} palavras · {{pages}} página",
+    "wordsAndPages_other": "{{words}} palavras · {{pages}} páginas",
+    "pageCount_one": "{{count}} página",
+    "pageCount_other": "{{count}} páginas",
+    "undoTooltip": "Desfazer (⌘Z)",
+    "redoTooltip": "Refazer (⌘⇧Z)",
+    "focusMode": "Modo foco",
+    "exitFocusMode": "Sair do modo foco",
+    "showSidePanel": "Mostrar painel lateral",
+    "hideSidePanel": "Ocultar painel lateral",
+    "noChaptersYet": "Nenhum capítulo ainda.",
+    "startWithFirstChapter": "Comece seu livro com o primeiro capítulo.",
+    "createFirstChapter": "Criar primeiro capítulo",
+    "untitledChapter": "Capítulo sem título",
+    "readOnlySnapshot": "Instantâneo somente leitura",
+    "chapterTitlePlaceholder": "Título do capítulo",
+    "beginWriting": "Comece a escrever seu capítulo…",
+    "bubbleBold": "Negrito (⌘B)",
+    "bubbleItalic": "Itálico (⌘I)",
+    "bubbleUnderline": "Sublinhado (⌘U)",
+    "bubbleBulletList": "Lista com marcadores",
+    "bubbleOrderedList": "Lista numerada",
+    "bubbleHeading1": "Título 1",
+    "bubbleHeading2": "Título 2",
+    "bubbleIndent": "Recuar",
+    "bubbleMarkForReview": "Marcar para revisão",
+    "bubbleFlagPassage": "Sinalizar esta passagem para feedback",
+    "draftN": "Rascunho {{number}}",
+    "draftSelector": "Seletor de rascunho",
+    "draftLive": "Ativo",
+    "draftEdited": "editado {{date}}",
+    "noDraftsYet": "Nenhum rascunho ainda.",
+    "renameDraft": "Renomear rascunho",
+    "deleteDraft": "Excluir rascunho",
+    "newDraft": "Novo rascunho",
+    "deleteDraftTitle": "Excluir Rascunho {{number}}?",
+    "deleteDraftDescription": "Isso exclui permanentemente o Rascunho {{number}} e seu conteúdo. Essa ação não pode ser desfeita.",
+    "deletePermanently": "Excluir permanentemente",
+    "tab": {
+      "folios": "Fólios",
+      "info": "Info",
+      "editor": "Editor IA",
+      "chat": "Chat"
+    },
+    "searchPlaceholder": "Buscar capítulos, fólios, cadernos…",
+    "clearSearch": "Limpar busca",
+    "searching": "Buscando",
+    "noResults": "Nenhum resultado para \"{{query}}\".",
+    "empty": "Vazio",
+    "chapterFolio": "Fólio do capítulo",
+    "selectChapterForNotebooks": "Selecione um capítulo para adicionar cadernos vinculados.",
+    "noChapterNotebooks": "Nenhum caderno de capítulo ainda.",
+    "addChapterNotebook": "Adicionar caderno ao capítulo",
+    "projectFolios": "Fólios do projeto",
+    "noFoliosYet": "Nenhum fólio ainda.",
+    "noNotebooks": "Sem cadernos",
+    "chapterResultsHeading": "Capítulos · {{count}}",
+    "folioResultsHeading": "Fólios · {{count}}",
+    "notebookResultsHeading": "Cadernos · {{count}}",
+    "collapse": "Recolher",
+    "expand": "Expandir",
+    "removeChapterNotebook": "Remover caderno do capítulo",
+    "aiEditor": "Editor IA",
+    "noteCount_one": "{{count}} nota",
+    "noteCount_other": "{{count}} notas",
+    "intentSoundsWrong": "Parece errado",
+    "intentNeedsIdeas": "Precisa de ideias",
+    "intentMarkedForReview": "Marcado para revisão",
+    "reAsk": "Perguntar novamente",
+    "dismiss": "Dispensar",
+    "retry": "Tentar novamente",
+    "somethingWentWrong": "Algo deu errado.",
+    "replace": "Substituir",
+    "aiNoChanges": "A IA não encontrou nada que valha mudar aqui — sua linha está boa.",
+    "optionN": "Opção {{number}}",
+    "aiEditorTip": "Dica: os destaques são por rascunho. Mude de rascunho para ver um conjunto novo.",
+    "thinking": "Pensando…",
+    "bookWideChat": "Chat do livro",
+    "chatEmptyHint": "Pergunte qualquer coisa sobre seu livro ou fólios — furos de enredo, resumos, sugestões de nomes, notas de ritmo…",
+    "writingResponse": "Escrevendo resposta…",
+    "chatFailed": "Falha no chat",
+    "askAboutSelectedText": "Pergunte sobre o texto selecionado…",
+    "askAboutBook": "Pergunte sobre seu livro…",
+    "selectedTextFromChapter": "Texto selecionado",
+    "suggestionTry": "Tente",
+    "suggestionCouldBe": "Poderia ser",
+    "suggestionOption": "Opção",
+    "suggestionAlt": "Alt",
+    "suggestionAlternative": "Alternativa",
+    "selectChapterForInfo": "Selecione um capítulo para ver suas informações.",
+    "infoSelection": "Seleção",
+    "infoChapters_one": "{{count}} capítulo",
+    "infoChapters_other": "{{count}} capítulos",
+    "lastEdited": "Última edição · {{date}}",
+    "infoLength": "Extensão",
+    "infoTime": "Tempo",
+    "infoReadability": "Legibilidade",
+    "infoStyle": "Estilo",
+    "infoMostUsed": "Mais usadas",
+    "statWords": "Palavras",
+    "statPages": "Páginas",
+    "statCharacters": "Caracteres",
+    "statNoSpaces": "Sem espaços",
+    "statSentences": "Frases",
+    "statParagraphs": "Parágrafos",
+    "statReading": "Leitura",
+    "statSpeaking": "Fala",
+    "statFleschEase": "Facilidade Flesch",
+    "statFleschEaseInfo": "Estima a facilidade de leitura do texto. Quanto maior, mais fácil: 90–100 é muito fácil, 60–70 é simples e abaixo de 30 é muito difícil. É mais confiável para textos em inglês.",
+    "statFKGrade": "Série FK",
+    "statFKGradeInfo": "A série escolar aproximada dos EUA necessária para entender o texto. Uma pontuação 8 equivale aproximadamente ao oitavo ano; valores menores indicam leitura mais fácil. É mais confiável para textos em inglês.",
+    "statReadingLevel": "Nível de leitura",
+    "statReadingLevelInfo": "Um resumo em linguagem simples da pontuação de facilidade Flesch, variando de muito fácil a muito difícil.",
+    "statAvgWord": "Palavra média",
+    "statAvgSentence": "Frase média",
+    "chatAiEmpty": "A IA não retornou nada desta vez — tente reformular ou pergunte novamente.",
+    "aiEditorHeader": "Editor de IA",
+    "aiEditorNotes_one": "{{count}} nota",
+    "aiEditorNotes_other": "{{count}} notas",
+    "aiEditorNotes": "{{count}} notas",
+    "aiEditorLoading": "Analisando capítulo…",
+    "aiEditorEmptyPre": "Selecione qualquer trecho do seu capítulo e clique em",
+    "aiEditorEmptyPost": "na barra flutuante. Uma crítica atenta à voz do texto aparecerá aqui — observações e sugestões que você pode aceitar ou descartar.",
+    "aiEditorEmptyTip": "Dica: os destaques são por rascunho. Troque de rascunho para ver um conjunto novo.",
+    "chaptersLabel": "Capítulos",
+    "statAvgWordUnit": "{{n}} caracteres",
+    "statAvgSentenceUnit": "{{n}} palavras",
+    "chatBookWide": "Chat do livro inteiro",
+    "chatNew": "Novo chat",
+    "statPagesHint": "~250 palavras/página",
+    "statReadingHint": "@ 225 ppm",
+    "statSpeakingHint": "@ 150 ppm",
+    "aiEditorEmptyTitle": "As notas do editor aparecerão aqui",
+    "aiEditorEmptyBullet1": "Selecione qualquer trecho do capítulo",
+    "aiEditorEmptyBullet2": "Toque em <action/> na barra flutuante",
+    "aiEditorEmptyBullet3": "Receba uma crítica atenta à voz com sugestões para aceitar ou descartar",
+    "aiEditorEmptyTipNew": "Dica: as notas são salvas por rascunho — trocar de rascunho dá um conjunto novo.",
+    "highlightReplace": "Substituir",
+    "highlightCopy": "Copiar",
+    "highlightThinking": "Pensando…",
+    "highlightError": "Algo deu errado.",
+    "highlightRetry": "Tentar novamente",
+    "highlightNoChange": "A IA não viu nada que valesse a pena mudar aqui — sua linha permanece.",
+    "optionLabel": "Opção {{n}}",
+    "ariaReAsk": "Perguntar de novo",
+    "ariaDismiss": "Dispensar",
+    "export": {
+      "title": "Exportar",
+      "expandHint": "Escolha um formato para baixar",
+      "thisChapter": "Este capítulo",
+      "wholeStory": "História toda",
+      "txt": "Texto simples",
+      "md": "Markdown",
+      "rtf": "Texto rico (RTF)",
+      "doc": "Word (.doc)",
+      "pdf": "PDF / Imprimir",
+      "nothing": "Nada para exportar",
+      "failed": "Falha ao exportar",
+      "popupBlocked": "Permita pop-ups para exportar em PDF"
+    },
+    "reviewIntroTitle": "Peça uma revisão",
+    "reviewIntroBody": "Selecione um trecho e marque para revisão.",
+    "reviewIntroHide": "Ocultar instruções",
+    "chatSuggestionsLabel": "Experimente perguntar",
+    "chatSuggestionSummary": "Resuma este capítulo e identifique as principais características dos personagens e temas.",
+    "chatSuggestion1": "Onde este capítulo mais precisa de revisão, e há furos de enredo ou problemas de continuidade?",
+    "chatSuggestion2": "Pode verificar inconsistências de terminologia, comportamento dos personagens e regras do mundo neste capítulo?",
+    "chatSuggestion3": "Quais cenas ou trechos estão mais fracos, e que mudanças específicas os melhorariam mais?",
+    "chatSuggestion4": "As decisões e reações emocionais dos personagens parecem críveis ao longo do capítulo?",
+    "chatReviewRequest": "Faça uma revisão editorial deste trecho.",
+    "chatQueued": "Na fila para revisão",
+    "chatScrollToBottom": "Ir para o final",
+    "jumpToQuote": "Ir para este trecho",
+    "chatSpeedLabel": "Modo de resposta",
+    "chatSpeedFast": "Rápido",
+    "chatSpeedFastHint": "Respostas rápidas e curtas, com o menor gasto de créditos",
+    "chatSpeedThoughtful": "Reflexivo",
+    "chatSpeedThoughtfulHint": "Pensa antes de responder; alguns créditos a mais",
+    "chatSpeedCreative": "Criativo",
+    "chatSpeedCreativeHint": "Modelo mais forte para prosa sutil (o que mais gasta créditos)",
+    "saveAnswerToFolio": "Salvar como caderno do capítulo",
+    "answerSavedToFolio": "Salvo no <1>Fólio</1> deste capítulo",
+    "answerSaveFailed": "Não foi possível salvar esta resposta",
+    "answerCopy": "Copiar",
+    "answerCopyFailed": "Não foi possível copiar este texto",
+    "answerDiscuss": "Perguntar mais sobre isto",
+    "saveAnswerToProjectFolio": "Salvar no Fólio do Projeto",
+    "answerSavedToProjectFolio": "Salvo no Fólio do Projeto",
+    "notebookSaved": "Caderno salvo!",
+    "openSavedFolioHint": "Ele está pronto na barra lateral de Fólios.",
+    "openSavedFolio": "Abrir {{folio}} em Fólios",
+    "noFoliosToSave": "Este projeto ainda não tem fólios.",
+    "chapterNoteFallbackTitle": "Nota do Editor de IA",
+    "statusReading": "Lendo sua história…",
+    "statusThinkingSelection": "Pensando sobre o trecho…",
+    "statusThinkingChapter": "Pensando sobre este capítulo…",
+    "statusThinkingBook": "Pensando sobre o livro todo…",
+    "thoughtFor": "Pensou por {{time}}",
+    "creditsUsed_one": "{{count}} crédito",
+    "creditsUsed_other": "{{count}} créditos",
+    "statusResuming": "Retomando de onde parou…",
+    "resumeLostTitle": "Essa resposta foi interrompida",
+    "resumeLostBody": "Ela parou antes de terminar. Pergunte de novo para receber outra."
+  },
+  "chat": {
+    "placeholder": "Pergunte sobre sua história…",
+    "send": "Enviar",
+    "thinking": "Pensando…",
+    "newChat": "Novo chat",
+    "stop": "Parar"
+  },
+  "map": {
+    "title": "Mapas",
+    "newMap": "Novo mapa",
+    "worldMap": "🗺️ Mapa-Múndi",
+    "drawWithAi": "Desenhar com IA",
+    "promptPlaceholder": "Descreva o que desenhar…",
+    "generating": "Gerando…",
+    "pointer": "Ponteiro",
+    "pan": "Mover",
+    "pencil": "Lápis",
+    "fill": "Preencher",
+    "eyedropper": "Conta-gotas",
+    "eraser": "Borracha",
+    "label": "Rótulo",
+    "undo": "Desfazer",
+    "redo": "Refazer",
+    "viewAll": "Ver todos",
+    "addNotebook": "Adicionar caderno",
+    "deleteMap": "Excluir mapa",
+    "pointerTip": "Ponteiro (V)",
+    "panTip": "Mover (Espaço)",
+    "undoTip": "Desfazer (⌘Z)",
+    "redoTip": "Refazer (⌘⇧Z)",
+    "pickColor": "Escolher cor",
+    "drawTip": "Desenhar (D)",
+    "rectangleTip": "Retângulo (R)",
+    "circleTip": "Círculo (C)",
+    "lineTip": "Linha (G)",
+    "shapeTip": "Ferramenta de forma",
+    "lineSizeTip": "Espessura da linha",
+    "fillTip": "Preencher (F)",
+    "addNotebookTip": "Adicionar caderno (N)",
+    "addLabelTip": "Adicionar etiqueta (L)",
+    "removeItem": "Remover item",
+    "aiDrawTip": "Desenho com IA (A)",
+    "zoomIn": "Ampliar",
+    "zoomOut": "Reduzir",
+    "aiDraw": "Desenho com IA",
+    "aiDrawPlaceholder": "ex.: uma floresta densa com um rio sinuoso",
+    "aiDrawHint": "Enter para desenhar · Esc para cancelar",
+    "drawButton": "Desenhar",
+    "drawing": "Desenhando",
+    "stylePainterly": "Pictórico",
+    "styleFlat": "Plano",
+    "stylePixel": "Pixel",
+    "stickerEdge": "Borda",
+    "stickerEdge_none": "Nenhuma",
+    "stickerEdge_white": "Branca",
+    "stickerEdge_black": "Preta",
+    "aiModePixels": "Pintar no mapa",
+    "aiModeSticker": "Adesivo",
+    "hexColorPlaceholder": "cor hex",
+    "apply": "Aplicar",
+    "customColor": "Cor personalizada",
+    "colorPickerTitle": "Conta-gotas (I)",
+    "colorRed": "Vermelho",
+    "colorOrange": "Laranja",
+    "colorYellow": "Amarelo",
+    "colorGreen": "Verde",
+    "colorBlue": "Azul",
+    "colorPurple": "Roxo",
+    "colorNeutral": "Neutro",
+    "comingSoon": "Visualização de mapa em breve",
+    "comingSoonDesc": "Desenhe e explore mapas dos seus mundos narrativos",
+    "newMapTitle": "Novo mapa",
+    "newBlankMap": "Novo mapa em branco",
+    "newBlankMapDetail": "Comece com uma tela de grama vazia",
+    "newAiMap": "Novo mapa com IA",
+    "newAiMapDetail": "Transforme um capítulo em terreno e marcos",
+    "mapNamePlaceholder": "Nome do mapa…",
+    "creating": "Criando…",
+    "deleteMapTitle": "Excluir mapa",
+    "deleteMapConfirm": "Tem certeza que deseja excluir <strong>{{name}}</strong>? Esta ação não pode ser desfeita.",
+    "noFolios": "Nenhum fólio",
+    "labelTextPlaceholder": "Texto da etiqueta…",
+    "theme": "Tema",
+    "preview": "Pré-visualização",
+    "updateLabel": "Atualizar etiqueta",
+    "placeOnMap": "Colocar no mapa",
+    "publicFolio": "Fólio público",
+    "emailNotifSoonDesc": "Notificações por e-mail ainda não estão configuradas. {{email}} verá este canvas ao fazer login."
+  },
+  "timeline": {
+    "title": "Linha do Tempo",
+    "today": "Hoje",
+    "noEvents": "Nenhum evento na linha do tempo ainda.",
+    "addDate": "Adicionar data"
+  },
+  "notepad": {
+    "newNotebook": "Novo caderno",
+    "deleteNotebook": "Excluir caderno",
+    "renameNotebook": "Renomear caderno",
+    "addEntry": "Adicionar anotação",
+    "untitledNotebook": "Caderno sem título",
+    "timeline": {
+      "emptyState": "Nenhuma data encontrada nos cadernos. Escreva datas nas suas notas para vê-las na linha do tempo.",
+      "fitAll": "Ajustar tudo"
+    },
+    "theme": {
+      "changeTheme": "Alterar Tema",
+      "lightThemes": "Temas Claros",
+      "darkThemes": "Temas Escuros",
+      "fontSize": "Tamanho da Fonte",
+      "font": "Fonte",
+      "cancel": "Cancelar",
+      "apply": "Aplicar",
+      "close": "Fechar",
+      "paper": "Papel",
+      "stone": "Pedra",
+      "cream": "Creme",
+      "parchment": "Pergaminho",
+      "honey": "Mel",
+      "sky": "Céu",
+      "sage": "Sálvia",
+      "lavender": "Lavanda",
+      "rose": "Rosa",
+      "mint": "Hortelã",
+      "midnight": "Meia-Noite",
+      "graphite": "Grafite",
+      "ocean": "Oceano",
+      "forest": "Floresta",
+      "violet": "Violeta",
+      "steel": "Aço",
+      "noir": "Noir",
+      "espresso": "Espresso"
+    },
+    "font": {
+      "modernSans": "Sans Moderno",
+      "cleanSans": "Sans Limpo",
+      "friendlySans": "Sans Amigável",
+      "accessibleSans": "Sans Acessível",
+      "classicSerif": "Serif Clássico",
+      "literarySerif": "Serif Literário",
+      "readingSerif": "Serif de Leitura",
+      "editorialSerif": "Serif Editorial",
+      "classicGaramond": "Garamond Clássico",
+      "bookSerif": "Serif de Livro",
+      "modernSerif": "Serif Moderno",
+      "robustSerif": "Serif Robusto",
+      "monospace": "Monoespaçado",
+      "codeMono": "Mono para Código"
+    },
+    "fontSize": {
+      "extraSmall": "Muito Pequeno",
+      "small": "Pequeno",
+      "medium": "Médio",
+      "large": "Grande",
+      "extraLarge": "Muito Grande"
+    },
+    "card": {
+      "copied": "Copiado!",
+      "copyContent": "Copiar conteúdo",
+      "scanDocument": "Escanear documento",
+      "changeTheme": "Alterar Tema",
+      "deleteNotepad": "Excluir bloco",
+      "notSaved": "Não salvo",
+      "doneEditing": "Concluir edição",
+      "titlePlaceholder": "Sem título",
+      "empty": "Vazio",
+      "clickToEdit": "Clique para editar...",
+      "startWriting": "Comece a escrever...",
+      "deleteDialog": {
+        "title": "Excluir bloco?",
+        "description": "Isso excluirá permanentemente \"{{title}}\". Esta ação não pode ser desfeita.",
+        "cancel": "Cancelar",
+        "delete": "Excluir"
+      }
+    },
+    "grid": {
+      "emptyCanvas": "Esta tela está vazia",
+      "emptyGrid": "Esta grade está vazia",
+      "addFirstNotebook": "Adicionar Primeiro Caderno",
+      "deleteColumn": "Excluir coluna",
+      "deleteColumnDialog": {
+        "title": "Excluir coluna?",
+        "description": "Isso excluirá todos os blocos desta coluna. Esta ação não pode ser desfeita.",
+        "cancel": "Cancelar",
+        "delete": "Excluir"
+      },
+      "defaultFolioTitle": "Fólio sem Título",
+      "initialNotebook": {
+        "lightTitle": "Ideias para o seu romance",
+        "darkTitle": "Construindo o seu mundo",
+        "lightContent": "Os cadernos são perfeitos para capturar os fios soltos que viram a sua história.\n\nUse este espaço para:\n- Histórias de fundo e motivações dos personagens\n- Ideias de cenas e trechos de diálogo\n- Reviravoltas e perguntas \"e se...\"\n- Pesquisa, referências e inspiração\n- Detalhes de world-building e locais\n\nVolte sempre para deixar uma nova ideia.",
+        "darkContent": "Um romance vive nos detalhes. Mantenha os importantes por perto.\n\nUse este espaço para:\n- Esboços de capítulos e batimentos da história\n- Linhas do tempo e idades dos personagens\n- Cenários, mapas e geografia\n- Temas, motivos e símbolos\n- Notas de revisão e recados para você mesmo\n\nDeixe este caderno crescer junto com a sua história."
+      }
+    },
+    "scan": {
+      "title": "Escanear Documento",
+      "subtitle": "Envie uma imagem para extrair texto usando OCR",
+      "uploadTitle": "Envie uma imagem para escanear",
+      "uploadSubtitle": "Suporta JPG, PNG e outros formatos de imagem",
+      "scanning": "Escaneando documento...",
+      "scanningSubtitle": "Extraindo texto da sua imagem",
+      "previewLabel": "Prévia do texto extraído:",
+      "scanAnother": "Escanear outro",
+      "replaceText": "Substituir Texto do Caderno",
+      "addToBeginning": "Adicionar ao Início",
+      "addToEnd": "Adicionar ao Final",
+      "addToNewNotebook": "Adicionar a Novo Caderno",
+      "invalidFileType": "Tipo de arquivo inválido",
+      "invalidFileTypeDesc": "Por favor, envie um arquivo de imagem (JPG, PNG, etc.)",
+      "fileTooLarge": "Arquivo muito grande",
+      "fileTooLargeDesc": "Por favor, envie uma imagem menor que 10 MB",
+      "complete": "Escaneamento concluído",
+      "completeDesc": "Texto extraído com sucesso. Revise e escolha uma ação.",
+      "failed": "Falha no escaneamento",
+      "failedDefault": "Falha ao escanear documento",
+      "networkError": "Não conseguimos acessar o serviço de digitalização. Verifique sua conexão e tente novamente.",
+      "noText": "O serviço de digitalização não retornou texto. Tente uma imagem mais nítida."
+    },
+    "editor": {
+      "bold": "Negrito (⌘B)",
+      "italic": "Itálico (⌘I)",
+      "underline": "Sublinhado (⌘U)",
+      "bulletList": "Lista com marcadores",
+      "blockquote": "Recuo",
+      "heading1": "Título 1",
+      "heading2": "Título 2",
+      "orderedList": "Lista numerada",
+      "horizontalRule": "Linha horizontal"
+    },
+    "default": {
+      "scannedDocument": "Documento Escaneado",
+      "untitled": "Sem título"
+    },
+    "toast": {
+      "errorLoading": "Erro ao carregar blocos",
+      "errorCreating": "Erro ao criar bloco",
+      "errorUpdating": "Erro ao atualizar bloco",
+      "errorDeleting": "Erro ao excluir bloco",
+      "errorDeletingColumn": "Erro ao excluir coluna",
+      "errorMoving": "Erro ao mover bloco",
+      "errorReordering": "Erro ao reordenar blocos",
+      "errorLoadingFolios": "Erro ao carregar fólios",
+      "errorCreatingFolio": "Erro ao criar fólio",
+      "errorUpdatingFolio": "Erro ao atualizar fólio",
+      "errorReorderingFolios": "Erro ao reordenar fólios",
+      "errorDeletingFolio": "Erro ao excluir fólio"
+    }
+  },
+  "profile": {
+    "title": "Meu Perfil",
+    "profilePhoto": "Foto de Perfil",
+    "displayName": "Nome de Exibição",
+    "displayNamePlaceholder": "Digite seu nome",
+    "saveName": "Salvar Nome",
+    "subscription": "Assinatura",
+    "free": "Gratuito",
+    "renews": "Renova em {{date}}",
+    "manageSubscription": "Gerenciar Assinatura",
+    "changePassword": "Alterar Senha",
+    "newPassword": "Nova Senha",
+    "confirmPassword": "Confirmar Senha",
+    "updatePassword": "Atualizar Senha",
+    "passwordHint": "Deve conter pelo menos uma letra, um número e um símbolo.",
+    "dangerZone": "Zona de Perigo",
+    "deleteAccount": "Excluir Conta",
+    "deleteAccountWarning": "Ao excluir sua conta, todos os seus dados serão removidos permanentemente. Esta ação não pode ser desfeita.",
+    "deleteConfirmTitle": "Excluir sua conta?",
+    "deleteConfirmDescription": "Isso excluirá permanentemente sua conta e todos os dados associados. Digite EXCLUIR para confirmar.",
+    "deleteConfirmPlaceholder": "Digite EXCLUIR para confirmar",
+    "language": "Idioma de Exibição",
+    "languageHint": "Idioma usado em toda a interface do StoryMode."
+  },
+  "share": {
+    "visibilityTitle": "Visibilidade do projeto",
+    "visibilityDescription": "Escolha se \"{{title}}\" é privado ou público.",
+    "publicAccess": "Acesso público",
+    "privateAccess": "Privado",
+    "anyoneCanView": "Qualquer pessoa com o link pode visualizar",
+    "onlyYouCanView": "Apenas você pode visualizar e editar",
+    "publicLink": "Link público",
+    "makePublic": "Tornar este projeto público",
+    "publicReadOnly": "Qualquer pessoa com o link pode visualizar (somente leitura)."
+  },
+  "upgrade": {
+    "title": "Faça upgrade do seu plano",
+    "subtitle": "Desbloqueie mais projetos, fólios, mapas e recursos de IA.",
+    "maybeLater": "Talvez depois",
+    "upgradeNow": "Fazer upgrade agora",
+    "limitReachedTitle": "Limite de {{label}} atingido",
+    "beginnerAllows": "O plano Rascunho permite até {{count}} {{label}}. Faça upgrade para o Manuscrito e tenha acesso ilimitado.",
+    "storytellerPlanLine": "Plano Manuscrito — US$5/mês",
+    "unlimitedProjects": "Projetos ilimitados",
+    "unlimitedFolios": "Fólios ilimitados",
+    "unlimitedMaps": "Mapas ilimitados",
+    "upgradeButton": "Fazer upgrade — US$5/mês",
+    "opening": "Abrindo...",
+    "errorCheckout": "Erro ao iniciar o checkout",
+    "limitSingular": {
+      "project": "projeto",
+      "folio": "fólio",
+      "map": "mapa"
+    },
+    "limitPlural": {
+      "project": "projetos",
+      "folio": "fólios",
+      "map": "mapas"
+    },
+    "beginnerPlanName": "Rascunho",
+    "storytellerPlanName": "Manuscrito"
+  },
+  "errors": {
+    "generic": "Algo deu errado. Por favor, tente novamente.",
+    "network": "Erro de rede. Verifique sua conexão e tente novamente.",
+    "unauthorized": "Você não está conectado.",
+    "rateLimited": "Muitas solicitações. Por favor, aguarde um pouco e tente novamente.",
+    "creditsExhausted": "Créditos de IA esgotados. Adicione créditos para continuar."
+  },
+  "home": {
+    "nav": {
+      "login": "Entrar",
+      "plans": "Planos",
+      "guide": "Guia",
+      "myProjects": "Meus Projetos",
+      "joinWaitlist": "Entrar na Lista de Espera",
+      "waitlistShort": "Lista de Espera"
+    },
+    "hero": {
+      "eyebrow": "Est. Paraty, RJ · MMXXV",
+      "title": "StoryMode — Estúdio de Escrita Criativa e Ferramentas de Construção de Mundos",
+      "sub": "Um lugar tranquilo para escrever sua história e um jeito divertido de construir seu mundo. Com um editor prestativo ao seu lado, fólios cheios de ideias, linhas do tempo interativas e mapas que ganham vida.",
+      "seeHow": "Veja como funciona",
+      "guide": "Leia o guia",
+      "scroll": "Rolar"
+    },
+    "intro": {
+      "kicker": "Seu estúdio profissional de escrita",
+      "build": "Construa seu mundo. ",
+      "plan": "Planeje sua trama.",
+      "tell": " Conte sua história.",
+      "guide": "Explore o guia"
+    },
+    "sections": {
+      "write": {
+        "kicker": "Escreva",
+        "title": "Desapareça no rascunho.",
+        "body": "Uma página inteira que sai do seu caminho. Com um editor de IA esperando na margem: ele aperta uma frase, aponta uma metáfora confusa, indica um furo de roteiro. A escrita é toda sua.",
+        "items": [
+          "Modo foco",
+          "Fólios na margem",
+          "Editor com IA",
+          "Chat sobre o livro"
+        ]
+      },
+      "organize": {
+        "kicker": "Organize",
+        "title": "Um lar para as suas ideias.",
+        "body": "Personagens, facções, lugares, história: tudo guardado em fólios que você abre como aplicativos. Reordene o roteiro num quadro e veja toda a saga se encaixar numa linha do tempo.",
+        "items": [
+          "Organize em fólios",
+          "Arrume e estilize cadernos",
+          "Cada data numa linha do tempo"
+        ]
+      },
+      "map": {
+        "kicker": "Mapeie",
+        "title": "Desenhe seu próprio território.",
+        "body": "Esboce litorais e estradas à mão, ou descreva um lugar e deixe o Storymode renderizar. AI Draw em estilos pixel, pintura ou flat. Mapeie seu mundo tão rápido quanto você o imagina.",
+        "items": [
+          "Crie e anote mapas",
+          "Desenhe e esboce à mão",
+          "Dê vida a lugares com IA"
+        ]
+      }
+    },
+    "showcase": {
+      "write": {
+        "title": "Escreva, com um editor na margem",
+        "items": [
+          {
+            "title": "Marque trechos para revisão",
+            "body": "Selecione um parágrafo e envie ao editor de IA direto da barra de ferramentas."
+          },
+          {
+            "title": "Revisões que conhecem seu livro",
+            "body": "Notas de continuidade, história e escrita, lidas contra cada capítulo que você escreveu."
+          },
+          {
+            "title": "Aplique com um toque",
+            "body": "Aceite a correção sugerida como está, ou guarde a nota e reescreva do seu jeito."
+          }
+        ]
+      },
+      "folios": {
+        "title": "Fólios para tudo em volta da história",
+        "items": [
+          {
+            "title": "Um fólio para cada fio",
+            "body": "Separe worldbuilding, pesquisa e roteiros, e encontre tudo com um clique."
+          },
+          {
+            "title": "Cadernos temáticos",
+            "body": "Cada caderno tem sua cor e capa, para você reconhecer de relance."
+          },
+          {
+            "title": "Todas as datas numa linha do tempo",
+            "body": "As datas das suas notas se alinham numa única linha do tempo da saga."
+          }
+        ]
+      },
+      "maps": {
+        "title": "Desenhe o mundo como você o imagina",
+        "items": [
+          {
+            "title": "AI Draw a partir de uma descrição",
+            "body": "Diga o que existe ali, de uma cordilheira a uma estufa escondida, e veja aparecer."
+          },
+          {
+            "title": "Pictórico, plano ou pixel",
+            "body": "Escolha o estilo que combina com o livro e mantenha todos os mapas nele."
+          },
+          {
+            "title": "Desenhe à mão",
+            "body": "Trace estradas, rios e fronteiras com sua própria caneta."
+          }
+        ]
+      },
+      "codex": {
+        "title": "Um códex que acompanha você",
+        "items": [
+          {
+            "title": "Pessoas, lugares, grupos, eventos",
+            "body": "Tudo e todos que importam, reunidos dos seus capítulos enquanto você escreve."
+          },
+          {
+            "title": "Fatos com suas citações",
+            "body": "Cada fato leva à linha de onde veio. Um clique abre o capítulo."
+          },
+          {
+            "title": "Sabe o que está desatualizado",
+            "body": "Quando você muda um capítulo, o códex aponta o que precisa de outro olhar."
+          }
+        ]
+      }
+    },
+    "footer": {
+      "kicker": "Comece sua história",
+      "h2": "Seu mundo está esperando.",
+      "p": "Grátis para começar. Traga um caderno de ideias, ou um mapa rabiscado em um guardanapo."
+    },
+    "waitlist": {
+      "title": "Entrar na Lista de Espera",
+      "description": "Deixe seu e-mail e te convidaremos ao StoryMode em breve.",
+      "doneTitle": "Você está na lista.",
+      "doneBody": "Obrigado por entrar na lista de espera do StoryMode. Entraremos em contato em breve com seu convite.",
+      "emailPlaceholder": "voce@exemplo.com",
+      "cancel": "Cancelar",
+      "submit": "Entrar na Lista",
+      "submitting": "Entrando…",
+      "close": "Fechar",
+      "invalidEmail": "Digite um e-mail válido",
+      "errorTitle": "Algo deu errado"
+    }
+  },
+  "history": {
+    "editHistory": "Histórico de edições",
+    "last3Days": "Últimos 3 dias de edições, uma por dia.",
+    "loading": "Carregando…",
+    "noHistory": "Nenhum histórico ainda. Conforme você edita, a primeira versão de cada dia é salva automaticamente.",
+    "preview": "Pré-visualizar",
+    "restore": "Restaurar",
+    "restoreTitle": "Restaurar a versão de {{day}}?",
+    "restoreDescription": "O conteúdo atual será substituído pela versão de {{day}}. O conteúdo de hoje será salvo como um instantâneo antes, para que você possa recuperá-lo.",
+    "empty": "Vazio",
+    "restoreThisVersion": "Restaurar esta versão",
+    "today": "Hoje",
+    "yesterday": "Ontem",
+    "previewSuffix": "— pré-visualização"
+  },
+  "viewLoading": {
+    "timeline": "Carregando linha do tempo…",
+    "map": "Carregando mapa…",
+    "story": "Carregando história…"
+  },
+  "notFound": {
+    "code": "Erro 404",
+    "title": "Esta página não está na história",
+    "description": "O link pode ser antigo ou a página pode ter mudado de lugar. Volte ao início e continue de onde parou.",
+    "returnHome": "Voltar ao início"
+  },
+  "gridView": {
+    "folioNotFound": "Fólio não encontrado",
+    "folioNotFoundDesc": "Este fólio não existe ou você não tem acesso a ele."
+  },
+  "admin": {
+    "tabs": {
+      "users": "Usuários",
+      "flags": "Sinalizadores",
+      "editor": "Editor de IA",
+      "models": "Modelos de IA"
+    },
+    "usage": {
+      "title": "Uso real",
+      "description": "Quanto custaram as respostas do editor de IA para os escritores e quanto o texto demorou a aparecer, a partir do que cada resposta registra. Grátis: lê respostas que aconteceram de qualquer forma. Conta a partir desta atualização.",
+      "period": "Período",
+      "days_one": "{{count}} dia",
+      "days_other": "{{count}} dias",
+      "none": "Nenhuma resposta do editor de IA neste período ainda.",
+      "col": {
+        "kind": "Pergunta",
+        "model": "Modelo",
+        "answers": "Respostas",
+        "credits": "Créditos, mediana · total",
+        "firstText": "Primeiro texto, mediana · 5% mais lentos",
+        "input": "Tokens de entrada, mediana",
+        "output": "Tokens de saída, mediana",
+        "empty": "Vazias",
+        "cached": "Entrada em cache"
+      },
+      "kinds": {
+        "selection": "Trecho",
+        "chapter": "Capítulo",
+        "book-focused": "Livro, pela memória",
+        "book-full": "Livro, texto completo"
+      },
+      "newTiers": "novos níveis",
+      "writers_one": "{{count}} escritor",
+      "writers_other": "{{count}} escritores",
+      "legend": "Novos níveis: Rápido no Gemini 2.5 Flash, curto; Cuidadoso no Gemini 3.6 Flash. Administradores recebem primeiro; ative Novos níveis de velocidade em Sinalizadores para liberar a todos. Entrada em cache é a parte da entrada que o provedor reaproveitou de pedidos anteriores (– quando ele não informa)."
+    },
+    "bench": {
+      "title": "Benchmark do editor de IA",
+      "description": "Faz ao editor de IA as mesmas perguntas sobre um livro de teste, como editor só de texto e com a memória do projeto, e registra tokens, créditos, velocidade e se cada resposta encontrou o que devia. Cada pedido é cobrado desta conta como um pedido normal.",
+      "loading": "Carregando…",
+      "failed": "O benchmark parou",
+      "bookTitle": "Livro de teste",
+      "bookNone": "Crie primeiro o projeto de teste: \"The Glass Hollows\", oito capítulos com fólios e três contradições plantadas. Criar é grátis.",
+      "create": "Criar o projeto de teste",
+      "bookStatus": "O Códice leu {{read}} de {{total}} capítulos.",
+      "read": "Ler no Códice (cerca de {{credits}} créditos)",
+      "readHint": "As respostas com memória precisam que o Códice tenha lido o livro.",
+      "reading": "Lendo o capítulo {{done}} de {{total}}…",
+      "open": "Abrir projeto",
+      "runTitle": "Executar",
+      "speed": "Velocidade",
+      "editor": "Editor",
+      "questions": "Perguntas",
+      "repeat": "Repetir",
+      "speeds": {
+        "fast": "Rápido",
+        "thoughtful": "Cuidadoso",
+        "creative": "Criativo"
+      },
+      "modes": {
+        "text": "Só texto",
+        "memory": "Com memória"
+      },
+      "kinds": {
+        "passage": "Trecho ({{count}})",
+        "chapter": "Capítulo ({{count}})",
+        "book": "Livro ({{count}})"
+      },
+      "plan_one": "{{count}} pedido, cerca de {{credits}} créditos",
+      "plan_other": "{{count}} pedidos, cerca de {{credits}} créditos",
+      "run": "Executar benchmark",
+      "stop": "Parar",
+      "progress": "{{done}} de {{total}} pedidos",
+      "keepOpen": "Mantenha esta aba aberta até terminar.",
+      "timing": "{{first}} até o primeiro texto, {{total}} no total",
+      "confirmRunTitle": "Gastar cerca de {{credits}} créditos?",
+      "confirmRunBody_one": "Isto envia {{count}} pedido ao editor de IA, cobrado desta conta como um pedido normal.",
+      "confirmRunBody_other": "Isto envia {{count}} pedidos ao editor de IA, um de cada vez. Cada um é cobrado desta conta como um pedido normal.",
+      "confirmReadTitle": "Ler o livro de teste no Códice?",
+      "confirmReadBody": "O Códice lê cada capítulo que ainda não leu, cerca de 10 créditos por capítulo.",
+      "spend": "Gastar créditos",
+      "resultsTitle": "Execução de {{date}}",
+      "baseline": "Referência",
+      "setBaseline": "Usar como referência",
+      "baselineSet": "Esta execução agora é a referência",
+      "totals": "Créditos: {{text}} só texto → {{memory}} com memória. Tokens de entrada: {{textTokens}} → {{memoryTokens}}.",
+      "regressions_one": "{{count}} pedido está pior que a referência",
+      "regressions_other": "{{count}} pedidos estão piores que a referência",
+      "noRegressions": "Nenhuma piora em relação à referência.",
+      "what": {
+        "inputTokens": "tokens de entrada",
+        "credits": "créditos",
+        "firstTextMs": "tempo até o primeiro texto",
+        "checks": "as verificações agora falham"
+      },
+      "col": {
+        "question": "Pergunta",
+        "speed": "Velocidade",
+        "context": "Contexto com memória",
+        "input": "Tokens de entrada",
+        "output": "Tokens de saída",
+        "credits": "Créditos",
+        "firstText": "Primeiro texto",
+        "total": "Total",
+        "checks": "Verificações",
+        "date": "Data",
+        "requests": "Pedidos",
+        "setup": "Execução"
+      },
+      "missing": "Faltou {{patterns}}",
+      "pass": "ok",
+      "fail": "falhou",
+      "legend": "Cada célula é só texto → com memória, medianas das repetições. Verde é melhor, vermelho é pior. Uma verificação passa quando a resposta menciona o que devia, como as duas cores dos olhos.",
+      "historyTitle": "Execuções",
+      "noRuns": "Nenhuma execução ainda.",
+      "view": "Ver"
+    },
+    "featureFlags": {
+      "title": "Sinalizadores de recursos",
+      "description": "Desligue recursos sinalizados para todos (inclusive admins), teste-os como admin ou abra-os para todos.",
+      "loading": "Carregando sinalizadores…",
+      "loadFailed": "Não foi possível carregar os sinalizadores.",
+      "migrationPending": "Os sinalizadores ainda não foram configurados no banco de dados. Publique a atualização mais recente do banco de dados do StoryMode e tente novamente.",
+      "retry": "Tentar novamente",
+      "saveFailed": "Não foi possível atualizar o sinalizador",
+      "mapOutline": "Esboço do mapa do capítulo",
+      "mapOutlineDescription": "Mostra o esboço de relações do mapa em Informações do capítulo e libera o serviço de IA correspondente.",
+      "everyone": "Todos",
+      "speedTiers": "Novos níveis de velocidade",
+      "speedTiersDescription": "Rápido no Gemini 2.5 Flash com respostas curtas, Cuidadoso no Gemini 3.6 Flash para todas as perguntas. Desligado: Rápido no Gemini 3.6 Flash, Cuidadoso no GPT-5.5 para trechos e no Gemini 2.5 Flash nos demais casos.",
+      "memoryBook": "Respostas do livro pela memória",
+      "memoryBookDescription": "Perguntas ao editor de IA sobre fatos ao longo do livro usam a memória do projeto e os parágrafos que os mencionam, em vez do texto completo de cada capítulo. Requer a memória do projeto ativa.",
+      "everyoneSaved": "{{feature}} agora está disponível para todos",
+      "off": "Desligado",
+      "admins": "Admins",
+      "offStatus": "Desligado para todos, inclusive admins",
+      "adminsStatus": "Só admins",
+      "everyoneStatus": "Todos",
+      "whoCanUse": "Quem pode usar {{feature}}",
+      "offSaved": "{{feature}} agora está desligado para todos, inclusive admins",
+      "adminsSaved": "{{feature}} agora é só para admins",
+      "homeShowcase": "Vitrine de recursos na página inicial",
+      "homeShowcaseDescription": "A página inicial mostra uma seção clara por recurso (Escrita, Fólios, Mapas, Códex) em vez do vídeo de visão geral e das seções originais. Admins: só admins conectados a veem em /. Compare as duas a qualquer momento em /home-1 e /home-2."
+    },
+    "waitlist": "Lista de espera",
+    "joined": "Entrou em",
+    "status": "Status",
+    "inviteAs": "Convidar como",
+    "noWaitlist": "Ninguém na lista de espera ainda",
+    "invited": "Convidado",
+    "invitedAs": "Convidado como {{plan}}",
+    "pending": "Pendente",
+    "removeFromWaitlist": "Remover da lista de espera",
+    "title": "Admin — Usuários",
+    "pageTitle": "Administração",
+    "users": "Usuários",
+    "inviteUser": "Convidar Usuário",
+    "emailPlaceholder": "usuario@exemplo.com",
+    "sendInvite": "Enviar Convite",
+    "sending": "Enviando...",
+    "tableUser": "Usuário",
+    "tableEmail": "E-mail",
+    "tablePlan": "Plano",
+    "tableSignedUp": "Cadastrado em",
+    "tableLastSignIn": "Último acesso",
+    "noUsers": "Nenhum usuário encontrado",
+    "beginner": "Rascunho",
+    "storyteller": "Manuscrito",
+    "author": "Estúdio",
+    "draft": "Rascunho",
+    "manuscript": "Manuscrito",
+    "studio": "Estúdio",
+    "deleteUser": "Excluir usuário",
+    "deleteUserTitle": "Excluir usuário \"{{name}}\"?",
+    "deleteUserDescription": "Isso excluirá permanentemente esta conta de usuário e todos os seus dados. Esta ação não pode ser desfeita.",
+    "deleting": "Excluindo...",
+    "errorSendingInvite": "Erro ao enviar convite",
+    "invitationSent": "Convite enviado",
+    "invitationResent": "Convite reenviado",
+    "resendInvite": "Reenviar convite",
+    "sendLoginEmail": "Enviar e-mail de acesso",
+    "invitedDescription": "{{email}} convidado como {{plan}}",
+    "removedFromWaitlist": "Removido da lista de espera",
+    "errorLoadingUsers": "Erro ao carregar usuários",
+    "userDeleted": "Usuário excluído",
+    "errorDeletingUser": "Erro ao excluir usuário",
+    "inviteSentDescription": "Convite enviado por e-mail para {{email}}",
+    "planUpdated": "Plano atualizado para {{plan}}",
+    "aiModels": {
+      "title": "Modelos de IA",
+      "description": "Escolha qual provedor de IA atende cada nível. Se você adicionou a chave desse provedor no OpenRouter (Settings → Integrations), sua chave é usada; caso contrário, as solicitações são pagas com seu crédito do OpenRouter. Suas próprias chaves exigem uma conta paga no OpenRouter: compre crédito uma vez (Settings → Credits).",
+      "loading": "Carregando configurações de modelos…",
+      "loadFailed": "Não foi possível carregar as configurações de modelos.",
+      "saved": "Escolha de modelo salva",
+      "saveFailed": "Não foi possível salvar a escolha de modelo",
+      "fast": "Rápido",
+      "fastDescription": "Respostas rápidas no editor de IA, além de trabalho em segundo plano: memória do projeto, digitalização de documentos e criação de novos projetos.",
+      "thoughtful": "Cuidadoso",
+      "thoughtfulDescription": "O padrão do editor de IA: respostas e revisões cuidadosas.",
+      "creative": "Criativo",
+      "creativeDescription": "Revisões profundas, que levam mais tempo e custam mais.",
+      "images": "Imagens",
+      "imagesDescription": "AI Draw e mapas de cena. O Claude não gera imagens.",
+      "family": {
+        "google": "Google",
+        "openai": "OpenAI",
+        "anthropic": "Claude"
+      },
+      "checkTitle": "Verifique seus provedores",
+      "checkDescription": "Envia uma solicitação mínima ao modelo Rápido de cada provedor e mostra se funciona e qual chave pagou.",
+      "check": "Verificar",
+      "checking": "Verificando…",
+      "checkOwnKey": "Funciona · usando sua própria chave",
+      "checkCredit": "Funciona · pago com seu crédito do OpenRouter",
+      "checkFailed": "Não funcionou: {{error}}"
+    },
+    "signups": {
+      "title": "Cadastros",
+      "description": "Quem pode criar uma conta aqui. Todos com conta podem usar a IA com o seu crédito do OpenRouter.",
+      "loading": "Carregando…",
+      "loadFailed": "Não foi possível carregar as configurações de cadastro.",
+      "saveFailed": "Não foi possível salvar as configurações de cadastro",
+      "notSetUp": "Os cadastros ainda não têm restrição: rode npm run setup → Update to the latest version.",
+      "whoLabel": "Quem pode se cadastrar",
+      "closed": "Só quem eu adicionar",
+      "open": "Qualquer pessoa",
+      "closedDescription": "Só você e os endereços abaixo podem criar uma conta.",
+      "openDescription": "Qualquer pessoa com o endereço do seu site pode criar uma conta e usar a IA com o seu crédito.",
+      "allowedTitle": "Pessoas adicionadas",
+      "allowedDescription": "Elas se cadastram no seu site com este endereço. Se o seu StoryMode não envia e-mails, a conta funciona sem confirmação.",
+      "addLabel": "E-mail para adicionar",
+      "add": "Adicionar",
+      "remove": "Remover",
+      "noneAllowed": "Ninguém ainda"
+    }
+  },
+  "projects": {
+    "errorLoading": "Erro ao carregar projetos",
+    "errorCreating": "Erro ao criar projeto",
+    "errorReordering": "Erro ao reordenar projetos"
+  },
+  "credits": {
+    "costChatBasic": "Os créditos variam conforme o tamanho da resposta",
+    "costChatSelection": "Os créditos variam conforme o tamanho da resposta",
+    "costReview": "Os créditos variam conforme o tamanho do trecho",
+    "costScan": "Alguns créditos por digitalização",
+    "costMapDraw": "Cerca de 16 créditos por adesivo",
+    "byok": "Gerenciar chave",
+    "byokBody": "Use sua conta OpenAI no Perfil para ignorar os limites mensais de crédito.",
+    "byokConnected": "Chave OpenAI conectada (sk-…{{last4}})",
+    "purchasedNote": "Inclui {{count}} créditos extras na sua conta (compras ou bônus; não expiram)",
+    "resets": "Renova em {{date}}"
+  },
+  "plans": {
+    "title": "Planos",
+    "subtitle": "Escolha o plano que combina com a profundidade da sua história. Os créditos são renovados todo mês e você pode recarregar quando quiser.",
+    "current": "Atual",
+    "credits": "Créditos de IA",
+    "perMonth": "/ mês",
+    "yourPlan": "Seu plano",
+    "manageBilling": "Gerenciar cobrança",
+    "includedWithSignup": "Incluído no cadastro",
+    "opening": "Abrindo…",
+    "choose": "Escolher {{name}}",
+    "checkoutError": "Não foi possível abrir o checkout",
+    "billing": "Cobrança",
+    "footnote": "Um único conjunto de créditos cobre tudo: chat de IA, revisões do editor, digitalizações e desenho de mapas com IA. Cada pedido custa créditos conforme o trabalho que exige, então perguntas curtas saem baratas e análises do livro inteiro ou imagens custam mais. Pacotes extras de recarga ficam disponíveis no seu perfil quando você entra em um plano pago.",
+    "byokTitle": "Use sua própria chave OpenAI",
+    "byokBody": "Conecte uma chave OpenAI pessoal no seu Perfil para usar a IA com sua própria conta. Quando o BYOK está ativo, o uso de IA não consome créditos do StoryMode.",
+    "tiers": {
+      "draft": {
+        "name": "Rascunho",
+        "tagline": "Para uma primeira ideia, uma única faísca.",
+        "features": [
+          "1 projeto · 3 fólios · 1 mapa",
+          "Linha do tempo, fólios e mapa",
+          "Pequena porção mensal de créditos"
+        ]
+      },
+      "manuscript": {
+        "name": "Manuscrito",
+        "tagline": "Para quem está construindo um mundo.",
+        "features": [
+          "Projetos, fólios e mapas ilimitados",
+          "Chat de IA, revisão e ajudantes de capítulo",
+          "Desenho de mapa com IA e digitalização",
+          "Use sua própria chave OpenAI"
+        ]
+      },
+      "studio": {
+        "name": "Estúdio",
+        "tagline": "Para quem está publicando um livro.",
+        "features": [
+          "Tudo do Manuscrito",
+          "IA de escrita mais avançada (GPT-5)",
+          "Revisão de capítulo inteiro",
+          "Maior mensalidade de créditos"
+        ]
+      }
+    }
+  },
+  "guide": {
+    "title": "Guia",
+    "subtitle": "Tudo o que você precisa saber para escrever, planejar, mapear e colaborar no StoryMode.",
+    "back": "Voltar",
+    "topicsLabel": "Tópicos",
+    "onThisPage": "Nesta página",
+    "planManuscript": "Plano Manuscript",
+    "planStudio": "Plano Studio",
+    "planAvailable": "Disponível no {{plan}}",
+    "videoPlaceholder": "Vídeo em breve",
+    "imagePlaceholder": "Captura de tela em breve",
+    "closeFullscreen": "Fechar imagem em tela cheia",
+    "useCases": {
+      "p1": "O Chat funciona de duas formas: <b>no livro inteiro</b> quando nada está selecionado e <b>ancorado em um trecho</b> quando você destaca um texto em um capítulo antes. Use o modo livro inteiro para raciocinar sobre todo o manuscrito: continuidade, arcos de personagens e ritmo entre capítulos.",
+      "p2": "Pergunte sobre o comportamento de um personagem — \"O comportamento da Lia aqui é coerente com o que ela faz nos capítulos anteriores?\" — e o Chat compara com todas as cenas anteriores, respondendo com um veredito, os momentos que soam verdadeiros e as pequenas oscilações que valem a pena ajustar.",
+      "p3": "Procure furos de roteiro, deslizes de linha do tempo ou lacunas de informação em vários capítulos de uma vez. O Chat distingue contradições reais dos mistérios que você está semeando de propósito e aponta exatamente as linhas em que se baseia.",
+      "p4": "Destaque um parágrafo e o Chat se limita a esse trecho — perfeito para uma revisão editorial focada em clareza, voz, tom, ritmo ou técnica. Ele responde com seções claras e opções concretas de reescrita na voz do autor.",
+      "p5": "Outras coisas que o Chat faz bem: encontrar onde um lugar ou objeto foi mencionado pela primeira vez, criar cenas alternativas, resumir uma mitologia complexa para uma sinopse e comparar eventos entre linhas do tempo."
+    },
+    "topics": {
+      "getting-started": {
+        "title": "Primeiros passos",
+        "intro": "O StoryMode organiza seu trabalho como Projetos → Fólios → Cadernos. Toda nova conta começa com um projeto de exemplo completo para você explorar antes de criar o seu.",
+        "s": {
+          "dashboard": {
+            "title": "O Painel",
+            "body": "O painel mostra todos os seus projetos em cartões grandes. Clique em um projeto para abri-lo — depois você alterna entre as visões Fólios, Linha do Tempo e Mapa pelo cabeçalho."
+          },
+          "projects": {
+            "title": "Projetos, Fólios e Cadernos",
+            "body": "Projetos são seus livros, jogos ou campanhas. Dentro de cada projeto, os Fólios agrupam cadernos relacionados (Personagens, Lugares, Capítulos, Mitologia…). Cadernos são as anotações individuais."
+          },
+          "starter": {
+            "title": "O projeto inicial",
+            "body": "Novas contas recebem uma cópia de “Um Estudo em Vermelho” já preenchida com fólios, eventos na linha do tempo e um mapa-múndi, para você ver todos os recursos em ação."
+          }
+        }
+      },
+      "themes": {
+        "title": "Temas",
+        "intro": "O StoryMode usa uma estética escura e minimalista, mas você pode personalizar a aparência de cada caderno — e ajustar o editor ao seu conforto de leitura.",
+        "s": {
+          "notebook-theme": {
+            "title": "Tema do caderno",
+            "body": "Cada cartão de caderno em um Fólio pode ter seu próprio tema. Os temas mudam a cor de fundo, a borda e o tom de destaque do cartão, para você agrupar notas relacionadas num relance — azul para personagens, verde para lugares ou âmbar para mitologia, por exemplo. Abra um caderno na grade do Fólio e clique na opção de tema para abrir o seletor. A prévia é atualizada na hora, então você vê como o cartão vai ficar antes de salvar. Escolha uma cor que combine com o propósito do caderno e feche o seletor para aplicá-la."
+          },
+          "editor-theme": {
+            "title": "Tema do editor",
+            "body": "Você também pode escolher o tema do Editor de História e do Modo Foco, tingindo a superfície de escrita para começar com uma página branca em branco ou um tema escuro e introspectivo. O tema escolhido acompanha o Editor de História e o Modo Foco, fazendo com que capítulos longos pareçam visualmente ligados ao caderno a que pertencem."
+          },
+          "font-size": {
+            "title": "Fonte e tamanho",
+            "body": "Ajuste o tamanho da fonte do editor conforme sua tela e sua visão. Tamanhos maiores funcionam bem em sessões longas de escrita ou telas de alta resolução; menores mostram mais do capítulo quando você está revisando a estrutura. Depois escolha a tipografia da escrita: uma serifada para um clima de livro, uma sem serifa para um visual moderno ou uma monoespaçada para um clima de roteiro/manuscrito. Fonte e tamanho valem no Editor de História e no Modo Foco; o resto do app mantém sua tipografia de interface."
+          }
+        }
+      },
+      "story-editor": {
+        "title": "Editor de História e capítulos",
+        "intro": "A visão História é um ambiente de escrita longa e focada para cadernos de Capítulo, com salvamento automático, atalhos de teclado e um editor Markdown completo.",
+        "s": {
+          "focus": {
+            "title": "Modo Foco",
+            "body": "Abra o Modo Foco para esconder a interface ao redor e escrever em um editor calmo, em tela cheia. As margens, fólios e ferramentas desaparecem, deixando só o seu texto e o cursor para você mergulhar no rascunho."
+          },
+          "formatting": {
+            "title": "Escrita e formatação",
+            "body": "Use a barra flutuante para negrito, itálico, sublinhado, títulos e citações. A barra oferece negrito, itálico, código embutido, títulos (H1–H3) e citações — cada ação vale para a seleção atual ou para a linha do cursor.\n\nAtalhos de teclado: Cmd/Ctrl+B para negrito, Cmd/Ctrl+I para itálico e Cmd/Ctrl+Z / Shift+Cmd/Ctrl+Z para desfazer e refazer."
+          },
+          "autosave": {
+            "title": "Salvamento automático e status do rascunho",
+            "body": "O StoryMode salva seu rascunho a cada 15 segundos enquanto você escreve e novamente sempre que você sai do editor. Um indicador discreto mostra quando um salvamento está em andamento e quando o rascunho está guardado, para você nunca ficar em dúvida sobre a última edição."
+          },
+          "scroll-memory": {
+            "title": "Memória de rolagem",
+            "body": "Quando você sai e volta a um capítulo, o StoryMode restaura sua posição exata de rolagem — mesmo depois de trocar de projeto ou recarregar o navegador. Ótimo para retomar no meio de um parágrafo em capítulos longos."
+          },
+          "history": {
+            "title": "Histórico de edições",
+            "body": "O editor mantém um histórico completo de desfazer na sessão: use Cmd/Ctrl+Z para voltar nas edições recentes e Shift+Cmd/Ctrl+Z para refazer. Como o salvamento automático grava continuamente, fechar a aba e reabrir restaura o rascunho salvo mais recente."
+          },
+          "chapters": {
+            "title": "Adicionar e excluir capítulos",
+            "body": "Crie um capítulo pelo navegador de Fólios — ele já abre em modo de edição com o ícone 📝 definido. Excluir um capítulo exige uma confirmação em dois cliques dentro de 3 segundos, para evitar acidentes."
+          }
+        }
+      },
+      "ai-editor": {
+        "title": "Editor com IA",
+        "intro": "O Editor com IA é um segundo par de olhos que trabalha enquanto você escreve. Selecione um trecho, marque para revisão e continue escrevendo — o retorno estará esperando quando você quiser.",
+        "s": {
+          "opinions": {
+            "title": "Revisão enquanto você escreve",
+            "body": "Selecione qualquer trecho de um capítulo e clique em Marcar para revisão. O Editor com IA trabalha em segundo plano, então você pode continuar lendo, escrevendo ou revisando outros trechos enquanto ele pensa. Cada nota custa alguns créditos. Quando fica pronta, a nota aparece na barra lateral do Editor com IA com uma crítica e uma ou mais sugestões de reescrita que você aplica com um clique."
+          },
+          "feedback-examples": {
+            "title": "Como é o retorno",
+            "body": "O Editor com IA aponta o que soa estranho e explica por quê, e então dá sugestões concretas de reescrita para você comparar. Alguns exemplos do tipo de nota que ele deixa:\n\n- “Esta frase repete ‘lentamente’ e ‘silenciosamente’ — tente condensar a ação para aumentar a tensão.”\n- “A marcação de diálogo é redundante porque a própria fala já transmite a emoção; considere removê-la.”\n- “Esta descrição é vívida, mas interrompe o ritmo. Tente movê-la para um momento em que o personagem tenha tempo de reparar.”\n\nCada nota também mostra o trecho original em contexto, para você Substituir, copiar uma sugestão ou descartar a nota."
+          }
+        }
+      },
+      "chat": {
+        "title": "Converse com sua história",
+        "intro": "Faça perguntas sobre personagens, pontos de trama, lugares ou mitologia. O Chat tem acesso de leitura a todos os cadernos e à linha do tempo do projeto, então as respostas se apoiam no seu próprio mundo.",
+        "s": {
+          "asking": {
+            "title": "Fazendo perguntas",
+            "body": "Digite uma pergunta no painel de chat. As respostas citam o(s) caderno(s) de onde vieram, para você ir direto à fonte. Perguntas sobre o capítulo em que você está custam poucos créditos; perguntas sobre o livro inteiro (furos de roteiro, continuidade, arcos) custam 3."
+          },
+          "selection": {
+            "title": "Ancorando respostas em uma seleção",
+            "body": "Destaque um trecho de um capítulo antes de perguntar e o Chat responderá a partir daquele texto específico, tornando o retorno preciso e contextual. Custa alguns créditos."
+          },
+          "use-cases": {
+            "title": "O que você pode perguntar",
+            "body": ""
+          }
+        }
+      },
+      "timeline": {
+        "title": "Linha do Tempo",
+        "intro": "A Linha do Tempo distribui os eventos da sua história em uma faixa virtual com zoom, que vai de um único dia a milênios — perfeita para mundos de fantasia e ficção científica.",
+        "s": {
+          "dates": {
+            "title": "Datas e intervalos",
+            "body": "O StoryMode aceita quase qualquer data que você escreva: datas simples como 2026-07-23, 23 de julho de 2026, 23 July 2026, ou anos muito distantes como 3025 e 10.000 a.C. Para intervalos, separe duas datas com um traço ou a palavra “a”: 3025-01-15 a 3025-06-30, Primavera 3025 — Outono 3025, ou 1500 a.C. - 1450 a.C. Linhas do tempo de ficção científica e fantasia são cidadãs de primeira classe: você pode usar anos como 12027 ou -4832.\n\nNo nível do projeto, a Linha do Tempo agrega automaticamente os eventos de todos os fólios em uma única visão — cada linha recebe a cor do fólio a que pertence, para você ver como personagens, tramas e eventos do mundo se alinham em toda a história."
+          },
+          "pan-zoom": {
+            "title": "Mover e ampliar",
+            "body": "Arraste na horizontal para percorrer a faixa. Role (ou faça pinça) para ampliar — o StoryMode amplia em direção ao ponto sob o cursor, para você ir de séculos a um único dia sem se perder. O nível de zoom e a posição de rolagem são lembrados por fólio."
+          },
+          "previews": {
+            "title": "Prévias de eventos",
+            "body": "Passe o mouse sobre um evento para ver uma prévia flutuante com o trecho completo em markdown. O popup acompanha o cursor em eventos de longa duração, e você pode mantê-lo aberto para continuar lendo enquanto rola a linha do tempo."
+          }
+        }
+      },
+      "map": {
+        "title": "Mapa — ferramentas de desenho",
+        "intro": "O Mapa é uma tela de terreno, cadernos e rótulos. Todas as ferramentas ficam na barra à esquerda e têm atalho de uma tecla.",
+        "s": {
+          "pointer": {
+            "title": "Ponteiro (V)",
+            "body": "Selecione e mova pílulas, redimensione adesivos arrastando uma alça de canto e pressione Delete para remover a seleção."
+          },
+          "pan": {
+            "title": "Mover (H)",
+            "body": "Arraste para mover a tela. Role para ampliar em direção ao cursor. Use “Ver tudo” para enquadrar todos os elementos de uma vez."
+          },
+          "pencil": {
+            "title": "Lápis e seletor de cores (P)",
+            "body": "Pinte células de terreno traço a traço. O seletor de cores abre ao lado do lápis com sete famílias de matizes e fileiras de tons suaves/vibrantes, além de um gradiente HSL personalizado e campo hex para cores exatas. Toda cor que você aplica fica na fileira de recentes na base do seletor — uma faixa das mais usadas recentemente que mantém suas últimas cores a um clique de distância."
+          },
+          "fill": {
+            "title": "Balde de tinta (F)",
+            "body": "Preenche uma área fechada. Se a forma não estiver fechada, ele define a cor de fundo global do mapa."
+          },
+          "eyedropper": {
+            "title": "Conta-gotas (I)",
+            "body": "Clique em qualquer célula ou fundo para capturar a cor — o StoryMode volta automaticamente para o lápis, para você continuar desenhando."
+          },
+          "brush": {
+            "title": "Tamanho do pincel",
+            "body": "Ajuste o raio do pincel no seletor flutuante. A sobreposição do cursor sempre mostra a área exata que será pintada."
+          },
+          "label": {
+            "title": "Ferramenta de rótulo (T)",
+            "body": "Coloque uma pílula de texto com borda tracejada em qualquer ponto do mapa para anotar regiões, fronteiras ou marcos."
+          },
+          "notebook-pill": {
+            "title": "Colocar cadernos (N)",
+            "body": "Escolha qualquer fólio + caderno do projeto e solte como uma pílula. Busque por título ou conteúdo. Depois de colocar, a ferramenta volta para o ponteiro."
+          },
+          "delete-tool": {
+            "title": "Ferramenta de exclusão (X)",
+            "body": "Passe o mouse sobre uma pílula para ver o aviso vermelho tremido e clique para confirmar a remoção com uma explosão temática."
+          },
+          "undo": {
+            "title": "Desfazer / Refazer",
+            "body": "O StoryMode mantém um histórico de 50 passos de cada edição da tela, para você avançar e voltar nas mudanças recentes."
+          }
+        }
+      },
+      "ai-draw": {
+        "title": "Desenho com IA",
+        "intro": "Gere adesivos para o seu mapa a partir de descrições em linguagem natural, na estética de livro ilustrado que combina com o resto do StoryMode.",
+        "s": {
+          "stickers": {
+            "title": "Desenhando adesivos no mapa",
+            "body": "Escolha o Desenho com IA (A), descreva o que você quer (uma torre coberta de musgo, uma carroça de feira, um farol no porto…) e solte o adesivo gerado onde quiser no mapa. Redimensione arrastando uma alça de canto, gire pelo disco de rotação e pressione Delete para remover. Cada adesivo custa cerca de 16 créditos. Estilos: escolha o adesivo ilustrado para um visual de livro pintado à mão, ou o adesivo em pixel art para uma estética retrô de mapa de jogo. Você também pode indicar a direção artística no seu pedido — aquarela, nanquim, ilustração plana, xilogravura, guache texturizado — para que cada marco combine com o mundo que você está criando."
+          }
+        }
+      },
+      "scan": {
+        "title": "Digitalização de documentos",
+        "intro": "Importe anotações manuscritas ou impressas enviando uma foto ou PDF — a IA transcreve direto para um novo caderno.",
+        "s": {
+          "scanning": {
+            "title": "Digitalizando uma página",
+            "body": "Abra o Scan em qualquer fólio, solte o arquivo e confirme o texto reconhecido. Custa alguns créditos por digitalização."
+          }
+        }
+      },
+      "sharing": {
+        "title": "Projetos públicos e privados",
+        "intro": "Todo projeto é privado (só você) ou público (somente leitura para quem tiver o link). Os recursos de compartilhamento em equipe estão temporariamente desativados.",
+        "s": {
+          "private": {
+            "title": "Projetos privados",
+            "body": "Novos projetos são privados por padrão. Só você pode ver e editar. Fólios, linhas do tempo, mapas e notas não ficam acessíveis a mais ninguém."
+          },
+          "public": {
+            "title": "Links públicos somente leitura",
+            "body": "Torne um projeto público pelo cabeçalho do projeto para compartilhar a história, a linha do tempo e o mapa com qualquer pessoa. E-mails e notas privadas continuam ocultos."
+          }
+        }
+      },
+      "plans-credits": {
+        "title": "Planos e créditos",
+        "intro": "O uso de IA é medido em créditos de Escrita (chat, editor) e créditos de Imagem (scan, desenho com IA). Cada plano inclui uma cota mensal; você pode recarregar quando quiser.",
+        "s": {
+          "watching": {
+            "title": "Acompanhando seu saldo",
+            "body": "Seu Perfil mostra barras de progresso para os dois tipos de crédito. Um aviso global aparece quando você está perto de acabar."
+          },
+          "topups": {
+            "title": "Comprando mais créditos",
+            "body": "Recargas com um clique na página de Planos. Administradores também podem conceder créditos direto pelo painel administrativo."
+          },
+          "byok": {
+            "title": "Use sua própria chave OpenAI",
+            "body": "Conecte sua própria chave da API da OpenAI em Perfil → Integrações para ignorar completamente a cota de créditos do StoryMode. Com uma chave ativa, o Editor com IA, o Chat, o Desenho com IA e o Scan usam o saldo da sua chave em vez de consumir créditos do StoryMode, então você não precisa pensar em cotas, recargas ou renovações mensais.\n\nO StoryMode direciona automaticamente suas solicitações para os modelos mais fortes disponíveis na sua chave: a família GPT-5 mais recente para chat e revisão, e o gpt-image-1 em alta qualidade para o Desenho com IA e adesivos. Ou seja, você tem a saída mais rápida e capaz sem custo de crédito por chamada.\n\nSua chave é criptografada em repouso e só é descriptografada dentro das funções de backend do StoryMode — ela nunca é enviada ao navegador nem armazenada em texto puro. Você pode substituí-la ou removê-la quando quiser. Observação: o Desenho de Mapa com IA e os adesivos exigem uma chave OpenAI com acesso à geração de imagens; chaves do Anthropic Claude não são suportadas porque o Claude não gera imagens."
+          },
+          "plans": {
+            "title": "Escolhendo um plano",
+            "body": "O Draft é gratuito para sempre, o Manuscript custa US$ 5/mês para quem escreve com regularidade e o Studio custa US$ 19/mês para quem usa muito a IA."
+          }
+        }
+      }
+    }
+  },
+  "onboarding": {
+    "welcome": {
+      "kicker": "Bem-vindo ao StoryMode",
+      "heading": "Escreva sua história. Crie seu mundo.",
+      "close": "Fechar boas-vindas",
+      "enlarge": "Clique para ampliar",
+      "enlargeAria": "Ampliar captura de {{label}}",
+      "showPane": "Mostrar {{label}}",
+      "example": "Ver um exemplo",
+      "start": "Começar a escrever",
+      "creating": "Criando…",
+      "lightboxClose": "Clique em qualquer lugar para fechar ✕",
+      "panes": {
+        "editor": {
+          "label": "Editor de história",
+          "title": "Um leitor para o seu rascunho, de plantão às 2h.",
+          "alt": "Editor de história com notas de ofício"
+        },
+        "map": {
+          "label": "Criador de mapas",
+          "title": "Descreva um lugar e veja-o se materializar.",
+          "alt": "Criador de mapas com adesivos desenhados por IA"
+        },
+        "folio": {
+          "label": "Fólio de ideias",
+          "title": "Tudo o que você imaginou, a um clique de distância.",
+          "alt": "Fólio de cadernos de ideias"
+        }
+      }
+    },
+    "folios": {
+      "title": "Fólios: os quadros de notas do seu projeto",
+      "subtitle": "Um fólio é um quadro de cadernos. Guarde personagens, lugares, pesquisa ou ideias de cena lado a lado e reutilize tudo na linha do tempo, nos mapas e nos capítulos.",
+      "cards": {
+        "notebooks": {
+          "title": "Escreva em cadernos",
+          "body": "Adicione cadernos em colunas, arraste para reordenar, redimensione e dê a cada um um tema de papel."
+        },
+        "timeline": {
+          "title": "Veja datas na linha do tempo",
+          "body": "Dê uma data ou intervalo a um caderno e ele aparece na linha do tempo do fólio e também na do projeto."
+        },
+        "mapStory": {
+          "title": "Use nos mapas e na História",
+          "body": "Solte cadernos do fólio no mapa como marcadores de lugar e mantenha-os à mão enquanto escreve capítulos."
+        }
+      },
+      "createCta": "Crie seu primeiro fólio",
+      "createHint": "Ele começa com dois cadernos curtos de dicas de escrita que você pode editar ou apagar.",
+      "guideLink": "Explore o guia"
+    },
+    "folioEmpty": {
+      "title": "Este fólio está vazio",
+      "body": "Cadernos são as notas dentro de um fólio: um esboço de personagem, um lugar, uma ideia de cena. Adicione o primeiro para começar.",
+      "hint": "Use Nova coluna no cabeçalho para colocar cadernos lado a lado."
+    },
+    "foliosModal": {
+      "kicker": "Fólios",
+      "heading": "Seus personagens, lugares e pesquisa, tudo em um só lugar.",
+      "intro": "Conte o que sua história precisa e montamos agora, com alguns exemplos para começar. Tudo o que você escrever aqui te acompanha: na linha do tempo, nos mapas e ao lado do seu rascunho.",
+      "noteCount": "{{count}} NOTAS",
+      "startEmpty": "Começar vazio",
+      "create": "Criar {{count}} fólios",
+      "dontShow": "Não mostrar novamente",
+      "footnote": "As notas são apenas exemplos. Reescreva ou jogue fora.",
+      "close": "Fechar"
+    },
+    "folioSets": {
+      "characters": {
+        "title": "Personagens",
+        "icon": "🧍",
+        "body": "Quem são, o que querem, quando nasceram.",
+        "notes": [
+          {
+            "title": "Protagonista",
+            "content": "Nome:\n\nQuer:\n\nTeme:\n\nNasceu em:\n\nAparece primeiro em:"
+          },
+          {
+            "title": "Antagonista",
+            "content": "Nome:\n\nO que quer e o protagonista não pode permitir:\n\nComo justifica isso:"
+          },
+          {
+            "title": "Aliado",
+            "content": "Nome:\n\nComo se conheceram:\n\nO que arrisca:"
+          },
+          {
+            "title": "Elenco",
+            "content": "Uma linha para cada personagem que fala."
+          }
+        ]
+      },
+      "locations": {
+        "title": "Lugares",
+        "icon": "📍",
+        "body": "Cada lugar que sua história visita, pronto para o mapa.",
+        "notes": [
+          {
+            "title": "Casa",
+            "content": "Onde a história começa. O cheiro do lugar, quem está sempre lá."
+          },
+          {
+            "title": "O caminho",
+            "content": "Lugares atravessados até o final."
+          },
+          {
+            "title": "Onde termina",
+            "content": "O que precisa ser verdade aqui para a história acabar."
+          }
+        ]
+      },
+      "scenes": {
+        "title": "Cenas",
+        "icon": "🎬",
+        "body": "Cartões soltos de cena para embaralhar em capítulos.",
+        "notes": [
+          {
+            "title": "Imagem de abertura",
+            "content": "O que o leitor vê primeiro."
+          },
+          {
+            "title": "A virada",
+            "content": "O momento sem volta."
+          },
+          {
+            "title": "O preço",
+            "content": "O que se perde para conseguir o que se quer."
+          },
+          {
+            "title": "Última página",
+            "content": "A batida final, mesmo que mude depois."
+          }
+        ]
+      },
+      "research": {
+        "title": "Pesquisa",
+        "icon": "🔎",
+        "body": "Os fatos e citações que você sempre procura duas vezes.",
+        "notes": [
+          {
+            "title": "Fatos a checar",
+            "content": "Datas, distâncias, nomes e tudo o que você chutou."
+          },
+          {
+            "title": "Citações e fontes",
+            "content": "Frases que valem guardar, com a origem."
+          }
+        ]
+      },
+      "factions": {
+        "title": "Facções e lore",
+        "icon": "⚔️",
+        "body": "Casas, ordens e guildas, e quem deve a quem.",
+        "notes": [
+          {
+            "title": "Poderes",
+            "content": "Quem manda em quê, e como se mantém."
+          },
+          {
+            "title": "Dívidas e rancores",
+            "content": "Quem deve a quem, e desde quando."
+          },
+          {
+            "title": "Regras deste mundo",
+            "content": "O que é possível aqui e não é em outro lugar."
+          }
+        ]
+      }
+    },
+    "timelineModal": {
+      "kicker": "Linha do tempo",
+      "heading": "Veja sua história inteira em ordem, sem montar nada.",
+      "intro": "Dê uma data a qualquer coisa do projeto, um personagem, um evento, um capítulo, e ela aparece aqui sozinha.",
+      "example": {
+        "character": "UM PERSONAGEM",
+        "characterBody": "nasce 1204, morre 1251",
+        "event": "UM EVENTO",
+        "eventBody": "o porto pega fogo",
+        "chapter": "UM CAPÍTULO",
+        "chapterBody": "Nove e Sal"
+      },
+      "footnote": "Anos reais, inventados, ou uma era batizada por você.",
+      "dontShow": "Não mostrar novamente",
+      "cta": "Entendi",
+      "close": "Fechar"
+    },
+    "mapModal": {
+      "kicker": "Mapas",
+      "heading": "Desenhe o mundo onde sua história acontece.",
+      "intro": "Desenhe você mesmo ou peça para a IA ilustrar, e fixe seus personagens e lugares direto nele.",
+      "hand": {
+        "title": "Desenhe à mão",
+        "body": "Lápis, cores e balde de tinta para litorais e florestas. Nomeie cidades e estradas, e solte qualquer nota no mapa como um alfinete."
+      },
+      "ai": {
+        "title": "Ou descreva e deixe a IA ilustrar",
+        "body": "Peça um castelo, um porto, um dirigível. Chega em segundos, em um de três estilos, para o mapa ficar coeso."
+      },
+      "styles": {
+        "painterly": "Pictórico",
+        "flat": "Flat",
+        "pixel": "Pixel"
+      },
+      "dontShow": "Não mostrar novamente",
+      "drawMyself": "Eu mesmo desenho",
+      "drawWithAi": "Desenhar com IA",
+      "close": "Fechar"
+    }
+  },
+  "connectivity": {
+    "offlineTitle": "Você está offline",
+    "offlineDescription": "As alterações estão sendo mantidas neste dispositivo quando possível, mas talvez não sejam salvas na sua conta até a conexão voltar.",
+    "checkingTitle": "Verificando a conexão…",
+    "checkingDescription": "Tentando acessar o StoryMode.",
+    "savingTitle": "Conexão restaurada — salvando alterações…",
+    "savingDescription_one": "Tentando salvar novamente {{count}} alteração pendente.",
+    "savingDescription_other": "Tentando salvar novamente {{count}} alterações pendentes.",
+    "saveFailedTitle": "Algumas alterações ainda não foram salvas",
+    "saveFailedDescription": "O StoryMode não conseguiu salvar todas as alterações pendentes. Os rascunhos locais continuam protegidos quando possível.",
+    "savedTitle": "Conexão restaurada — todas as alterações foram salvas",
+    "savedDescription": "Seu texto pendente foi salvo na sua conta.",
+    "reconnectedTitle": "Conexão restaurada",
+    "reconnectedDescription": "O StoryMode voltou a acessar sua conta.",
+    "retry": "Tentar novamente"
+  },
+  "waitlistChat": {
+    "greeting": "Oi! Vamos colocar você na lista de espera do StoryMode. São só algumas perguntas rápidas.",
+    "progress": "{{current}} de {{total}}",
+    "send": "Enviar",
+    "skip": "Pular",
+    "retry": "Tentar de novo",
+    "typing": "Digitando…",
+    "backHome": "Voltar ao início",
+    "errors": {
+      "nameRequired": "Me diga seu nome, por favor.",
+      "emailInvalid": "Esse e-mail não parece válido.",
+      "submitFailed": "Algo deu errado ao salvar sua vaga. Tente de novo."
+    },
+    "questions": {
+      "language": {
+        "title": "Em que idioma você escreve?",
+        "why": "Por enquanto o StoryMode está disponível em inglês e português. Vamos conversar no que você escolher.",
+        "placeholder": "Ou digite outro idioma…"
+      },
+      "name": {
+        "title": "Como posso te chamar?",
+        "why": "Para o seu convite chegar no seu nome.",
+        "placeholder": "Seu nome"
+      },
+      "project": {
+        "title": "No que você está trabalhando?",
+        "why": "Escolha o mais próximo ou escreva o seu.",
+        "placeholder": "Ou descreva em poucas palavras…"
+      },
+      "detail": {
+        "placeholder": "Ou escreva o seu…",
+        "novel": {
+          "title": "Qual é o gênero?",
+          "why": "Escolha o mais próximo ou escreva o seu."
+        },
+        "short_stories": {
+          "title": "Quais gêneros você escreve?",
+          "why": "Escolha o mais próximo ou escreva o seu."
+        },
+        "comic": {
+          "title": "Qual é o gênero?",
+          "why": "Escolha o mais próximo ou escreva o seu."
+        },
+        "rpg": {
+          "title": "Qual sistema você joga?",
+          "why": "Escolha um ou escreva o seu."
+        },
+        "screenplay": {
+          "title": "Qual é o formato?",
+          "why": "Escolha um ou escreva o seu."
+        },
+        "game": {
+          "title": "Que tipo de jogo é?",
+          "why": "Escolha um ou escreva o seu."
+        },
+        "worldbuilding": {
+          "title": "Para que é o mundo?",
+          "why": "Escolha um ou escreva o seu."
+        },
+        "fanfic": {
+          "title": "Qual fandom?",
+          "why": "Escolha um ou escreva o seu."
+        },
+        "nonfiction": {
+          "title": "Que tipo de não ficção?",
+          "why": "Escolha um ou escreva o seu."
+        },
+        "custom": {
+          "title": "Me conta um pouco mais?",
+          "why": "Gênero, estilo, o que quiser. Ou pule."
+        }
+      },
+      "premise": {
+        "title": "Quer me contar do que se trata?",
+        "why": "Uma ou duas frases já bastam. Você pode pular.",
+        "placeholder": "Uma detetive que consegue ouvir mentiras…"
+      },
+      "own_key": {
+        "title": "Você tem sua própria chave de API da OpenAI?",
+        "why": "O StoryMode pode usá-la no lugar dos créditos de IA. Totalmente opcional."
+      },
+      "email": {
+        "title": "Última: qual é o seu e-mail?",
+        "why": "É para lá que vai o seu convite. Só vamos usá-lo para isso.",
+        "placeholder": "voce@exemplo.com"
+      }
+    },
+    "options": {
+      "projects": {
+        "novel": "Um romance ou livro",
+        "short_stories": "Contos",
+        "rpg": "Uma campanha de RPG",
+        "screenplay": "Um roteiro",
+        "comic": "Uma HQ ou graphic novel",
+        "game": "Um jogo ou história interativa",
+        "worldbuilding": "Construção de mundo",
+        "fanfic": "Fanfic",
+        "nonfiction": "Não ficção ou memórias"
+      },
+      "genres": {
+        "fantasy": "Fantasia",
+        "scifi": "Ficção científica",
+        "mystery": "Mistério e suspense",
+        "romance": "Romance",
+        "horror": "Terror",
+        "literary": "Ficção literária",
+        "historical": "Histórico",
+        "ya": "Jovem adulto",
+        "children": "Infantil"
+      },
+      "comicGenres": {
+        "fantasy": "Fantasia",
+        "scifi": "Ficção científica",
+        "superhero": "Super-herói",
+        "horror": "Terror",
+        "sliceOfLife": "Cotidiano",
+        "humor": "Humor",
+        "manga": "Estilo mangá"
+      },
+      "rpgSystems": {
+        "dnd5e": "D&D 5e",
+        "pathfinder": "Pathfinder",
+        "tormenta20": "Tormenta20",
+        "coc": "Chamado de Cthulhu",
+        "vtm": "Vampiro: A Máscara",
+        "blades": "Blades in the Dark",
+        "homebrew": "Sistema próprio"
+      },
+      "screenFormats": {
+        "feature": "Longa-metragem",
+        "tv": "Série de TV",
+        "short": "Curta-metragem",
+        "play": "Peça de teatro",
+        "web": "Websérie"
+      },
+      "gameKinds": {
+        "visualNovel": "Visual novel",
+        "textAdventure": "Aventura em texto",
+        "videoRpg": "RPG eletrônico",
+        "boardGame": "Jogo de tabuleiro",
+        "gamebook": "Livro-jogo"
+      },
+      "worldPurposes": {
+        "book": "Para um livro ou série",
+        "tabletop": "Para uma campanha de mesa",
+        "videogame": "Para um videogame",
+        "fun": "Só por diversão"
+      },
+      "fandoms": {
+        "harryPotter": "Harry Potter",
+        "marvel": "Marvel",
+        "starWars": "Star Wars",
+        "lotr": "O Senhor dos Anéis",
+        "anime": "Anime e mangá"
+      },
+      "nonfiction": {
+        "memoir": "Memórias",
+        "biography": "Biografia",
+        "history": "História",
+        "selfHelp": "Autoajuda",
+        "essays": "Ensaios",
+        "travel": "Viagem"
+      },
+      "ownKey": {
+        "yes": "Sim",
+        "no": "Não",
+        "unsure": "O que é isso?"
+      }
+    },
+    "replies": {
+      "languageChosen": "Ótimo, vamos seguir em português.",
+      "languageUnsupported": "Obrigado! Por enquanto o StoryMode só funciona em inglês e português, então vamos seguir em inglês. Anotamos {{language}} para o futuro.",
+      "name": "Prazer, {{name}}!",
+      "project": {
+        "novel": "Um livro! Histórias longas são exatamente para o que o StoryMode foi feito.",
+        "short_stories": "Contos, que legal. São muitos mundinhos para acompanhar.",
+        "rpg": "Uma campanha! Mapas e anotações de lore vão ser muito úteis.",
+        "screenplay": "Um roteiro, legal. Cenas e personagens ficam bem mais fáceis de organizar num lugar só.",
+        "comic": "Uma HQ! Manter personagens e mundos consistentes de página em página é metade do trabalho.",
+        "game": "Uma história interativa, que divertido. Tramas com ramificações pedem boas anotações.",
+        "worldbuilding": "Construção de mundo! Mapas, linhas do tempo e lore se sentem em casa aqui.",
+        "fanfic": "Fanfic, adoro.",
+        "nonfiction": "Não ficção, ótimo. Anotações e rascunhos lado a lado ajudam muito."
+      },
+      "detail": "Anotado: {{detail}}.",
+      "customDetail": [
+        "Que legal, {{detail}}. É uma combinação que eu leria com gosto.",
+        "Adorei: {{detail}}. Tem muito espaço para surpreender os leitores.",
+        "Boa, {{detail}}. Tem muito potencial."
+      ],
+      "customProject": [
+        "Que legal, {{project}}! Adoro quando alguém traz algo um pouco diferente.",
+        "Boa, {{project}}. Parece um projeto muito divertido de construir.",
+        "Adorei: {{project}}. Projetos assim ficam muito interessantes quando está tudo num lugar só."
+      ],
+      "detailSkipped": "Sem problemas.",
+      "premise": [
+        "Que ótimo gancho. Eu leria isso.",
+        "Essa é uma premissa com muito espaço para explorar.",
+        "Adorei. Tem um mundo inteiro esperando dentro dessa ideia.",
+        "Que gancho forte. Já consigo imaginar o primeiro capítulo."
+      ],
+      "premiseSkipped": "Sem problema nenhum.",
+      "ownKey": {
+        "yes": "Perfeito. Você vai poder conectá-la e usar no lugar dos créditos.",
+        "no": "Sem problemas. Todo plano do StoryMode inclui créditos de IA.",
+        "unsure": "É uma chave pessoal da OpenAI que permite ao StoryMode usar a sua própria conta de IA. Totalmente opcional: todo plano inclui créditos de IA."
+      },
+      "done": "{{name}}, você está na lista! Vamos mandar um e-mail para {{email}} assim que o seu convite estiver pronto."
+    }
+  },
+  "welcomeChat": {
+    "newProject": {
+      "intro": "Vamos montar seu novo projeto. Algumas perguntas rápidas e eu crio tudo para você.",
+      "open": "Abrir {{title}}",
+      "credits": "Seus créditos de IA acabaram, então não consigo montar este projeto agora. Você pode recarregar na página de planos.",
+      "limit": "Seu plano inclui um projeto. Faça upgrade para criar mais.",
+      "busy": "Outra solicitação de IA ainda está em andamento. Espere um pouco e tente de novo.",
+      "plans": "Ver planos"
+    },
+    "congrats": "🎉 Parabéns, {{name}}! Você entrou.",
+    "congratsNoName": "🎉 Parabéns! Você entrou.",
+    "intro": {
+      "novel": "Seu livro finalmente tem uma casa. Vamos trazer de volta um pouco daquela magia.",
+      "short_stories": "Seus contos finalmente têm uma casa. Vamos trazer de volta um pouco daquela magia.",
+      "rpg": "Sua campanha finalmente tem uma casa. Vamos levar um pouco daquela magia de volta para a mesa.",
+      "screenplay": "Seu roteiro finalmente tem uma casa. Vamos trazer de volta um pouco daquela magia.",
+      "comic": "Sua HQ finalmente tem uma casa. Vamos trazer de volta um pouco daquela magia.",
+      "game": "A história do seu jogo finalmente tem uma casa. Vamos trazer de volta um pouco daquela magia.",
+      "worldbuilding": "Seu mundo finalmente tem uma casa. Vamos trazer de volta um pouco daquela magia.",
+      "fanfic": "Sua fanfic finalmente tem uma casa. Vamos trazer de volta um pouco daquela magia.",
+      "nonfiction": "Sua história finalmente tem uma casa. Vamos levar um pouco daquela magia de volta para a página.",
+      "default": "Sua escrita finalmente tem uma casa. Vamos trazer de volta um pouco daquela magia."
+    },
+    "offer": "Posso montar seu primeiro projeto para você. Leva só um minuto.",
+    "typing": "Digitando…",
+    "send": "Enviar",
+    "and": "e",
+    "showPassword": "Mostrar senha",
+    "hidePassword": "Ocultar senha",
+    "questions": {
+      "name": {
+        "title": "Como posso te chamar?",
+        "why": "Para o StoryMode saber quem você é.",
+        "placeholder": "Seu nome"
+      },
+      "password": {
+        "title": "Só mais uma coisa: escolha uma senha",
+        "why": "Para você entrar da próxima vez. Pelo menos 6 caracteres, com uma letra, um número e um símbolo.",
+        "placeholder": "Sua nova senha"
+      },
+      "ready": {
+        "title": "Vamos começar?",
+        "why": "Vou criar o projeto, alguns fólios para organizar suas ideias e o seu primeiro capítulo, se você tiver um."
+      },
+      "project": {
+        "title": "No que você está trabalhando?",
+        "why": "Escolha o mais próximo ou escreva o seu.",
+        "placeholder": "Ou descreva em poucas palavras…"
+      },
+      "title": {
+        "title": "Qual é o nome dele?",
+        "why": "Esse será o nome do seu projeto. Você pode mudar quando quiser.",
+        "placeholder": "A Longa Noite"
+      },
+      "chapter": {
+        "title": "Você tem um primeiro capítulo para trazer?",
+        "why": "Vou adicioná-lo à sua história e levar os personagens e lugares dele para os seus fólios."
+      }
+    },
+    "options": {
+      "yes": "Sim, vamos lá!",
+      "later": "Agora não",
+      "paste": "Colar o texto",
+      "upload": "Enviar um arquivo",
+      "fresh": "Começar do zero",
+      "retry": "Tentar de novo",
+      "dashboard": "Ir para o meu painel"
+    },
+    "replies": {
+      "name": "Prazer, {{name}}!",
+      "passwordSet": "Pronto! Sua conta está configurada.",
+      "project": "Ótima escolha.",
+      "title": "{{title}}. Adorei.",
+      "fresh": "Começando do zero, então. Vou montar alguns fólios para você começar.",
+      "pasted": "Recebido: {{count}} palavras. Que ótimo começo.",
+      "uploaded": "Recebido: {{count}} palavras de {{file}}.",
+      "working": "Maravilha. Me dê um instante enquanto preparo tudo…",
+      "ready": "{{title}} está pronto!",
+      "done": "{{title}} está pronto! Criei {{count}} fólios para você: {{folios}}.",
+      "doneWithChapter": "{{title}} está pronto! Criei {{count}} fólios para você ({{folios}}) e adicionei {{chapter}} à sua história.",
+      "doneWithCodex": "{{title}} está pronto! Criei {{count}} fólios para você ({{folios}}), adicionei {{chapter}} à sua história e ativei seu Códice, que já está lendo o capítulo para lembrar das pessoas, lugares e acontecimentos.",
+      "failed": "Algo deu errado durante a preparação, e nada foi salvo. Quer tentar de novo?",
+      "exhausted": "Não consegui preparar isso automaticamente, mas você pode começar seu projeto pelo painel.",
+      "readFailed": "Não consegui ler esse arquivo. Tente outro ou cole o texto.",
+      "unsupported": "Consigo ler arquivos do Word (.docx), PDF e texto simples.",
+      "tooLarge": "Esse arquivo tem mais de 8 MB. Tente um menor ou cole o texto.",
+      "tooShort": "Parece um pouco curto para um capítulo. Acrescente mais um pouco ou comece do zero.",
+      "welcomeBack": "Que bom te ver de novo, {{name}}! Só falta uma coisa.",
+      "welcomeBackNoName": "Que bom te ver de novo! Só falta uma coisa.",
+      "laterPassword": "Sem problemas! Antes de ir, vamos garantir que você consiga entrar da próxima vez.",
+      "doneFallback": "{{title}} está pronto, e {{chapter}} já está na sua história! Desta vez não consegui identificar os personagens e lugares dele, então montei fólios iniciais para você: {{folios}}."
+    },
+    "paste": {
+      "placeholder": "Cole seu capítulo aqui…",
+      "use": "Usar este capítulo",
+      "back": "Voltar",
+      "words_one": "{{count}} palavra",
+      "words_other": "{{count}} palavras"
+    },
+    "upload": {
+      "prompt": "Solte aqui um arquivo do Word, PDF ou de texto",
+      "choose": "Escolher arquivo",
+      "hint": "Até 8 MB",
+      "reading": "Lendo {{file}}…",
+      "back": "Voltar"
+    },
+    "attachment": {
+      "pasted": "📋 Capítulo colado · {{words}}",
+      "file": "📄 {{file}}"
+    },
+    "progress": {
+      "project": "{{title}} criado",
+      "readingChapter": "Lendo seu capítulo",
+      "sketching": "Montando seus fólios",
+      "hintsChapter": [
+        "🎭 Personagens",
+        "🗺️ Lugares",
+        "📝 Anotações"
+      ],
+      "hintsFresh": [
+        "🌍 Seu mundo",
+        "📚 Fólios",
+        "✨ Perguntas para começar"
+      ],
+      "notebooks_one": "{{count}} caderno",
+      "notebooks_other": "{{count}} cadernos",
+      "chapter": "{{title}} adicionado à sua história",
+      "codex": "Códice ativado; ele está lendo {{title}}",
+      "done": "Tudo pronto!"
+    },
+    "toProjects": "Ver meus projetos",
+    "errors": {
+      "titleRequired": "Dê um nome ao seu projeto, por favor.",
+      "nameRequired": "Me diga seu nome, por favor."
+    }
+  }
+}

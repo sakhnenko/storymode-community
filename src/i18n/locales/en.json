@@ -1,0 +1,2337 @@
+{
+  "memory": {
+    "title": "Project memory",
+    "pilot": "Pilot",
+    "description": "Source-backed facts for your AI Editor. Extracted facts can be used automatically; your chapters and notebooks are never rewritten.",
+    "flagDescription": "Preview writing profiles and manual, cited chapter memory. Each project must also opt in.",
+    "profile": "Writing profile",
+    "enable": "Use project memory in AI reviews",
+    "enableFirst": "Enable project memory and save the profile to begin.",
+    "register": "Writing type",
+    "genre": "Genre or field (optional)",
+    "guidance": "Editorial preferences (optional)",
+    "profileHint": "No need to fill these in: the genre comes from your onboarding answers or the chapters read, and Auto adapts the writing type to each passage. Preferences stay behind the scenes and do not change your writing.",
+    "profileSaved": "Writing profile saved.",
+    "unsavedProfile": "Save or cancel the profile changes before closing.",
+    "unsavedCorrection": "Save or cancel the open fact correction before leaving it.",
+    "coverage": "{{count}} of {{total}} chapters have current memory. Extractions are selective, not complete audits.",
+    "refresh": "Refresh status",
+    "chapter": "Chapter memory",
+    "selectChapter": "Choose a saved chapter",
+    "cost": "Manual analysis uses AI credits at the usual usage rate, or your own API key. One saved chapter per request, up to 35,000 characters. There is no automatic paid background analysis. Provider work may still incur usage if validation fails or the chapter changes during analysis.",
+    "acceptUsage": "I understand that analyzing this chapter uses AI credits or my API account.",
+    "analyze": "Analyze saved chapter",
+    "analyzing": "Analyzing…",
+    "cached": "Memory is up to date",
+    "analyzed": "Saved {{count}} cited facts. {{rejected}} unsupported or duplicate entries were omitted.",
+    "pending": "Wait for pending edits to save before analyzing. Local writing is not sent to this extractor.",
+    "stale": "This chapter or its active draft has changed. These facts are excluded from reviews until you analyze it again.",
+    "staleEvidence": "This excerpt belongs to an older revision and may no longer appear in the chapter.",
+    "previousFailed": "The previous analysis did not finish. Existing memory has been preserved; you can retry.",
+    "detected": "Detected writing type",
+    "empty": "Analyze a saved chapter to see its source-backed facts here.",
+    "recorded": "Recorded in this chapter",
+    "noFacts": "No useful cited facts were extracted from this revision.",
+    "evidence": "Supporting passage",
+    "openChapter": "Open source chapter",
+    "original": "Original extraction",
+    "correction": "Your correction",
+    "correctionHint": "Saved separately as your assertion. The original extraction and source quote remain visible; reanalysis will not overwrite this correction for the same evidence.",
+    "confirm": "Confirm",
+    "correct": "Correct",
+    "exclude": "Exclude from reviews",
+    "restore": "Use again",
+    "resetFact": "Undo correction",
+    "saveFailed": "Could not save this change. Your input has been kept; please retry.",
+    "unavailable": "Project memory is unavailable. The pilot requires its database migration and backend function to be deployed through Lovable, and access to your own project.",
+    "retry": "Retry",
+    "status": {
+      "extracted": "Extracted · unconfirmed",
+      "confirmed": "Author-confirmed",
+      "corrected": "Author correction",
+      "excluded": "Excluded"
+    },
+    "basis": {
+      "stated": "Stated in source",
+      "reported": "Attributed report or belief",
+      "inferred": "AI inference · uncertain"
+    },
+    "kind": {
+      "person": "Person",
+      "place": "Place",
+      "organization": "Organization",
+      "object": "Object",
+      "system": "System",
+      "concept": "Concept",
+      "event": "Event"
+    },
+    "registers": {
+      "auto": "Auto — adapt to the passage",
+      "literary": "Fiction",
+      "nonfiction": "Memoir & non-fiction",
+      "script": "Script (film, TV, video, stage, comics)",
+      "worldbuilding": "Worldbuilding & games",
+      "academic": "Academic",
+      "technical": "Technical",
+      "general": "Undetermined"
+    },
+    "errors": {
+      "failed": "Analysis failed. Your writing and existing memory were preserved. Please retry.",
+      "unavailable": "The memory backend is not available yet, or the connection failed. Deploy the migration and project-memory function through Lovable, then retry.",
+      "forbidden": "Project memory is not enabled for this project or account.",
+      "busy": "Another AI request is still running. Wait a few minutes and try again.",
+      "credits": "There are not enough AI credits to analyze this chapter.",
+      "empty": "This saved chapter does not contain enough text to analyze.",
+      "tooLong": "This chapter is longer than 180,000 characters. Split it into smaller chapters to analyze it.",
+      "citations": "The analysis found no facts that could be matched to exact quotes in the chapter. Nothing was saved; please retry.",
+      "provider": "The AI provider could not complete the analysis. Please retry.",
+      "billing": "Usage could not be confirmed, so new memory was not published. Please retry later.",
+      "sourceChanged": "The chapter changed during analysis. Old results were not published; analyze the saved revision again.",
+      "publish": "The analysis could not be published. Existing memory is unchanged. Please retry.",
+      "invalidRequest": "Choose a saved chapter and accept the usage notice before analyzing."
+    },
+    "upgrade": "Re-analyze to add links",
+    "time": {
+      "scene": "In this scene",
+      "past": "Backstory",
+      "future": "Planned or expected",
+      "ongoing": "Ongoing"
+    }
+  },
+  "codex": {
+    "title": "Codex",
+    "search": "Search the Codex",
+    "noMatches": "Nothing in the Codex matches that search.",
+    "kinds": {
+      "person": "People",
+      "place": "Places",
+      "organization": "Organizations",
+      "event": "Events",
+      "object": "Objects",
+      "system": "Systems",
+      "concept": "Concepts"
+    },
+    "aka": "also {{names}}",
+    "sameAs": "Same as…",
+    "alsoCalled": "Also called",
+    "noFactsMentioned": "No facts of its own yet. It's mentioned in:",
+    "insideOf": "Inside of…",
+    "insidePlace": "Inside {{name}}",
+    "insideSearch": "Find a place",
+    "insideNone": "No other places yet.",
+    "insideNothing": "Not inside anything",
+    "mentionedIn": "Mentioned in {{chapters}}",
+    "sameAsSearch": "Find an entry",
+    "sameAsNone": "No other entries of this kind.",
+    "showAs": "Show as",
+    "join": "Join",
+    "joined": "Same as {{name}}, joined by you",
+    "revealed": "Same as {{name}}, revealed in {{chapter}}",
+    "separate": "Separate",
+    "tabs": {
+      "facts": "Facts",
+      "connections": "Connections",
+      "locations": "Locations"
+    },
+    "noFacts": "No facts of its own yet.",
+    "noConnections": "No connections yet.",
+    "noLocations": "No places linked yet.",
+    "outOfDate": "Out of date",
+    "factOutOfDate": "Out of date: its chapter changed after analysis",
+    "appearsIn": "Appears in",
+    "path": "Path through the story",
+    "locationUnknown": "location unknown",
+    "presence": {
+      "onstage": "in the scene",
+      "mentioned": "mentioned"
+    },
+    "unavailableTitle": "The Codex isn't available here",
+    "unavailable": "The Codex is built from project memory, which is in a limited pilot and only available to the project's owner.",
+    "disabledTitle": "Start your Codex",
+    "disabled": "The Codex gathers the people, places and events of your story from your chapters. Turn it on for this project to begin.",
+    "setUp": "Set up project memory",
+    "emptyTitle": "Your Codex is empty",
+    "empty": "Read your chapters and everyone and everything they mention will appear here, with a quote from the chapter for every fact.",
+    "links": {
+      "out": {
+        "family": "Family: {{name}}",
+        "romance": "Romance: {{name}}",
+        "ally": "Ally: {{name}}",
+        "conflict": "Conflict: {{name}}",
+        "member": "Member of {{name}}",
+        "leads": "Leads {{name}}",
+        "located_in": "In {{name}}",
+        "at": "At {{name}}",
+        "has": "Has {{name}}",
+        "part_of": "Part of {{name}}",
+        "participates": "Takes part in {{name}}",
+        "related": "Related: {{name}}"
+      },
+      "in": {
+        "member": "Member: {{name}}",
+        "leads": "Led by {{name}}",
+        "located_in": "Contains {{name}}",
+        "at": "Here: {{name}}",
+        "has": "Held by {{name}}",
+        "part_of": "Includes {{name}}",
+        "participates": "Participant: {{name}}"
+      }
+    },
+    "catchUp": {
+      "title": "Update Codex",
+      "reason": {
+        "edited": "Edited since it was last read",
+        "new": "Not read yet",
+        "format": "Read before links and paths were added"
+      },
+      "group": {
+        "edited": "Edited since last read",
+        "new": "Not read yet",
+        "format": "Older format"
+      },
+      "reading_one": "Reading… {{count}} found",
+      "reading_other": "Reading… {{count}} found",
+      "waiting": "Waiting",
+      "cached": "Already up to date",
+      "done_one": "Read · {{count}} fact saved",
+      "done_other": "Read · {{count}} facts saved",
+      "errors": {
+        "busy": "Another AI request was running",
+        "credits": "Not enough credits",
+        "empty": "Too short to read",
+        "tooLong": "Too long to read (over 180,000 characters)",
+        "failed": "Could not be read"
+      },
+      "readingTitle": "Reading {{title}}",
+      "behind_one": "{{count}} chapter to update",
+      "behind_other": "{{count}} chapters to update",
+      "upToDate": "The Codex is up to date",
+      "upToDateHint": "Edit a chapter and it shows up here to be read again.",
+      "progress": "{{found}} found · {{facts}} facts",
+      "readNow": "Updated just now",
+      "position": "Chapter {{index}} of {{total}}",
+      "stop": "Stop after this chapter",
+      "stopping": "Stopping after this chapter…",
+      "read_one": "Read {{count}} chapter · about {{credits}} credits",
+      "read_other": "Read {{count}} chapters · about {{credits}} credits",
+      "costHint": "Uses AI credits or your own API key. Longer chapters cost more.",
+      "settings": "Memory settings",
+      "pillReading": "Updating {{index}} of {{total}}",
+      "pillBehind_one": "{{count}} chapter to update",
+      "pillBehind_other": "{{count}} chapters to update",
+      "pillUpToDate": "Up to date",
+      "new": "New",
+      "justFound": "Just found",
+      "selectAll": "Select all ({{count}})",
+      "creating": "Creating “{{name}}” memory…"
+    },
+    "view": {
+      "label": "Codex view",
+      "cards": "Cards",
+      "journeys": "Journeys"
+    },
+    "journeys": {
+      "characters": "Characters shown",
+      "emptyTitle": "No journeys yet",
+      "empty": "Journeys come from chapters read with the newest format, which records where each character is. Catch up on your chapters to see who goes where.",
+      "unread": {
+        "new": "Not read yet",
+        "format": "Read before places were recorded"
+      },
+      "nobody": "No one is placed anywhere in this chapter.",
+      "limit": "Up to 15 at once",
+      "summary": "Journeys of {{count}} characters across {{places}} places",
+      "pick_one": "{{count}} character",
+      "pick_other": "{{count}} characters",
+      "find": "Find a character",
+      "top": "Top {{count}} by connections",
+      "none": "Clear all",
+      "links_one": "{{count}} link",
+      "links_other": "{{count}} links",
+      "hide": "Hide {{name}}",
+      "show": "Show {{name}}",
+      "move": "Move {{name}}: drag beside a place to reorder or onto one to put it inside; or use the arrow keys",
+      "events": "Events",
+      "moreEvents": "+{{count}} more",
+      "with": "with {{names}}",
+      "offShort": "hidden",
+      "hiddenPlaces": "Hidden locations:",
+      "collapse": "Collapse {{name}}",
+      "expand": "Expand {{name}}",
+      "resize": "Resize the place column (double-click to reset)"
+    },
+    "stale": {
+      "tip_one": "{{chapters}} was edited after the Codex read it, so some of this may be out of date. Click to update.",
+      "tip_other": "{{chapters}} were edited after the Codex read them, so some of this may be out of date. Click to update.",
+      "fact": "From {{chapter}}, edited after the Codex read it"
+    },
+    "turnOn": "Turn on the Codex"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "close": "Close",
+    "loading": "Loading…",
+    "back": "Back",
+    "confirm": "Confirm",
+    "yes": "Yes",
+    "no": "No",
+    "ok": "OK",
+    "search": "Search",
+    "settings": "Settings",
+    "share": "Share",
+    "new": "New",
+    "rename": "Rename",
+    "untitled": "Untitled",
+    "error": "Error",
+    "tryAgain": "Try again",
+    "saving": "Saving…",
+    "saved": "Saved",
+    "copy": "Copy",
+    "copied": "Copied",
+    "more": "More",
+    "open": "Open",
+    "language": "Language",
+    "english": "English",
+    "portuguese_br": "Português (Brasil)"
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "signOut": "Sign Out",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "forgotPassword": "Forgot password?",
+    "myProfile": "My Profile",
+    "admin": "Admin",
+    "continueWithGoogle": "Continue with Google",
+    "continueWithApple": "Continue with Apple",
+    "or": "or",
+    "createAccount": "Create Account",
+    "orContinueWith": "or continue with",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "joinWishlist": "Join Wishlist",
+    "backToHome": "← Back to home",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "passwordHint": "Must contain at least one letter, one number, and one symbol.",
+    "emailPlaceholder": "you@example.com",
+    "loginFailed": "Login failed",
+    "invalidCredentials": "Invalid email or password. Please try again.",
+    "accountExists": "Account exists",
+    "emailAlreadyRegistered": "This email is already registered. Please sign in instead.",
+    "signUpFailed": "Sign up failed",
+    "accountCreated": "Account created!",
+    "accountCreatedDesc": "You can now start using your research notepads.",
+    "oauthFailed": "{{provider}} sign-in failed",
+    "openingProvider": "Opening {{provider}}…",
+    "waitingProvider": "Waiting for provider confirmation…",
+    "returningToApp": "Returning you to StoryMode…",
+    "validEmail": "Please enter a valid email",
+    "minPassword": "Password must be at least 6 characters",
+    "mustContainLetter": "Must contain at least one letter",
+    "mustContainNumber": "Must contain at least one number",
+    "enterYourName": "Please enter your name",
+    "mustContainSymbol": "Must contain at least one symbol",
+    "passwordsNoMatch": "Passwords do not match",
+    "couldntSetPassword": "Couldn't set password",
+    "resetExpired": "Reset link expired",
+    "inviteExpired": "Invitation link expired",
+    "resetExpiredBody": "This password reset link is no longer valid. Request a new one from the sign in page.",
+    "inviteExpiredBody": "This invitation link is no longer valid. Ask your admin to send a new one.",
+    "goToSignIn": "Go to sign in",
+    "chooseNewPassword": "Choose a new password for your account.",
+    "invitedIntro": "You've been invited. Finish setting up your account below.",
+    "yourName": "Your name",
+    "namePlaceholder": "Jane Doe",
+    "updatePassword": "Update password",
+    "setPasswordContinue": "Set password & continue",
+    "couldntSendReset": "Couldn't send reset email",
+    "checkYourEmail": "Check your email",
+    "resetSent": "We sent a password reset link to {{email}}.",
+    "signUpServerError": "The sign-up service had a problem (error {{status}}). This usually means the confirmation email couldn't be sent. Please try again in a moment.",
+    "confirmSent": "We sent a confirmation link to {{email}}. Open it to finish creating your account (check your spam folder too).",
+    "resendConfirmation": "Send it again",
+    "confirmationResent": "We sent the confirmation link again.",
+    "signupsClosed": "Sign-ups are closed",
+    "signupsClosedDesc": "This StoryMode only lets in people its owner has added. Ask them to add your email address."
+  },
+  "header": {
+    "story": "Story",
+    "folios": "Folios",
+    "timeline": "Timeline",
+    "maps": "Maps",
+    "notebook": "Notebook",
+    "projectVisibility": "Project visibility",
+    "visibility": "Visibility",
+    "moreActions": "More actions",
+    "accountMenu": "Account",
+    "shareProject": "Share this project",
+    "editFolio": "Edit folio title",
+    "editProject": "Edit project title",
+    "deleteFolio": "Delete folio",
+    "deleteProject": "Delete project",
+    "addColumn": "Add column",
+    "errorUpdatingTitle": "Error updating title",
+    "errorUpdatingIcon": "Error updating icon",
+    "errorDeletingFolio": "Error deleting folio",
+    "errorDeletingProject": "Error deleting project",
+    "errorUpdatingVisibility": "Error updating visibility",
+    "errorUpdatingLanguage": "Error updating language",
+    "deleteEntityTitle": "Delete \"{{title}}\"?",
+    "deleteFolioDescription": "This will permanently delete this folio and all its notebooks. This action cannot be undone.",
+    "deleteProjectDescription": "This will permanently delete this project and all its folios, notebooks, and maps. This action cannot be undone.",
+    "codex": "Codex"
+  },
+  "dashboard": {
+    "title": "My Projects",
+    "newProject": "New Project",
+    "newFolio": "New Folio",
+    "noFolios": "No folios yet",
+    "noFoliosOwner": "Create your first folio to get started",
+    "noFoliosReader": "This project has no folios",
+    "noProjects": "No projects yet",
+    "createFirst": "Create your first project"
+  },
+  "project": {
+    "settings": "Project Settings",
+    "projectLanguage": "Project Language",
+    "aiLanguage": "AI responds in",
+    "aiLanguageHint": "Language used by AI in Story chat, chapter review, and map drawing for this project.",
+    "deleteTitle": "Delete this {{entity}}?",
+    "deleteDescription": "This action cannot be undone."
+  },
+  "story": {
+    "title": "Story",
+    "chapters": "Chapters",
+    "newChapter": "New chapter",
+    "renameChapter": "Rename chapter",
+    "deleteChapter": "Delete chapter",
+    "wordCount": "{{count}} words",
+    "askAi": "Ask AI",
+    "selectedText": "Selected text",
+    "spellingGrammar": "Spelling & Grammar",
+    "editorialReview": "Editorial",
+    "readingFlow": "Flow",
+    "sceneMap": {
+      "action": "Generate scene map",
+      "title": "Generate a scene map",
+      "description": "Choose the named places from “{{chapter}}” to include. StoryMode will infer how they are positioned and create an editable map.",
+      "chooseChapterDescription": "Choose a chapter, select its named places, and generate an editable map.",
+      "chapter": "Chapter to map",
+      "loadingChapters": "Loading chapters…",
+      "noChapters": "No chapters available",
+      "noChaptersDetail": "Write and save a chapter before generating an AI map.",
+      "chooseChapterError": "Choose a chapter to map.",
+      "namedPlaces": "Named places",
+      "namedPlacesDetail": "Select every place you want StoryMode to position and draw.",
+      "selectAll": "Select all",
+      "clearAll": "Clear",
+      "discovering": "Reading the chapter and finding named places…",
+      "discoveryFailed": "StoryMode could not identify the named places in this chapter.",
+      "noNamedPlaces": "No named map-scale places were found in this chapter.",
+      "landmarkCount": "Maximum landmark stickers",
+      "artStyle": "Map style",
+      "style": {
+        "painterly": "Painterly",
+        "flat": "Flat",
+        "pixelart": "Pixel"
+      },
+      "estimate": "About {{credits}} credits for the artwork",
+      "estimateDetail": "This creates {{images}} images: one terrain painting plus the stickers. Chapter analysis costs a few additional credits. Your current StoryMode balance is {{balance}} credits; personal API keys use your OpenAI account instead.",
+      "analyze": "Review & confirm",
+      "analyzing": "Reading and planning…",
+      "analysisFailed": "The AI could not plan this scene map.",
+      "plannerOutdated": "The live map planner is out of date. Deploy the latest ai-scene-map-plan function before generating a map.",
+      "terrain": "General terrain",
+      "mapLabels": "Map labels",
+      "confirmCost": "Generate {{images}} images for about {{credits}} credits",
+      "confirmDetail": "The exact charge follows the image provider. The generated map remains fully editable.",
+      "selectionCostDetail": "One terrain image plus {{places}} selected place stickers. Place discovery and relative-position planning use a few additional credits. Your balance is {{balance}} credits.",
+      "generateSelected": "Generate selected map",
+      "positioning": "Working out how the selected places are positioned relative to one another…",
+      "positioningShort": "Positioning places…",
+      "generate": "Generate map",
+      "generating": "Generating…",
+      "preparingMap": "Preparing the editable map…",
+      "paintingTerrain": "Painting the general terrain…",
+      "drawingLandmark": "Drawing {{current}} of {{total}} · {{label}}",
+      "keepOpen": "Keep this window open while StoryMode creates and saves each image.",
+      "progressCount": "Image {{current}} / {{total}}",
+      "createFailed": "StoryMode could not create the new map.",
+      "terrainFailed": "The terrain painting did not produce usable map cells.",
+      "landmarkFailed": "The image model did not return a sticker for {{label}}.",
+      "generationFailed": "Scene-map generation failed.",
+      "partialFailure": "Generation stopped: {{message}} Every completed image was saved to a partial map.",
+      "openPartial": "Open partial map"
+    },
+    "mapRelationshipTest": {
+      "title": "Map relationships",
+      "description": "Text-only Jev test. It identifies chapter geography and may use general geographic knowledge for recognized real places.",
+      "action": "Generate outline",
+      "open": "Open outline",
+      "regenerate": "Analyze again",
+      "running": "Reading…",
+      "failed": "StoryMode could not test the map relationships in this chapter.",
+      "modalTitle": "Chapter map outline",
+      "modalDescription": "A text-only spatial sketch based on the chapter, with general geographic knowledge for recognized real places. Nothing here is added to your project or saved as a map.",
+      "landmarks": "Scene geography",
+      "relationships": "Relationships",
+      "asciiMap": "ASCII map",
+      "asciiHint": "Approximate · north is up",
+      "noLandmarks": "No map-scale landmarks were confidently identified.",
+      "noRelationships": "No direction or distance relationships were supported by the chapter or reliable real-world geography.",
+      "between": "{{place}} lies between {{from}} and {{to}}",
+      "directional": "{{to}} is {{direction}} of {{from}}",
+      "inside": "{{to}} is inside {{from}}",
+      "contains": "{{to}} contains or surrounds {{from}}",
+      "sameArea": "{{to}} and {{from}} occupy the same area",
+      "distanceOnly": "{{to}} is {{distance}} from {{from}}",
+      "confidence": "{{value}}% confidence",
+      "kind": {
+        "settlement": "settlement",
+        "region": "plain or region",
+        "forest": "forest",
+        "mountain": "mountain or ridge",
+        "water": "water feature",
+        "structure": "major structure"
+      },
+      "direction": {
+        "north": "north",
+        "northeast": "northeast",
+        "east": "east",
+        "southeast": "southeast",
+        "south": "south",
+        "southwest": "southwest",
+        "west": "west",
+        "northwest": "northwest"
+      },
+      "distance": {
+        "same_site": "at the same site",
+        "adjacent": "adjacent",
+        "nearby": "nearby",
+        "moderate_journey": "a moderate journey away",
+        "distant": "distant",
+        "unknown": "an unknown distance"
+      }
+    },
+    "loadingStory": "Loading story…",
+    "themeAndTypography": "Theme & typography",
+    "hideChapters": "Hide chapters",
+    "showChapters": "Show chapters",
+    "deleteChapterConfirm": "Click again to delete chapter",
+    "wordsAndPages": "{{words}} words · {{pages}} page",
+    "wordsAndPages_other": "{{words}} words · {{pages}} pages",
+    "pageCount_one": "{{count}} page",
+    "pageCount_other": "{{count}} pages",
+    "undoTooltip": "Undo (⌘Z)",
+    "redoTooltip": "Redo (⌘⇧Z)",
+    "focusMode": "Focus mode",
+    "exitFocusMode": "Exit focus mode",
+    "showSidePanel": "Show side panel",
+    "hideSidePanel": "Hide side panel",
+    "noChaptersYet": "No chapters yet.",
+    "startWithFirstChapter": "Start your book with the first chapter.",
+    "createFirstChapter": "Create first chapter",
+    "untitledChapter": "Untitled chapter",
+    "readOnlySnapshot": "Read-only snapshot",
+    "chapterTitlePlaceholder": "Chapter title",
+    "beginWriting": "Begin writing your chapter…",
+    "bubbleBold": "Bold (⌘B)",
+    "bubbleItalic": "Italic (⌘I)",
+    "bubbleUnderline": "Underline (⌘U)",
+    "bubbleBulletList": "Bullet list",
+    "bubbleOrderedList": "Numbered list",
+    "bubbleHeading1": "Heading 1",
+    "bubbleHeading2": "Heading 2",
+    "bubbleIndent": "Indent",
+    "bubbleMarkForReview": "Mark for review",
+    "bubbleFlagPassage": "Flag this passage for feedback",
+    "draftN": "Draft {{number}}",
+    "draftSelector": "Draft selector",
+    "draftLive": "Live",
+    "draftEdited": "edited {{date}}",
+    "noDraftsYet": "No drafts yet.",
+    "renameDraft": "Rename draft",
+    "deleteDraft": "Delete draft",
+    "newDraft": "New draft",
+    "deleteDraftTitle": "Delete Draft {{number}}?",
+    "deleteDraftDescription": "This permanently deletes Draft {{number}} and its contents. This action cannot be undone.",
+    "deletePermanently": "Delete permanently",
+    "tab": {
+      "folios": "Folios",
+      "info": "Info",
+      "editor": "AI Editor",
+      "chat": "Chat"
+    },
+    "searchPlaceholder": "Search chapters, folios, notebooks…",
+    "clearSearch": "Clear search",
+    "searching": "Searching",
+    "noResults": "No results for \"{{query}}\".",
+    "empty": "Empty",
+    "chapterFolio": "Chapter folio",
+    "selectChapterForNotebooks": "Select a chapter to add chapter-linked notebooks.",
+    "noChapterNotebooks": "No chapter notebooks yet.",
+    "addChapterNotebook": "Add chapter notebook",
+    "projectFolios": "Project folios",
+    "noFoliosYet": "No folios yet.",
+    "noNotebooks": "No notebooks",
+    "chapterResultsHeading": "Chapters · {{count}}",
+    "folioResultsHeading": "Folios · {{count}}",
+    "notebookResultsHeading": "Notebooks · {{count}}",
+    "collapse": "Collapse",
+    "expand": "Expand",
+    "removeChapterNotebook": "Remove chapter notebook",
+    "aiEditor": "AI Editor",
+    "noteCount_one": "{{count}} note",
+    "noteCount_other": "{{count}} notes",
+    "intentSoundsWrong": "Sounds wrong",
+    "intentNeedsIdeas": "Needs ideas",
+    "intentMarkedForReview": "Marked for review",
+    "reAsk": "Re-ask",
+    "dismiss": "Dismiss",
+    "retry": "Retry",
+    "somethingWentWrong": "Something went wrong.",
+    "replace": "Replace",
+    "aiNoChanges": "The AI didn't see anything worth changing here — your line stands.",
+    "optionN": "Option {{number}}",
+    "aiEditorTip": "Tip: highlights live per draft. Switch drafts and you'll see a fresh set.",
+    "thinking": "Thinking…",
+    "bookWideChat": "Book-wide chat",
+    "chatEmptyHint": "Ask anything about your book or folios — plot holes, summaries, name suggestions, pacing notes…",
+    "writingResponse": "Writing response…",
+    "chatFailed": "Chat failed",
+    "askAboutSelectedText": "Ask about the selected text…",
+    "askAboutBook": "Ask about your book…",
+    "selectedTextFromChapter": "Selected text",
+    "suggestionTry": "Try",
+    "suggestionCouldBe": "Could be",
+    "suggestionOption": "Option",
+    "suggestionAlt": "Alt",
+    "suggestionAlternative": "Alternative",
+    "selectChapterForInfo": "Select a chapter to see its info.",
+    "infoSelection": "Selection",
+    "infoChapters_one": "{{count}} chapter",
+    "infoChapters_other": "{{count}} chapters",
+    "lastEdited": "Last edited · {{date}}",
+    "infoLength": "Length",
+    "infoTime": "Time",
+    "infoReadability": "Readability",
+    "infoStyle": "Style",
+    "infoMostUsed": "Most used",
+    "statWords": "Words",
+    "statPages": "Pages",
+    "statCharacters": "Characters",
+    "statNoSpaces": "No spaces",
+    "statSentences": "Sentences",
+    "statParagraphs": "Paragraphs",
+    "statReading": "Reading",
+    "statSpeaking": "Speaking",
+    "statFleschEase": "Flesch ease",
+    "statFleschEaseInfo": "Estimates how easy the text is to read. Higher is easier: 90–100 is very easy, 60–70 is plain, and below 30 is very difficult. Most reliable for English text.",
+    "statFKGrade": "FK grade",
+    "statFKGradeInfo": "The approximate U.S. school grade needed to understand the text. A score of 8 means roughly eighth-grade level; lower scores are easier. Most reliable for English text.",
+    "statReadingLevel": "Reading level",
+    "statReadingLevelInfo": "A plain-language summary of the Flesch ease score, ranging from very easy to very difficult.",
+    "statAvgWord": "Avg word",
+    "statAvgSentence": "Avg sentence",
+    "chatAiEmpty": "The AI didn't return anything this time — try rephrasing or asking again.",
+    "aiEditorHeader": "AI Editor",
+    "aiEditorNotes_one": "{{count}} note",
+    "aiEditorNotes_other": "{{count}} notes",
+    "aiEditorNotes": "{{count}} notes",
+    "aiEditorLoading": "Analyzing chapter…",
+    "aiEditorEmptyPre": "Select any passage in your chapter, then hit",
+    "aiEditorEmptyPost": "in the floating toolbar. A voice-aware critique will land here — observations and suggestions you can accept or dismiss.",
+    "aiEditorEmptyTip": "Tip: highlights live per draft. Switch drafts and you'll see a fresh set.",
+    "chaptersLabel": "Chapters",
+    "statAvgWordUnit": "{{n}} chars",
+    "statAvgSentenceUnit": "{{n}} words",
+    "chatBookWide": "Book-wide chat",
+    "chatNew": "New chat",
+    "statPagesHint": "~250 words/page",
+    "statReadingHint": "@ 225 wpm",
+    "statSpeakingHint": "@ 150 wpm",
+    "aiEditorEmptyTitle": "Your editor's notes will land here",
+    "aiEditorEmptyBullet1": "Highlight any passage in the chapter",
+    "aiEditorEmptyBullet2": "Tap <action/> in the floating toolbar",
+    "aiEditorEmptyBullet3": "Get a voice-aware critique with suggestions to accept or dismiss",
+    "aiEditorEmptyTipNew": "Tip: notes are saved per draft — switching drafts gives you a fresh set.",
+    "highlightReplace": "Replace",
+    "highlightCopy": "Copy",
+    "highlightThinking": "Thinking…",
+    "highlightError": "Something went wrong.",
+    "highlightRetry": "Retry",
+    "highlightNoChange": "The AI didn't see anything worth changing here — your line stands.",
+    "optionLabel": "Option {{n}}",
+    "ariaReAsk": "Re-ask",
+    "ariaDismiss": "Dismiss",
+    "export": {
+      "title": "Export",
+      "expandHint": "Choose a format and download",
+      "thisChapter": "This chapter",
+      "wholeStory": "Whole story",
+      "txt": "Plain text",
+      "md": "Markdown",
+      "rtf": "Rich text (RTF)",
+      "doc": "Word (.doc)",
+      "pdf": "PDF / Print",
+      "nothing": "Nothing to export",
+      "failed": "Export failed",
+      "popupBlocked": "Allow pop-ups to export as PDF"
+    },
+    "reviewIntroTitle": "Ask for a review",
+    "reviewIntroBody": "Select a passage, then mark it for review.",
+    "reviewIntroHide": "Hide instructions",
+    "chatSuggestionsLabel": "Try asking",
+    "chatSuggestionSummary": "Summarize this chapter and identify the main character traits and themes.",
+    "chatSuggestion1": "Where does this chapter need the most revision, and are there any plot holes or continuity problems?",
+    "chatSuggestion2": "Can you check this chapter for inconsistencies in terminology, character behavior, and worldbuilding rules?",
+    "chatSuggestion3": "Which scenes or passages are weakest, and what specific changes would improve them most?",
+    "chatSuggestion4": "Do the characters’ decisions and emotional reactions feel believable throughout this chapter?",
+    "chatReviewRequest": "Give me an editorial review of this passage.",
+    "chatQueued": "Queued for review",
+    "chatScrollToBottom": "Go to latest",
+    "jumpToQuote": "Jump to this passage",
+    "chatSpeedLabel": "Response mode",
+    "chatSpeedFast": "Fast",
+    "chatSpeedFastHint": "Quick, short answers that use the fewest credits",
+    "chatSpeedThoughtful": "Thoughtful",
+    "chatSpeedThoughtfulHint": "Thinks it through before answering; a few more credits",
+    "chatSpeedCreative": "Creative",
+    "chatSpeedCreativeHint": "Strongest model for nuanced prose (uses the most credits)",
+    "saveAnswerToFolio": "Save as chapter notebook",
+    "answerSavedToFolio": "Saved to this chapter's <1>Folio</1>",
+    "answerSaveFailed": "Couldn't save this answer",
+    "answerCopy": "Copy",
+    "answerCopyFailed": "Couldn't copy this text",
+    "answerDiscuss": "Ask a follow-up about this",
+    "saveAnswerToProjectFolio": "Save to Project Folio",
+    "answerSavedToProjectFolio": "Saved to Project Folio",
+    "notebookSaved": "Notebook saved!",
+    "openSavedFolioHint": "It is ready in your Folios sidebar.",
+    "openSavedFolio": "Open {{folio}} in Folios",
+    "noFoliosToSave": "This project has no folios yet.",
+    "chapterNoteFallbackTitle": "AI Editor note",
+    "statusReading": "Reading your story…",
+    "statusThinkingSelection": "Thinking about the passage…",
+    "statusThinkingChapter": "Thinking about this chapter…",
+    "statusThinkingBook": "Thinking across your book…",
+    "thoughtFor": "Thought for {{time}}",
+    "creditsUsed_one": "{{count}} credit",
+    "creditsUsed_other": "{{count}} credits",
+    "statusResuming": "Picking up where it left off…",
+    "resumeLostTitle": "That answer was interrupted",
+    "resumeLostBody": "It stopped before it finished. Ask again to get a new one."
+  },
+  "chat": {
+    "placeholder": "Ask about your story…",
+    "send": "Send",
+    "thinking": "Thinking…",
+    "newChat": "New chat",
+    "stop": "Stop"
+  },
+  "map": {
+    "title": "Maps",
+    "newMap": "New map",
+    "worldMap": "🗺️ World Map",
+    "drawWithAi": "Draw with AI",
+    "promptPlaceholder": "Describe what to draw…",
+    "generating": "Generating…",
+    "pointer": "Pointer",
+    "pan": "Pan",
+    "pencil": "Pencil",
+    "fill": "Fill",
+    "eyedropper": "Eyedropper",
+    "eraser": "Eraser",
+    "label": "Label",
+    "undo": "Undo",
+    "redo": "Redo",
+    "viewAll": "View all",
+    "addNotebook": "Add notebook",
+    "deleteMap": "Delete map",
+    "pointerTip": "Pointer (V)",
+    "panTip": "Pan (Space)",
+    "undoTip": "Undo (⌘Z)",
+    "redoTip": "Redo (⌘⇧Z)",
+    "pickColor": "Pick color",
+    "drawTip": "Draw (D)",
+    "rectangleTip": "Rectangle (R)",
+    "circleTip": "Circle (C)",
+    "lineTip": "Line (G)",
+    "shapeTip": "Shape tool",
+    "lineSizeTip": "Line size",
+    "fillTip": "Fill (F)",
+    "addNotebookTip": "Add Notebook (N)",
+    "addLabelTip": "Add Label (L)",
+    "removeItem": "Remove Item",
+    "aiDrawTip": "AI Draw (A)",
+    "zoomIn": "Zoom In",
+    "zoomOut": "Zoom Out",
+    "aiDraw": "AI Draw",
+    "aiDrawPlaceholder": "e.g. a dense forest with a winding river",
+    "aiDrawHint": "Enter to draw · Esc to cancel",
+    "drawButton": "Draw",
+    "drawing": "Drawing",
+    "stylePainterly": "Painterly",
+    "styleFlat": "Flat",
+    "stylePixel": "Pixel",
+    "stickerEdge": "Edge",
+    "stickerEdge_none": "None",
+    "stickerEdge_white": "White",
+    "stickerEdge_black": "Black",
+    "aiModePixels": "Paint into map",
+    "aiModeSticker": "Sticker",
+    "hexColorPlaceholder": "hex color",
+    "apply": "Apply",
+    "customColor": "Custom Color",
+    "colorPickerTitle": "Color Picker (I)",
+    "colorRed": "Red",
+    "colorOrange": "Orange",
+    "colorYellow": "Yellow",
+    "colorGreen": "Green",
+    "colorBlue": "Blue",
+    "colorPurple": "Purple",
+    "colorNeutral": "Neutral",
+    "comingSoon": "Map view coming soon",
+    "comingSoonDesc": "Draw and explore maps of your story worlds",
+    "newMapTitle": "New Map",
+    "newBlankMap": "New blank map",
+    "newBlankMapDetail": "Start with an empty grass canvas",
+    "newAiMap": "New AI map",
+    "newAiMapDetail": "Turn a chapter into terrain and landmarks",
+    "mapNamePlaceholder": "Map name…",
+    "creating": "Creating…",
+    "deleteMapTitle": "Delete Map",
+    "deleteMapConfirm": "Are you sure you want to delete <strong>{{name}}</strong>? This action cannot be undone.",
+    "noFolios": "No folios",
+    "labelTextPlaceholder": "Label text…",
+    "theme": "Theme",
+    "preview": "Preview",
+    "updateLabel": "Update Label",
+    "placeOnMap": "Place on Map",
+    "publicFolio": "Public folio",
+    "emailNotifSoonDesc": "Email notifications are not yet configured. {{email}} will see this canvas when they log in."
+  },
+  "timeline": {
+    "title": "Timeline",
+    "today": "Today",
+    "noEvents": "No events on the timeline yet.",
+    "addDate": "Add date"
+  },
+  "notepad": {
+    "newNotebook": "New notebook",
+    "deleteNotebook": "Delete notebook",
+    "renameNotebook": "Rename notebook",
+    "addEntry": "Add entry",
+    "untitledNotebook": "Untitled notebook",
+    "timeline": {
+      "emptyState": "No dates found in any notebooks. Write dates in your notes to see them on the timeline.",
+      "fitAll": "Fit all"
+    },
+    "theme": {
+      "changeTheme": "Change Theme",
+      "lightThemes": "Light Themes",
+      "darkThemes": "Dark Themes",
+      "fontSize": "Font Size",
+      "font": "Font",
+      "cancel": "Cancel",
+      "apply": "Apply",
+      "close": "Close",
+      "paper": "Paper",
+      "stone": "Stone",
+      "cream": "Cream",
+      "parchment": "Parchment",
+      "honey": "Honey",
+      "sky": "Sky",
+      "sage": "Sage",
+      "lavender": "Lavender",
+      "rose": "Rose",
+      "mint": "Mint",
+      "midnight": "Midnight",
+      "graphite": "Graphite",
+      "ocean": "Ocean",
+      "forest": "Forest",
+      "violet": "Violet",
+      "steel": "Steel",
+      "noir": "Noir",
+      "espresso": "Espresso"
+    },
+    "font": {
+      "modernSans": "Modern Sans",
+      "cleanSans": "Clean Sans",
+      "friendlySans": "Friendly Sans",
+      "accessibleSans": "Accessible Sans",
+      "classicSerif": "Classic Serif",
+      "literarySerif": "Literary Serif",
+      "readingSerif": "Reading Serif",
+      "editorialSerif": "Editorial Serif",
+      "classicGaramond": "Classic Garamond",
+      "bookSerif": "Book Serif",
+      "modernSerif": "Modern Serif",
+      "robustSerif": "Robust Serif",
+      "monospace": "Monospace",
+      "codeMono": "Code Mono"
+    },
+    "fontSize": {
+      "extraSmall": "Extra Small",
+      "small": "Small",
+      "medium": "Medium",
+      "large": "Large",
+      "extraLarge": "Extra Large"
+    },
+    "card": {
+      "copied": "Copied!",
+      "copyContent": "Copy content",
+      "scanDocument": "Scan document",
+      "changeTheme": "Change Theme",
+      "deleteNotepad": "Delete notepad",
+      "notSaved": "Not saved",
+      "doneEditing": "Done editing",
+      "titlePlaceholder": "Untitled",
+      "empty": "Empty",
+      "clickToEdit": "Click to edit...",
+      "startWriting": "Start writing...",
+      "deleteDialog": {
+        "title": "Delete notepad?",
+        "description": "This will permanently delete \"{{title}}\". This action cannot be undone.",
+        "cancel": "Cancel",
+        "delete": "Delete"
+      }
+    },
+    "grid": {
+      "emptyCanvas": "This canvas is empty",
+      "emptyGrid": "This grid is empty",
+      "addFirstNotebook": "Add First Notebook",
+      "deleteColumn": "Delete column",
+      "deleteColumnDialog": {
+        "title": "Delete column?",
+        "description": "This will delete all notepads in this column. This action cannot be undone.",
+        "cancel": "Cancel",
+        "delete": "Delete"
+      },
+      "defaultFolioTitle": "Untitled Folio",
+      "initialNotebook": {
+        "lightTitle": "Ideas for your novel",
+        "darkTitle": "Building your world",
+        "lightContent": "Notebooks are perfect for capturing the loose threads that become your story.\n\nUse this space for:\n- Character backstories and motivations\n- Scene ideas and dialogue snippets\n- Plot twists and \"what if\" questions\n- Research, references, and inspiration\n- World-building details and locations\n\nCome back anytime to drop a new thought.",
+        "darkContent": "A novel lives in the details. Keep the important ones close.\n\nUse this space for:\n- Chapter outlines and story beats\n- Timelines and character ages\n- Settings, maps, and geography\n- Themes, motifs, and symbols\n- Revision notes and feedback to yourself\n\nLet this notebook grow as your story grows."
+      }
+    },
+    "scan": {
+      "title": "Scan Document",
+      "subtitle": "Upload an image to extract text using OCR",
+      "uploadTitle": "Upload an image to scan",
+      "uploadSubtitle": "Supports JPG, PNG, and other image formats",
+      "scanning": "Scanning document...",
+      "scanningSubtitle": "Extracting text from your image",
+      "previewLabel": "Preview of extracted text:",
+      "scanAnother": "Scan another",
+      "replaceText": "Replace Notebook Text",
+      "addToBeginning": "Add to the Beginning",
+      "addToEnd": "Add to the End",
+      "addToNewNotebook": "Add to New Notebook",
+      "invalidFileType": "Invalid file type",
+      "invalidFileTypeDesc": "Please upload an image file (JPG, PNG, etc.)",
+      "fileTooLarge": "File too large",
+      "fileTooLargeDesc": "Please upload an image smaller than 10MB",
+      "complete": "Scan complete",
+      "completeDesc": "Text extracted successfully. Review and choose an action.",
+      "failed": "Scan failed",
+      "failedDefault": "Failed to scan document",
+      "networkError": "We couldn't reach the scanning service. Please check your connection and try again.",
+      "noText": "The scanning service returned no text. Please try a clearer image."
+    },
+    "editor": {
+      "bold": "Bold (⌘B)",
+      "italic": "Italic (⌘I)",
+      "underline": "Underline (⌘U)",
+      "bulletList": "Bullet list",
+      "blockquote": "Indent",
+      "heading1": "Heading 1",
+      "heading2": "Heading 2",
+      "orderedList": "Numbered list",
+      "horizontalRule": "Horizontal line"
+    },
+    "default": {
+      "scannedDocument": "Scanned Document",
+      "untitled": "Untitled"
+    },
+    "toast": {
+      "errorLoading": "Error loading notepads",
+      "errorCreating": "Error creating notepad",
+      "errorUpdating": "Error updating notepad",
+      "errorDeleting": "Error deleting notepad",
+      "errorDeletingColumn": "Error deleting column",
+      "errorMoving": "Error moving notepad",
+      "errorReordering": "Error reordering notepads",
+      "errorLoadingFolios": "Error loading folios",
+      "errorCreatingFolio": "Error creating folio",
+      "errorUpdatingFolio": "Error updating folio",
+      "errorReorderingFolios": "Error reordering folios",
+      "errorDeletingFolio": "Error deleting folio"
+    }
+  },
+  "profile": {
+    "title": "My Profile",
+    "profilePhoto": "Profile Photo",
+    "displayName": "Display Name",
+    "displayNamePlaceholder": "Enter your name",
+    "saveName": "Save Name",
+    "subscription": "Subscription",
+    "free": "Free",
+    "renews": "Renews {{date}}",
+    "manageSubscription": "Manage Subscription",
+    "changePassword": "Change Password",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm Password",
+    "updatePassword": "Update Password",
+    "passwordHint": "Must contain at least one letter, one number, and one symbol.",
+    "dangerZone": "Danger Zone",
+    "deleteAccount": "Delete Account",
+    "deleteAccountWarning": "Once you delete your account, all your data will be permanently removed. This action cannot be undone.",
+    "deleteConfirmTitle": "Delete your account?",
+    "deleteConfirmDescription": "This will permanently delete your account and all associated data. Type DELETE to confirm.",
+    "deleteConfirmPlaceholder": "Type DELETE to confirm",
+    "language": "Display Language",
+    "languageHint": "Language used throughout the StoryMode interface."
+  },
+  "share": {
+    "visibilityTitle": "Project visibility",
+    "visibilityDescription": "Choose whether \"{{title}}\" is private or public.",
+    "publicAccess": "Public access",
+    "privateAccess": "Private",
+    "anyoneCanView": "Anyone with the link can view",
+    "onlyYouCanView": "Only you can view and edit",
+    "publicLink": "Public link",
+    "makePublic": "Make this project public",
+    "publicReadOnly": "Anyone with the link can view (read only)."
+  },
+  "upgrade": {
+    "title": "Upgrade your plan",
+    "subtitle": "Unlock more projects, folios, maps, and AI features.",
+    "maybeLater": "Maybe later",
+    "upgradeNow": "Upgrade now",
+    "limitReachedTitle": "{{label}} limit reached",
+    "beginnerAllows": "The Draft plan allows up to {{count}} {{label}}. Upgrade to Manuscript for unlimited access.",
+    "storytellerPlanLine": "Manuscript plan — $5/month",
+    "unlimitedProjects": "Unlimited projects",
+    "unlimitedFolios": "Unlimited folios",
+    "unlimitedMaps": "Unlimited maps",
+    "upgradeButton": "Upgrade — $5/mo",
+    "opening": "Opening...",
+    "errorCheckout": "Error starting checkout",
+    "limitSingular": {
+      "project": "project",
+      "folio": "folio",
+      "map": "map"
+    },
+    "limitPlural": {
+      "project": "projects",
+      "folio": "folios",
+      "map": "maps"
+    },
+    "beginnerPlanName": "Draft",
+    "storytellerPlanName": "Manuscript"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "network": "Network error. Check your connection and try again.",
+    "unauthorized": "You're not signed in.",
+    "rateLimited": "Too many requests. Please slow down and try again.",
+    "creditsExhausted": "AI credits exhausted. Add credits to continue."
+  },
+  "home": {
+    "nav": {
+      "login": "Login",
+      "plans": "Plans",
+      "guide": "Guide",
+      "myProjects": "My Projects",
+      "joinWaitlist": "Join the Waitlist",
+      "waitlistShort": "Waitlist"
+    },
+    "hero": {
+      "eyebrow": "Est. Paraty, RJ · MMXXV",
+      "title": "StoryMode — Creative Writing Studio and World-Building Tools",
+      "sub": "A calm place to write your story and a fun way to build your world. With a helpful editor by your side, folios full of ideas, interactive timelines, and maps that spring to life.",
+      "seeHow": "See how it works",
+      "guide": "Read the guide",
+      "scroll": "Scroll"
+    },
+    "intro": {
+      "kicker": "Your pro writing studio",
+      "build": "Build your world. ",
+      "plan": "Plan your plot.",
+      "tell": " Tell your story.",
+      "guide": "Explore the guide"
+    },
+    "sections": {
+      "write": {
+        "kicker": "Write",
+        "title": "Disappear into the draft.",
+        "body": "A full-bleed page that gets out of the way. With an AI editor that waits in the margin: it tightens a line, flags a mixed metaphor, points out a plothole. Writing is all yours.",
+        "items": [
+          "Focus mode",
+          "Folios in the margin",
+          "AI editor",
+          "Book-wide chat"
+        ]
+      },
+      "organize": {
+        "kicker": "Organize",
+        "title": "A home for your ideas.",
+        "body": "Characters, factions, locations, history: all kept in folios you open like apps. Reorder the outline on a board, then watch the whole saga fall into place on a timeline.",
+        "items": [
+          "Organize into folios",
+          "Arrange & style notebooks",
+          "Every date on a timeline"
+        ]
+      },
+      "map": {
+        "kicker": "Map",
+        "title": "Draw your own territory.",
+        "body": "Sketch coastlines and roads by hand, or describe a place and let Storymode render it. AI Draw in pixel, painterly, or flat styles. Map your world as fast as you can picture it.",
+        "items": [
+          "Create & annotate maps",
+          "Draw & sketch by hand",
+          "Bring locations to life with AI"
+        ]
+      }
+    },
+    "showcase": {
+      "write": {
+        "title": "Write, with an editor in the margin",
+        "items": [
+          {
+            "title": "Mark passages for review",
+            "body": "Select a paragraph and send it to the AI editor straight from the toolbar."
+          },
+          {
+            "title": "Reviews that know your book",
+            "body": "Continuity, story and craft notes, read against every chapter you've written."
+          },
+          {
+            "title": "Apply in one tap",
+            "body": "Take a suggested fix as-is, or keep the note and rewrite it your way."
+          }
+        ]
+      },
+      "folios": {
+        "title": "Folios for everything around the story",
+        "items": [
+          {
+            "title": "A folio for every thread",
+            "body": "Keep worldbuilding, research and outlines apart, and find them in a click."
+          },
+          {
+            "title": "Themed notebooks",
+            "body": "Each notebook gets its own color and cover, so you know it at a glance."
+          },
+          {
+            "title": "Every date on a timeline",
+            "body": "Dates in your notes line up on one timeline for the whole saga."
+          }
+        ]
+      },
+      "maps": {
+        "title": "Draw the world as you picture it",
+        "items": [
+          {
+            "title": "AI Draw from a description",
+            "body": "Say what's there, from a ridge of peaks to a hidden greenhouse, and watch it appear."
+          },
+          {
+            "title": "Painterly, flat or pixel",
+            "body": "Pick a style that suits the book, and keep every map in it."
+          },
+          {
+            "title": "Sketch by hand",
+            "body": "Rough in roads, rivers and borders with your own pen."
+          }
+        ]
+      },
+      "codex": {
+        "title": "A codex that keeps up with you",
+        "items": [
+          {
+            "title": "People, places, groups, events",
+            "body": "Everyone and everything that matters, gathered from your chapters as you write."
+          },
+          {
+            "title": "Facts with their quotes",
+            "body": "Every fact links to the line it came from. One click opens the chapter."
+          },
+          {
+            "title": "Knows what's out of date",
+            "body": "When you change a chapter, the codex flags what needs another look."
+          }
+        ]
+      }
+    },
+    "footer": {
+      "kicker": "Start your story",
+      "h2": "Your world is waiting.",
+      "p": "Free to start. Bring a notebook of ideas, or a map sketched on a napkin."
+    },
+    "waitlist": {
+      "title": "Join the Waitlist",
+      "description": "Leave your email and we'll invite you to StoryMode soon.",
+      "doneTitle": "You're on the list.",
+      "doneBody": "Thanks for joining the StoryMode waitlist. We'll be in touch soon with your invitation.",
+      "emailPlaceholder": "you@example.com",
+      "cancel": "Cancel",
+      "submit": "Join the Waitlist",
+      "submitting": "Joining…",
+      "close": "Close",
+      "invalidEmail": "Enter a valid email",
+      "errorTitle": "Something went wrong"
+    }
+  },
+  "history": {
+    "editHistory": "Edit history",
+    "last3Days": "Last 3 days of edits, one per day.",
+    "loading": "Loading…",
+    "noHistory": "No history yet. As you edit, the first version each day is saved automatically.",
+    "preview": "Preview",
+    "restore": "Restore",
+    "restoreTitle": "Restore {{day}}'s version?",
+    "restoreDescription": "This will replace the current content with the version from {{day}}. Today's current content will be saved as today's snapshot first, so you can still get back to it.",
+    "empty": "Empty",
+    "restoreThisVersion": "Restore this version",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "previewSuffix": "— preview"
+  },
+  "viewLoading": {
+    "timeline": "Loading timeline…",
+    "map": "Loading map…",
+    "story": "Loading story…"
+  },
+  "notFound": {
+    "code": "Error 404",
+    "title": "This page isn't in the story",
+    "description": "The link may be old, or the page may have moved. Head back home and pick up where you left off.",
+    "returnHome": "Back to home"
+  },
+  "gridView": {
+    "folioNotFound": "Folio not found",
+    "folioNotFoundDesc": "This folio doesn't exist or you don't have access to it."
+  },
+  "admin": {
+    "tabs": {
+      "users": "Users",
+      "flags": "Feature flags",
+      "editor": "AI editor",
+      "models": "AI models"
+    },
+    "usage": {
+      "title": "Real usage",
+      "description": "What writers' AI editor answers cost and how soon text appeared, from what each answer records. Free: it reads answers that happened anyway. Answers count from this update on.",
+      "period": "Period",
+      "days_one": "{{count}} day",
+      "days_other": "{{count}} days",
+      "none": "No AI editor answers in this period yet.",
+      "col": {
+        "kind": "Question",
+        "model": "Model",
+        "answers": "Answers",
+        "credits": "Credits, median · total",
+        "firstText": "First text, median · slowest 5%",
+        "input": "Input tokens, median",
+        "output": "Output tokens, median",
+        "empty": "Empty",
+        "cached": "Cached input"
+      },
+      "kinds": {
+        "selection": "Passage",
+        "chapter": "Chapter",
+        "book-focused": "Book, from memory",
+        "book-full": "Book, full text"
+      },
+      "newTiers": "new tiers",
+      "writers_one": "{{count}} writer",
+      "writers_other": "{{count}} writers",
+      "legend": "New tiers: Fast on Gemini 2.5 Flash, kept short; Thoughtful on Gemini 3.6 Flash. Admins get them first; turn on New speed tiers in Feature flags to give them to everyone. Cached input is the share of input the provider reused from earlier prompts (– when it doesn't say)."
+    },
+    "bench": {
+      "title": "AI editor benchmark",
+      "description": "Asks the AI editor the same questions about a test book, as the text-only editor and with project memory, and records tokens, credits, speed and whether each answer found what it should. Every request is charged to this account like a normal one.",
+      "loading": "Loading…",
+      "failed": "The benchmark stopped",
+      "bookTitle": "Test book",
+      "bookNone": "Create the test project first: \"The Glass Hollows\", eight chapters with folios and three planted contradictions. Creating it is free.",
+      "create": "Create the test project",
+      "bookStatus": "The Codex has read {{read}} of {{total}} chapters.",
+      "read": "Read into the Codex (about {{credits}} credits)",
+      "readHint": "Memory answers need the Codex to have read the book.",
+      "reading": "Reading chapter {{done}} of {{total}}…",
+      "open": "Open project",
+      "runTitle": "Run",
+      "speed": "Speed",
+      "editor": "Editor",
+      "questions": "Questions",
+      "repeat": "Repeat",
+      "speeds": {
+        "fast": "Fast",
+        "thoughtful": "Thoughtful",
+        "creative": "Creative"
+      },
+      "modes": {
+        "text": "Text only",
+        "memory": "With memory"
+      },
+      "kinds": {
+        "passage": "Passage ({{count}})",
+        "chapter": "Chapter ({{count}})",
+        "book": "Book ({{count}})"
+      },
+      "plan_one": "{{count}} request, about {{credits}} credits",
+      "plan_other": "{{count}} requests, about {{credits}} credits",
+      "run": "Run benchmark",
+      "stop": "Stop",
+      "progress": "{{done}} of {{total}} requests",
+      "keepOpen": "Keep this tab open until it finishes.",
+      "timing": "{{first}} to first text, {{total}} in all",
+      "confirmRunTitle": "Spend about {{credits}} credits?",
+      "confirmRunBody_one": "This sends {{count}} request to the AI editor. It is charged to this account like a normal request.",
+      "confirmRunBody_other": "This sends {{count}} requests to the AI editor, one at a time. Each is charged to this account like a normal request.",
+      "confirmReadTitle": "Read the test book into the Codex?",
+      "confirmReadBody": "The Codex reads each chapter it hasn't read yet, about 10 credits a chapter.",
+      "spend": "Spend credits",
+      "resultsTitle": "Run of {{date}}",
+      "baseline": "Baseline",
+      "setBaseline": "Use as baseline",
+      "baselineSet": "This run is now the baseline",
+      "totals": "Credits: {{text}} text only → {{memory}} with memory. Input tokens: {{textTokens}} → {{memoryTokens}}.",
+      "regressions_one": "{{count}} request is worse than the baseline",
+      "regressions_other": "{{count}} requests are worse than the baseline",
+      "noRegressions": "No regressions against the baseline.",
+      "what": {
+        "inputTokens": "input tokens",
+        "credits": "credits",
+        "firstTextMs": "time to first text",
+        "checks": "its checks now fail"
+      },
+      "col": {
+        "question": "Question",
+        "speed": "Speed",
+        "context": "Context with memory",
+        "input": "Input tokens",
+        "output": "Output tokens",
+        "credits": "Credits",
+        "firstText": "First text",
+        "total": "Total",
+        "checks": "Checks",
+        "date": "Date",
+        "requests": "Requests",
+        "setup": "Run"
+      },
+      "missing": "Missing {{patterns}}",
+      "pass": "pass",
+      "fail": "fail",
+      "legend": "Each cell is text only → with memory, medians over repeats. Green is better, red is worse. A check passes when the answer mentions what it should, such as both eye colours.",
+      "historyTitle": "Runs",
+      "noRuns": "No runs yet.",
+      "view": "View"
+    },
+    "featureFlags": {
+      "title": "Feature flags",
+      "description": "Turn flagged features off for everyone (admins included), preview them as an admin, or open them to everyone.",
+      "loading": "Loading feature flags…",
+      "loadFailed": "Could not load feature flags.",
+      "migrationPending": "Feature flags are not set up in the database yet. Deploy the latest StoryMode database update, then retry.",
+      "retry": "Retry",
+      "saveFailed": "Could not update feature flag",
+      "mapOutline": "Chapter map outline",
+      "mapOutlineDescription": "Show the map-relationships outline in Chapter Info and allow its AI endpoint.",
+      "everyone": "Everyone",
+      "speedTiers": "New speed tiers",
+      "speedTiersDescription": "Fast on Gemini 2.5 Flash with short answers, Thoughtful on Gemini 3.6 Flash for every question. Off: Fast on Gemini 3.6 Flash, Thoughtful on GPT-5.5 for passages and Gemini 2.5 Flash otherwise.",
+      "memoryBook": "Memory-first book answers",
+      "memoryBookDescription": "AI editor questions about facts across the book use project memory and the paragraphs that mention them instead of every chapter's full text. Needs project memory on.",
+      "everyoneSaved": "{{feature}} is now available to everyone",
+      "off": "Off",
+      "admins": "Admins",
+      "offStatus": "Off for everyone, admins included",
+      "adminsStatus": "Admins only",
+      "everyoneStatus": "Everyone",
+      "whoCanUse": "Who can use {{feature}}",
+      "offSaved": "{{feature}} is now off for everyone, admins included",
+      "adminsSaved": "{{feature}} is now admin-only",
+      "homeShowcase": "Home page feature showcase",
+      "homeShowcaseDescription": "The home page shows a light section per feature (Writing, Folios, Maps, Codex) instead of the overview video and original sections. Admins: only signed-in admins see it at /. Compare both any time at /home-1 and /home-2."
+    },
+    "waitlist": "Waitlist",
+    "joined": "Joined",
+    "status": "Status",
+    "inviteAs": "Invite as",
+    "noWaitlist": "No one on the waitlist yet",
+    "invited": "Invited",
+    "invitedAs": "Invited as {{plan}}",
+    "pending": "Pending",
+    "removeFromWaitlist": "Remove from waitlist",
+    "title": "Admin — Users",
+    "pageTitle": "Admin",
+    "users": "Users",
+    "inviteUser": "Invite User",
+    "emailPlaceholder": "user@example.com",
+    "sendInvite": "Send Invite",
+    "sending": "Sending...",
+    "tableUser": "User",
+    "tableEmail": "Email",
+    "tablePlan": "Plan",
+    "tableSignedUp": "Signed Up",
+    "tableLastSignIn": "Last Sign In",
+    "noUsers": "No users found",
+    "beginner": "Draft",
+    "storyteller": "Manuscript",
+    "author": "Studio",
+    "draft": "Draft",
+    "manuscript": "Manuscript",
+    "studio": "Studio",
+    "deleteUser": "Delete user",
+    "deleteUserTitle": "Delete user \"{{name}}\"?",
+    "deleteUserDescription": "This will permanently delete this user account and all their data. This action cannot be undone.",
+    "deleting": "Deleting...",
+    "errorSendingInvite": "Error sending invite",
+    "invitationSent": "Invitation sent",
+    "invitationResent": "Invitation resent",
+    "resendInvite": "Resend invitation",
+    "sendLoginEmail": "Send login email",
+    "invitedDescription": "{{email}} invited as {{plan}}",
+    "removedFromWaitlist": "Removed from waitlist",
+    "errorLoadingUsers": "Error loading users",
+    "userDeleted": "User deleted",
+    "errorDeletingUser": "Error deleting user",
+    "inviteSentDescription": "Invite email sent to {{email}}",
+    "planUpdated": "Plan updated to {{plan}}",
+    "aiModels": {
+      "title": "AI models",
+      "description": "Choose which AI provider serves each tier. If you've added that provider's key in OpenRouter (Settings → Integrations), your key is used; otherwise the requests are paid from your OpenRouter credit. Your own keys need a paid OpenRouter account: buy credit once (Settings → Credits).",
+      "loading": "Loading model settings…",
+      "loadFailed": "Could not load the model settings.",
+      "saved": "Model choice saved",
+      "saveFailed": "Could not save the model choice",
+      "fast": "Fast",
+      "fastDescription": "Quick answers in the AI editor, plus background work: project memory, document scans and setting up new projects.",
+      "thoughtful": "Thoughtful",
+      "thoughtfulDescription": "The AI editor's default: careful answers and reviews.",
+      "creative": "Creative",
+      "creativeDescription": "Deep reviews that take longer and cost more.",
+      "images": "Images",
+      "imagesDescription": "AI Draw and scene maps. Claude doesn't make images.",
+      "family": {
+        "google": "Google",
+        "openai": "OpenAI",
+        "anthropic": "Claude"
+      },
+      "checkTitle": "Check your providers",
+      "checkDescription": "Sends a tiny request to each provider's Fast model and shows whether it works and whose key paid for it.",
+      "check": "Check",
+      "checking": "Checking…",
+      "checkOwnKey": "Works · using your own key",
+      "checkCredit": "Works · paid from your OpenRouter credit",
+      "checkFailed": "Didn't work: {{error}}"
+    },
+    "signups": {
+      "title": "Sign-ups",
+      "description": "Who can create an account here. Everyone with an account can use AI on your OpenRouter credit.",
+      "loading": "Loading…",
+      "loadFailed": "Couldn't load the sign-up settings.",
+      "saveFailed": "Couldn't save the sign-up settings",
+      "notSetUp": "Sign-ups aren't restricted yet: run npm run setup → Update to the latest version.",
+      "whoLabel": "Who can sign up",
+      "closed": "Only people I add",
+      "open": "Anyone",
+      "closedDescription": "Only you and the addresses below can create an account.",
+      "openDescription": "Anyone with your site's address can create an account and use AI on your credit.",
+      "allowedTitle": "People you've added",
+      "allowedDescription": "They sign up on your site with this address. If your StoryMode doesn't send email, their account works without confirming it.",
+      "addLabel": "Email address to add",
+      "add": "Add",
+      "remove": "Remove",
+      "noneAllowed": "No one yet"
+    }
+  },
+  "projects": {
+    "errorLoading": "Error loading projects",
+    "errorCreating": "Error creating project",
+    "errorReordering": "Error reordering projects"
+  },
+  "credits": {
+    "costChatBasic": "Credits scale with the size of the answer",
+    "costChatSelection": "Credits scale with the size of the answer",
+    "costReview": "Credits scale with the length of the passage",
+    "costScan": "A few credits per scan",
+    "costMapDraw": "About 16 credits per sticker",
+    "byok": "Manage key",
+    "byokBody": "Use your own OpenAI account from Profile to bypass monthly credit limits.",
+    "byokConnected": "OpenAI key connected (sk-…{{last4}})",
+    "purchasedNote": "Includes {{count}} extra credits added to your account (top-ups or grants; they don't expire)",
+    "resets": "Renews {{date}}"
+  },
+  "plans": {
+    "title": "Plans",
+    "subtitle": "Pick the plan that matches how deep you want to go. Credits reset monthly, and you can top up any time.",
+    "current": "Current",
+    "credits": "AI credits",
+    "perMonth": "/ mo",
+    "yourPlan": "Your plan",
+    "manageBilling": "Manage billing",
+    "includedWithSignup": "Included with signup",
+    "opening": "Opening…",
+    "choose": "Choose {{name}}",
+    "checkoutError": "Couldn't open checkout",
+    "billing": "Billing",
+    "footnote": "One pool of credits covers everything: AI chat, editor reviews, document scans and AI map drawing. Each request costs credits based on how much work it takes, so short questions are cheap and big book-wide analyses or images cost more. Extra top-up packs are available inside your profile once you're on a paid plan.",
+    "byokTitle": "Bring your own OpenAI key",
+    "byokBody": "Connect a personal OpenAI key from your Profile to use AI on your own account. When BYOK is active, AI usage bypasses StoryMode credits.",
+    "tiers": {
+      "draft": {
+        "name": "Draft",
+        "tagline": "For a first idea, a single spark.",
+        "features": [
+          "1 project · 3 folios · 1 map",
+          "Timeline, folios, map canvas",
+          "Small monthly credit allowance"
+        ]
+      },
+      "manuscript": {
+        "name": "Manuscript",
+        "tagline": "For the writer building a world.",
+        "features": [
+          "Unlimited projects, folios, maps",
+          "AI chat, review, chapter helpers",
+          "AI map draw & document scan",
+          "Bring your own OpenAI key"
+        ]
+      },
+      "studio": {
+        "name": "Studio",
+        "tagline": "For the storyteller shipping a book.",
+        "features": [
+          "Everything in Manuscript",
+          "Highest-quality writing AI (GPT-5)",
+          "Chapter-wide review highlights",
+          "Largest monthly credit allowance"
+        ]
+      }
+    }
+  },
+  "guide": {
+    "title": "Guide",
+    "subtitle": "Everything you need to know about writing, planning, mapping and collaborating in StoryMode.",
+    "back": "Back",
+    "topicsLabel": "Topics",
+    "onThisPage": "On this page",
+    "planManuscript": "Manuscript plan",
+    "planStudio": "Studio plan",
+    "planAvailable": "Available on the {{plan}}",
+    "videoPlaceholder": "Video placeholder",
+    "imagePlaceholder": "Screenshot placeholder",
+    "closeFullscreen": "Close fullscreen image",
+    "useCases": {
+      "p1": "Chat works two ways: <b>book-wide</b> when nothing is selected, and <b>grounded on a passage</b> when you highlight text in a chapter first. Use book-wide to reason across your whole manuscript: continuity, character arcs, pacing between chapters.",
+      "p2": "Ask about a single character's behaviour — \"Is Lia's behaviour here consistent with how she acts in previous chapters?\" — and Chat weighs it against every earlier scene, then answers with a verdict, moments that ring true, and small wobbles worth smoothing.",
+      "p3": "Hunt for plot holes, timeline slips, or information gaps across multiple chapters at once. Chat distinguishes real contradictions from deliberate mysteries you're seeding, and points at the exact lines it's reasoning from.",
+      "p4": "Highlight a paragraph and Chat narrows to just that passage — perfect for a targeted editorial pass on clarity, voice, tone, rhythm, or craft. It comes back with clear sections and concrete rewrite options in the author's voice.",
+      "p5": "Other things Chat handles well: finding where a location or item was first mentioned, brainstorming alternate scenes, summarizing tangled lore for a synopsis, and comparing events across timelines."
+    },
+    "topics": {
+      "getting-started": {
+        "title": "Getting Started",
+        "intro": "StoryMode organizes your work as Projects → Folios → Notebooks. Every new account begins with a fully populated example project so you can explore before starting your own.",
+        "s": {
+          "dashboard": {
+            "title": "The Dashboard",
+            "body": "The dashboard shows all your projects as large cards. Click a project to open it — you can then switch between Folios, Timeline and Map views from the header."
+          },
+          "projects": {
+            "title": "Projects, Folios & Notebooks",
+            "body": "Projects are your books, games, or campaigns. Inside each Project, Folios group related notebooks (Characters, Places, Chapters, Lore…). Notebooks are the individual notes."
+          },
+          "starter": {
+            "title": "The Starter Project",
+            "body": "New accounts receive a copy of “A Study in Scarlet” pre-populated with folios, timeline events and a world map so you can see every feature in action."
+          }
+        }
+      },
+      "themes": {
+        "title": "Themes",
+        "intro": "StoryMode uses a minimalist dark aesthetic, but you can customize the look of individual notebooks — and tune the editor to match your reading comfort.",
+        "s": {
+          "notebook-theme": {
+            "title": "Notebook Theme",
+            "body": "Each notebook card in a Folio can be assigned its own theme. Themes change the card's background color, border, and accent tone so you can group related notes at a glance — for example, blue for characters, green for locations, or amber for lore. Open a notebook in the Folio grid and click the theme option to open the picker. The theme preview updates instantly so you can see how the card will look before saving. Pick a color that matches the notebook's purpose, then close the picker to apply it."
+          },
+          "editor-theme": {
+            "title": "Editor Theme",
+            "body": "You can also choose the theme for your Story Editor and Focus Mode, tinting the writing surface so that you can start with a blank, white page or a moody dark theme. The chosen theme carries into the Story Editor and Focus Mode, tinting the writing surface so long chapters feel visually tied to the notebook they belong to."
+          },
+          "font-size": {
+            "title": "Font & Size",
+            "body": "Adjust the editor font size to match your screen and eyesight. Larger sizes work well for long drafting sessions or high-resolution displays, while smaller sizes let you fit more of the chapter on screen when revising structure. Then choose the typeface used for writing: pick a serif for a book-like feel, a clean sans-serif for a modern editor look, or a monospaced face for a screenplay/manuscript feel. Font and size apply across the Story Editor and Focus Mode; the rest of the app keeps its consistent UI typography."
+          }
+        }
+      },
+      "story-editor": {
+        "title": "Story Editor & Chapters",
+        "intro": "The Story view is a focused, long-form writing environment for Chapter notebooks with autosave, keyboard shortcuts and a rich Markdown editor.",
+        "s": {
+          "focus": {
+            "title": "Focus Mode",
+            "body": "Open Focus Mode to hide the surrounding UI and write in a calm, full-screen editor. The margins, folios, and tools fade away, leaving just your text and the cursor so you can disappear into the draft."
+          },
+          "formatting": {
+            "title": "Writing & Formatting",
+            "body": "Use the floating toolbar to bold, italicize, underline, add headings and quotes. The toolbar exposes bold, italic, inline code, headings (H1–H3) and block quotes — every action applies to the current selection or the line the cursor is on.\n\nKeyboard shortcuts: Cmd/Ctrl+B for bold, Cmd/Ctrl+I for italic, and Cmd/Ctrl+Z / Shift+Cmd/Ctrl+Z for undo and redo."
+          },
+          "autosave": {
+            "title": "Autosave & Draft Status",
+            "body": "StoryMode saves your draft every 15 seconds while you type and again whenever you leave the editor. A subtle status indicator shows when a save is in flight and when the draft is safely stored, so you never wonder if your last edit made it."
+          },
+          "scroll-memory": {
+            "title": "Scroll Memory",
+            "body": "When you leave and return to a chapter, StoryMode restores your exact scroll position — even after switching projects or reloading the browser. Great for picking up mid-paragraph on long chapters."
+          },
+          "history": {
+            "title": "Undo History & Recovering Edits",
+            "body": "The editor keeps a full in-session undo history: use Cmd/Ctrl+Z to step back through recent edits and Shift+Cmd/Ctrl+Z to redo. Because autosave writes continuously, closing the tab and reopening restores the latest saved draft automatically."
+          },
+          "chapters": {
+            "title": "Adding & Deleting Chapters",
+            "body": "Create a chapter from the Folios browser — it opens straight into edit mode with the 📝 icon already set. Deleting a chapter requires a two-click confirmation within 3 seconds to protect against mistakes."
+          }
+        }
+      },
+      "ai-editor": {
+        "title": "AI Editor",
+        "intro": "The AI Editor is a second pair of eyes that works while you do. Select a passage, mark it for review, and keep writing — the feedback will be waiting when you’re ready.",
+        "s": {
+          "opinions": {
+            "title": "Review while you write",
+            "body": "Select any passage in a chapter and click Mark for Review. The AI Editor works in the background, so you can keep reading, writing, or reviewing other passages while it thinks. Each note costs a few credits, scaled to the length of the passage. When it’s ready, the note appears in the AI Editor sidebar with a critique and one or more rewrite suggestions you can replace with a single click."
+          },
+          "feedback-examples": {
+            "title": "What the feedback looks like",
+            "body": "The AI Editor flags what feels off and explains why, then gives concrete rewrite suggestions you can compare. A few examples of the kind of notes it leaves:\n\n- “This sentence repeats ‘slowly’ and ‘quietly’ — try condensing the action to heighten tension.”\n- “The dialogue tag is redundant because the line itself conveys the emotion; consider removing it.”\n- “This description is vivid but interrupts the pacing. Try moving it to a moment when the character has time to notice.”\n\nEach note also shows the original passage in context, so you can tap Replace, copy a suggestion, or dismiss the note entirely."
+          }
+        }
+      },
+      "chat": {
+        "title": "Chat with Your Story",
+        "intro": "Ask questions about characters, plot points, locations or lore. Chat has read access to all of your project’s notebooks and timeline, so answers are grounded in your own world.",
+        "s": {
+          "asking": {
+            "title": "Asking Questions",
+            "body": "Type a question in the chat panel. Responses cite the notebook(s) they came from so you can jump straight to the source. Short questions about the chapter you're in cost very little; book-wide questions (plot holes, continuity, arcs) read much more of your story and cost more credits."
+          },
+          "selection": {
+            "title": "Grounding Answers in a Selection",
+            "body": "Highlight a passage in a chapter before asking a question and Chat will answer from that specific text, making feedback precise and contextual. Costs a few credits, depending on the length of the passage."
+          },
+          "use-cases": {
+            "title": "What You Can Ask",
+            "body": ""
+          }
+        }
+      },
+      "timeline": {
+        "title": "Timeline",
+        "intro": "The Timeline lays your story’s events on a virtual, zoomable ribbon that spans a single day to millennia — perfect for fantasy and sci-fi worlds.",
+        "s": {
+          "dates": {
+            "title": "Dates & Ranges",
+            "body": "StoryMode accepts almost any date you can write: single dates like 2026-07-23, July 23, 2026, 23 July 2026, or far-future and far-past years like 3025 and 10,000 BC. For ranges, separate two dates with a dash or the word “to”: 3025-01-15 to 3025-06-30, Spring 3025 — Fall 3025, or 1500 BC - 1450 BC. Sci-fi and fantasy timelines are first-class citizens: you can use years like 12027 or -4832.\n\nAt the project level, the Timeline automatically aggregates events from every folio into a single view — each row is color-coded by the folio it belongs to, so you can see how characters, plotlines and world events line up across your entire story."
+          },
+          "pan-zoom": {
+            "title": "Pan & Zoom",
+            "body": "Drag horizontally to pan across the ribbon. Scroll (or pinch) to zoom — StoryMode zooms toward the point under your cursor so you can dive from centuries down to a single day without losing your place. Zoom level and scroll position are remembered per folio."
+          },
+          "previews": {
+            "title": "Event Previews",
+            "body": "Hover an event to see a floating preview with the full markdown snippet. The popup follows your cursor for extended-range events, and you can pin it open to keep reading while you scroll the timeline."
+          }
+        }
+      },
+      "map": {
+        "title": "Map — Drawing Tools",
+        "intro": "The Map is a canvas of terrain, notebooks and labels. Every tool lives in the left toolbar and is available via a single-key shortcut.",
+        "s": {
+          "pointer": {
+            "title": "Pointer (V)",
+            "body": "Select and move pills, resize stickers by dragging a corner handle, and press Delete to remove the selection."
+          },
+          "pan": {
+            "title": "Pan (H)",
+            "body": "Drag to pan the canvas. Scroll to zoom toward the cursor. Use “View All” to frame every element at once."
+          },
+          "pencil": {
+            "title": "Pencil & Color Picker (P)",
+            "body": "Paint terrain cells one stroke at a time. The color picker opens beside the pencil with seven hue families and muted/vibrant shade rows, plus a custom HSL gradient and hex input for exact colors. Every color you actually apply is remembered in the recents row at the bottom of the picker — an MRU (most-recently-used) strip that keeps your last dozen colors one click away so you don't have to hunt for them again."
+          },
+          "fill": {
+            "title": "Fill Bucket (F)",
+            "body": "Flood-fills an enclosed area. If the shape isn’t enclosed, it sets the map’s global background color instead."
+          },
+          "eyedropper": {
+            "title": "Eyedropper (I)",
+            "body": "Click any cell or background to sample its color — StoryMode then switches you back to the pencil so you can keep drawing."
+          },
+          "brush": {
+            "title": "Brush Size",
+            "body": "Adjust brush radius from the floating picker. The cursor overlay always shows the exact area you’ll paint."
+          },
+          "label": {
+            "title": "Label Tool (T)",
+            "body": "Place a dashed-border text pill anywhere on the map to annotate regions, borders or landmarks."
+          },
+          "notebook-pill": {
+            "title": "Place Notebooks (N)",
+            "body": "Pick any folio + notebook from the project and drop it as a pill. Search by title or contents. After placement the tool reverts to pointer."
+          },
+          "delete-tool": {
+            "title": "Delete Tool (X)",
+            "body": "Hover a pill to preview a red wiggle warning, then click to confirm removal with a themed explosion."
+          },
+          "undo": {
+            "title": "Undo / Redo",
+            "body": "StoryMode keeps a 50-step history of every canvas edit so you can step back and forward through recent changes."
+          }
+        }
+      },
+      "ai-draw": {
+        "title": "AI Draw",
+        "intro": "Generate stickers for your map from natural-language prompts, in the illustrated storybook aesthetic that matches the rest of StoryMode.",
+        "s": {
+          "stickers": {
+            "title": "Drawing Stickers on the Map",
+            "body": "Pick AI Draw (A), describe what you want (a mossy tower, a market cart, a harbour lighthouse…) and drop the generated sticker anywhere on the map. Resize by dragging a corner handle, rotate with the puck, and press Delete to remove it. Each sticker costs around 16 credits. Styles: choose an illustrated sticker for a hand-painted storybook look, or a pixel sticker for a retro, blocky game-map feel. You can also steer the art direction in your prompt — watercolor, ink line art, flat illustration, woodcut, textured gouache — so every landmark matches the world you're building."
+          }
+        }
+      },
+      "scan": {
+        "title": "Document Scan",
+        "intro": "Import handwritten or printed notes by uploading a photo or PDF — the AI transcribes it directly into a new notebook.",
+        "s": {
+          "scanning": {
+            "title": "Scanning a Page",
+            "body": "Open Scan from any folio, drop your file, and confirm the parsed text. Costs a few credits per scan."
+          }
+        }
+      },
+      "sharing": {
+        "title": "Public & Private Projects",
+        "intro": "Every project is either private (only you) or public (read-only for anyone with the link). Team sharing and collaboration features are temporarily disabled.",
+        "s": {
+          "private": {
+            "title": "Private Projects",
+            "body": "New projects are private by default. Only you can view and edit them. Folios, timelines, maps, and notes are not accessible to anyone else."
+          },
+          "public": {
+            "title": "Public Read-only Links",
+            "body": "Toggle a project to public from the project header to share the story, timeline, and map with anyone. Emails and private notes remain hidden."
+          }
+        }
+      },
+      "plans-credits": {
+        "title": "Plans & Credits",
+        "intro": "AI usage is metered in a single pool of credits. Every request costs credits based on how much work it takes, so a short chapter question is cheap while a book-wide analysis or an AI Draw sticker costs more. Each plan includes a monthly allowance; you can top up any time.",
+        "s": {
+          "watching": {
+            "title": "Watching Your Balance",
+            "body": "Your Profile shows a progress bar for your credit balance. A global banner appears when you’re close to running out."
+          },
+          "topups": {
+            "title": "Buying More Credits",
+            "body": "One-click top-ups from the Plans page. Admins can also grant credits directly from the admin dashboard."
+          },
+          "byok": {
+            "title": "Bring Your Own OpenAI Key",
+            "body": "Connect your own OpenAI API key in Profile → Integrations to bypass the StoryMode credit quota entirely. When a key is active, the AI Editor, Chat, AI Draw, and Scan all use your key’s balance instead of consuming StoryMode credits, so you never have to think about allowances, top-ups or monthly resets.\n\nStoryMode automatically routes your requests to the strongest OpenAI models available on your key: the latest GPT-5 family for chat and review, and gpt-image-1 with high quality for AI Draw and stickers. That means you get the fastest, most capable output without the per-call credit cost.\n\nYour key is encrypted at rest and is only decrypted inside StoryMode backend functions — it is never sent to the browser or stored in plain text. You can replace or remove it at any time. Note: AI Map Drawing and AI stickers require an OpenAI key with image-generation access; Anthropic Claude keys are not supported because Claude cannot generate images."
+          },
+          "plans": {
+            "title": "Choosing a Plan",
+            "body": "Draft is free forever, Manuscript is $5/mo for regular writers, and Studio is $20/mo for heavy AI users."
+          }
+        }
+      }
+    }
+  },
+  "onboarding": {
+    "welcome": {
+      "kicker": "Welcome to StoryMode",
+      "heading": "Write your story. Create your world.",
+      "close": "Close welcome",
+      "enlarge": "Click to enlarge",
+      "enlargeAria": "Enlarge {{label}} screenshot",
+      "showPane": "Show {{label}}",
+      "example": "See an Example",
+      "start": "Start Writing",
+      "creating": "Creating…",
+      "lightboxClose": "Click anywhere to close ✕",
+      "panes": {
+        "editor": {
+          "label": "Story Editor",
+          "title": "A reader for your draft, on call at 2am.",
+          "alt": "Story editor with craft notes"
+        },
+        "map": {
+          "label": "Map Builder",
+          "title": "Describe a location and watch it materialise.",
+          "alt": "Map builder with AI-drawn stickers"
+        },
+        "folio": {
+          "label": "Folio of Ideas",
+          "title": "Everything you imagined, one click away.",
+          "alt": "Folio of idea notebooks"
+        }
+      }
+    },
+    "folios": {
+      "title": "Folios: your project's boards of notes",
+      "subtitle": "A folio is a board of notebooks. Keep characters, places, research or scene ideas side by side, then reuse them across your timeline, maps and chapters.",
+      "cards": {
+        "notebooks": {
+          "title": "Write in notebooks",
+          "body": "Add notebooks in columns, drag to reorder, resize them, and give each one a paper theme."
+        },
+        "timeline": {
+          "title": "See dates on a timeline",
+          "body": "Give a notebook a date or a range and it appears on the folio timeline, and on the project timeline too."
+        },
+        "mapStory": {
+          "title": "Use them on maps and in Story",
+          "body": "Drop folio notebooks onto a map as place pins, and keep them at hand while you draft chapters."
+        }
+      },
+      "createCta": "Create your first folio",
+      "createHint": "It starts with two short notebooks of writing tips you can edit or delete.",
+      "guideLink": "Explore the guide"
+    },
+    "folioEmpty": {
+      "title": "This folio is empty",
+      "body": "Notebooks are the notes inside a folio: a character sketch, a location, a scene idea. Add your first one to get going.",
+      "hint": "Use New column in the header to place notebooks side by side."
+    },
+    "foliosModal": {
+      "kicker": "Folios",
+      "heading": "Your characters, places and research, all in one place.",
+      "intro": "Tell us what your story needs and we will set it up now, with a few examples to start you off. Everything you write here follows you: onto your timeline, onto your maps, and beside your draft.",
+      "noteCount": "{{count}} NOTES",
+      "startEmpty": "Start empty",
+      "create": "Create {{count}} folios",
+      "dontShow": "Do not show again",
+      "footnote": "The notes are just examples. Rewrite them, or throw them out.",
+      "close": "Close"
+    },
+    "folioSets": {
+      "characters": {
+        "title": "Characters",
+        "icon": "🧍",
+        "body": "Who they are, what they want, when they were born.",
+        "notes": [
+          {
+            "title": "Protagonist",
+            "content": "Name:\n\nWants:\n\nFears:\n\nBorn: \n\nFirst appears in:"
+          },
+          {
+            "title": "Antagonist",
+            "content": "Name:\n\nWhat they want that the protagonist cannot allow:\n\nHow they justify it:"
+          },
+          {
+            "title": "Ally",
+            "content": "Name:\n\nHow they met:\n\nWhat they risk:"
+          },
+          {
+            "title": "Cast list",
+            "content": "One line each for everyone else who speaks."
+          }
+        ]
+      },
+      "locations": {
+        "title": "Locations",
+        "icon": "📍",
+        "body": "Every place your story visits, ready to pin on a map.",
+        "notes": [
+          {
+            "title": "Home",
+            "content": "Where the story starts. What it smells like, who is always there."
+          },
+          {
+            "title": "The road",
+            "content": "Places passed through on the way to the ending."
+          },
+          {
+            "title": "The place it ends",
+            "content": "What must be true here for the story to finish."
+          }
+        ]
+      },
+      "scenes": {
+        "title": "Scenes",
+        "icon": "🎬",
+        "body": "Loose scene cards you can shuffle into chapters.",
+        "notes": [
+          {
+            "title": "Opening image",
+            "content": "What the reader sees first."
+          },
+          {
+            "title": "The turn",
+            "content": "The moment there is no going back."
+          },
+          {
+            "title": "The cost",
+            "content": "What is lost to get what is wanted."
+          },
+          {
+            "title": "Last page",
+            "content": "The final beat, even if it changes later."
+          }
+        ]
+      },
+      "research": {
+        "title": "Research",
+        "icon": "🔎",
+        "body": "The facts and quotes you keep looking up twice.",
+        "notes": [
+          {
+            "title": "Facts to check",
+            "content": "Dates, distances, names and anything you guessed."
+          },
+          {
+            "title": "Quotes and sources",
+            "content": "Lines worth keeping, with where they came from."
+          }
+        ]
+      },
+      "factions": {
+        "title": "Factions and lore",
+        "icon": "⚔️",
+        "body": "Houses, orders and guilds, and who owes whom.",
+        "notes": [
+          {
+            "title": "Powers",
+            "content": "Who rules what, and how they hold it."
+          },
+          {
+            "title": "Debts and grudges",
+            "content": "Who owes whom, and since when."
+          },
+          {
+            "title": "Rules of this world",
+            "content": "What is possible here that is not possible elsewhere."
+          }
+        ]
+      }
+    },
+    "timelineModal": {
+      "kicker": "Timeline",
+      "heading": "See your whole story in order, without building a thing.",
+      "intro": "Date anything, anywhere in your project, a character, an event, a chapter, and it appears here on its own.",
+      "example": {
+        "character": "A CHARACTER",
+        "characterBody": "born 1204, dies 1251",
+        "event": "AN EVENT",
+        "eventBody": "the harbour burns",
+        "chapter": "A CHAPTER",
+        "chapterBody": "Nine & Salt"
+      },
+      "footnote": "Real years, invented ones, or an era you name yourself.",
+      "dontShow": "Do not show again",
+      "cta": "Got it",
+      "close": "Close"
+    },
+    "mapModal": {
+      "kicker": "Maps",
+      "heading": "Draw the world your story happens in.",
+      "intro": "Sketch it yourself or have AI illustrate it for you, then pin your characters and places straight onto it.",
+      "hand": {
+        "title": "Draw it by hand",
+        "body": "Pencil, colours and a fill bucket for coastlines and forests. Name your cities and roads, and drop any note onto the map as a pin."
+      },
+      "ai": {
+        "title": "Or describe it and let AI illustrate",
+        "body": "Ask for a castle, a harbour, an airship. It arrives in seconds, in one of three styles, so the whole map holds together."
+      },
+      "styles": {
+        "painterly": "Painterly",
+        "flat": "Flat",
+        "pixel": "Pixel"
+      },
+      "dontShow": "Do not show again",
+      "drawMyself": "I'll draw it myself",
+      "drawWithAi": "Draw it with AI",
+      "close": "Close"
+    }
+  },
+  "connectivity": {
+    "offlineTitle": "You're offline",
+    "offlineDescription": "Changes are being kept on this device where supported, but may not be saved to your account until the connection returns.",
+    "checkingTitle": "Checking connection…",
+    "checkingDescription": "Trying to reach StoryMode.",
+    "savingTitle": "Back online — saving changes…",
+    "savingDescription_one": "Retrying {{count}} pending change.",
+    "savingDescription_other": "Retrying {{count}} pending changes.",
+    "saveFailedTitle": "Some changes still aren't saved",
+    "saveFailedDescription": "StoryMode couldn't save every pending change. Local drafts are still protected where supported.",
+    "savedTitle": "Back online — all changes saved",
+    "savedDescription": "Your pending writing has been saved to your account.",
+    "reconnectedTitle": "Back online",
+    "reconnectedDescription": "StoryMode can reach your account again.",
+    "retry": "Retry"
+  },
+  "waitlistChat": {
+    "greeting": "Hi! Let's get you on the StoryMode waitlist. Just a few quick questions.",
+    "progress": "{{current}} of {{total}}",
+    "send": "Send",
+    "skip": "Skip",
+    "retry": "Try again",
+    "typing": "Typing…",
+    "backHome": "Back to home",
+    "errors": {
+      "nameRequired": "Please tell me your name.",
+      "emailInvalid": "That email doesn't look right.",
+      "submitFailed": "Something went wrong saving your spot. Please try again."
+    },
+    "questions": {
+      "language": {
+        "title": "Which language do you write in?",
+        "why": "StoryMode is available in English and Portuguese for now. We'll chat in the one you pick.",
+        "placeholder": "Or type another language…"
+      },
+      "name": {
+        "title": "What should I call you?",
+        "why": "So your invite is addressed to you.",
+        "placeholder": "Your name"
+      },
+      "project": {
+        "title": "What are you working on?",
+        "why": "Pick the closest one, or type your own.",
+        "placeholder": "Or describe it in a few words…"
+      },
+      "detail": {
+        "placeholder": "Or type your own…",
+        "novel": {
+          "title": "What genre is it?",
+          "why": "Pick the closest one, or type your own."
+        },
+        "short_stories": {
+          "title": "What genres do you write?",
+          "why": "Pick the closest one, or type your own."
+        },
+        "comic": {
+          "title": "What genre is it?",
+          "why": "Pick the closest one, or type your own."
+        },
+        "rpg": {
+          "title": "Which system do you play?",
+          "why": "Pick one, or type your own."
+        },
+        "screenplay": {
+          "title": "What format is it?",
+          "why": "Pick one, or type your own."
+        },
+        "game": {
+          "title": "What kind of game is it?",
+          "why": "Pick one, or type your own."
+        },
+        "worldbuilding": {
+          "title": "What's the world for?",
+          "why": "Pick one, or type your own."
+        },
+        "fanfic": {
+          "title": "Which fandom?",
+          "why": "Pick one, or type your own."
+        },
+        "nonfiction": {
+          "title": "What kind of non-fiction?",
+          "why": "Pick one, or type your own."
+        },
+        "custom": {
+          "title": "Tell me a bit more?",
+          "why": "Genre, style, anything. Or skip it."
+        }
+      },
+      "premise": {
+        "title": "Want to tell me what it's about?",
+        "why": "A sentence or two is plenty. You can skip this.",
+        "placeholder": "A detective who can hear lies…"
+      },
+      "own_key": {
+        "title": "Do you have your own OpenAI API key?",
+        "why": "StoryMode can use it instead of AI credits. Totally optional."
+      },
+      "email": {
+        "title": "Last one: what's your email?",
+        "why": "That's where your invite will go. We'll only use it for that.",
+        "placeholder": "you@example.com"
+      }
+    },
+    "options": {
+      "projects": {
+        "novel": "A novel or book",
+        "short_stories": "Short stories",
+        "rpg": "An RPG campaign",
+        "screenplay": "A screenplay or script",
+        "comic": "A comic or graphic novel",
+        "game": "A game or interactive story",
+        "worldbuilding": "Worldbuilding",
+        "fanfic": "Fan fiction",
+        "nonfiction": "Non-fiction or memoir"
+      },
+      "genres": {
+        "fantasy": "Fantasy",
+        "scifi": "Science fiction",
+        "mystery": "Mystery & thriller",
+        "romance": "Romance",
+        "horror": "Horror",
+        "literary": "Literary fiction",
+        "historical": "Historical",
+        "ya": "Young adult",
+        "children": "Children's"
+      },
+      "comicGenres": {
+        "fantasy": "Fantasy",
+        "scifi": "Science fiction",
+        "superhero": "Superhero",
+        "horror": "Horror",
+        "sliceOfLife": "Slice of life",
+        "humor": "Humor",
+        "manga": "Manga-style"
+      },
+      "rpgSystems": {
+        "dnd5e": "D&D 5e",
+        "pathfinder": "Pathfinder",
+        "tormenta20": "Tormenta20",
+        "coc": "Call of Cthulhu",
+        "vtm": "Vampire: The Masquerade",
+        "blades": "Blades in the Dark",
+        "homebrew": "My own system"
+      },
+      "screenFormats": {
+        "feature": "Feature film",
+        "tv": "TV series",
+        "short": "Short film",
+        "play": "Stage play",
+        "web": "Web series"
+      },
+      "gameKinds": {
+        "visualNovel": "Visual novel",
+        "textAdventure": "Text adventure",
+        "videoRpg": "RPG video game",
+        "boardGame": "Board game",
+        "gamebook": "Choose-your-own-adventure book"
+      },
+      "worldPurposes": {
+        "book": "For a book or series",
+        "tabletop": "For a tabletop campaign",
+        "videogame": "For a video game",
+        "fun": "Just for fun"
+      },
+      "fandoms": {
+        "harryPotter": "Harry Potter",
+        "marvel": "Marvel",
+        "starWars": "Star Wars",
+        "lotr": "The Lord of the Rings",
+        "anime": "Anime & manga"
+      },
+      "nonfiction": {
+        "memoir": "Memoir",
+        "biography": "Biography",
+        "history": "History",
+        "selfHelp": "Self-help",
+        "essays": "Essays",
+        "travel": "Travel"
+      },
+      "ownKey": {
+        "yes": "Yes",
+        "no": "No",
+        "unsure": "What's that?"
+      }
+    },
+    "replies": {
+      "languageChosen": "Great, let's keep going in English.",
+      "languageUnsupported": "Thanks! StoryMode only supports English and Portuguese for now, so we'll continue in English. We've noted {{language}} for later.",
+      "name": "Nice to meet you, {{name}}!",
+      "project": {
+        "novel": "A book! Long-form stories are exactly what StoryMode is built for.",
+        "short_stories": "Short stories, nice. That's a lot of little worlds to keep track of.",
+        "rpg": "A campaign! Maps and lore notes are going to come in handy.",
+        "screenplay": "A script, nice. Scenes and characters are much easier to keep straight in one place.",
+        "comic": "A comic! Keeping characters and worlds consistent from page to page is half the battle.",
+        "game": "An interactive story, fun. Branching plots need good notes.",
+        "worldbuilding": "Worldbuilding! Maps, timelines and lore are right at home here.",
+        "fanfic": "Fan fiction, love it.",
+        "nonfiction": "Non-fiction, great. Notes and drafts side by side help a lot there."
+      },
+      "detail": "Got it: {{detail}}.",
+      "customDetail": [
+        "Ooh, {{detail}}. That's a combination I'd happily read.",
+        "I love that: {{detail}}. Lots of room to surprise your readers there.",
+        "Nice, {{detail}}. That's got real potential."
+      ],
+      "customProject": [
+        "Ooh, {{project}}! I love it when someone brings something a little different.",
+        "Nice, {{project}}. That sounds like a really fun one to build.",
+        "I love that: {{project}}. Projects like that get really interesting once everything lives in one place."
+      ],
+      "detailSkipped": "No problem.",
+      "premise": [
+        "Oh, that's a great hook. I'd read that.",
+        "Now that's a premise with a lot of room to explore.",
+        "Love it. There's a whole world waiting inside that idea.",
+        "That's a strong hook. I can already picture the first chapter."
+      ],
+      "premiseSkipped": "No problem at all.",
+      "ownKey": {
+        "yes": "Perfect. You'll be able to plug it in and use it instead of credits.",
+        "no": "No problem. Every StoryMode plan includes AI credits.",
+        "unsure": "It's a personal key from OpenAI that lets StoryMode use your own AI account. Totally optional: every plan includes AI credits."
+      },
+      "done": "{{name}}, you're on the list! We'll email {{email}} as soon as your invite is ready."
+    }
+  },
+  "welcomeChat": {
+    "newProject": {
+      "intro": "Let's set up your new project. A few quick questions, then I'll build it for you.",
+      "open": "Open {{title}}",
+      "credits": "You're out of AI credits for now, so I can't set this project up. You can top up on the Plans page.",
+      "limit": "Your plan includes one project. Upgrade to create more.",
+      "busy": "Another AI request is still running. Give it a moment, then try again.",
+      "plans": "See plans"
+    },
+    "congrats": "🎉 Congratulations, {{name}}! You're in.",
+    "congratsNoName": "🎉 Congratulations! You're in.",
+    "intro": {
+      "novel": "Your book finally has a home. Let's bring back some of that magic.",
+      "short_stories": "All those stories finally have a home. Let's bring back some of that magic.",
+      "rpg": "Your campaign finally has a home. Let's bring some of that magic back to the table.",
+      "screenplay": "Your script finally has a home. Let's bring back some of that magic.",
+      "comic": "Your comic finally has a home. Let's bring back some of that magic.",
+      "game": "Your game's story finally has a home. Let's bring back some of that magic.",
+      "worldbuilding": "Your world finally has a home. Let's bring back some of that magic.",
+      "fanfic": "Your fic finally has a home. Let's bring back some of that magic.",
+      "nonfiction": "Your story finally has a home. Let's bring some of that magic back to the page.",
+      "default": "Your writing finally has a home. Let's bring back some of that magic."
+    },
+    "offer": "I can set up your first project for you. It only takes a minute.",
+    "typing": "Typing…",
+    "send": "Send",
+    "and": "and",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "questions": {
+      "name": {
+        "title": "What should I call you?",
+        "why": "So StoryMode knows who you are.",
+        "placeholder": "Your name"
+      },
+      "password": {
+        "title": "One last thing: choose a password",
+        "why": "So you can sign in next time. At least 6 characters, with a letter, a number and a symbol.",
+        "placeholder": "Your new password"
+      },
+      "ready": {
+        "title": "Ready to start?",
+        "why": "I'll create the project, a few folios to organize your ideas, and your first chapter if you have one."
+      },
+      "project": {
+        "title": "What are you working on?",
+        "why": "Pick the closest one, or type your own.",
+        "placeholder": "Or describe it in a few words…"
+      },
+      "title": {
+        "title": "What's it called?",
+        "why": "This becomes your project's name. You can change it anytime.",
+        "placeholder": "The Long Night"
+      },
+      "chapter": {
+        "title": "Do you have a first chapter to bring in?",
+        "why": "I'll add it to your story and pull its characters and places into your folios."
+      }
+    },
+    "options": {
+      "yes": "Yes, let's do it!",
+      "later": "Not now",
+      "paste": "Paste it",
+      "upload": "Upload a file",
+      "fresh": "Start fresh",
+      "retry": "Try again",
+      "dashboard": "Go to my dashboard"
+    },
+    "replies": {
+      "name": "Nice to meet you, {{name}}!",
+      "passwordSet": "Done! Your account is all set.",
+      "project": "Great choice.",
+      "title": "{{title}}. I love it.",
+      "fresh": "Starting fresh it is. I'll sketch some folios to get you going.",
+      "pasted": "Got it: {{count}} words. What a great start.",
+      "uploaded": "Got it: {{count}} words from {{file}}.",
+      "working": "Wonderful. Give me a moment while I set everything up…",
+      "ready": "{{title}} is ready!",
+      "done": "{{title}} is ready! I made {{count}} folios for you: {{folios}}.",
+      "doneWithChapter": "{{title}} is ready! I made {{count}} folios for you ({{folios}}) and added {{chapter}} to your story.",
+      "doneWithCodex": "{{title}} is ready! I made {{count}} folios for you ({{folios}}), added {{chapter}} to your story, and turned on your Codex, which is reading it now to remember its people, places and events.",
+      "failed": "Something went wrong while setting things up, and nothing was saved. Want to try again?",
+      "exhausted": "I couldn't set this up automatically, but you can start your project from the dashboard.",
+      "readFailed": "I couldn't read that file. Try another one, or paste the text instead.",
+      "unsupported": "I can read Word (.docx), PDF and plain text files.",
+      "tooLarge": "That file is over 8 MB. Try a smaller one, or paste the text instead.",
+      "tooShort": "That looks a little short for a chapter. Add a bit more, or start fresh.",
+      "welcomeBack": "Welcome back, {{name}}! Just one thing left.",
+      "welcomeBackNoName": "Welcome back! Just one thing left.",
+      "laterPassword": "No problem! Before you go, let's make sure you can sign in next time.",
+      "doneFallback": "{{title}} is ready, and {{chapter}} is in your story! I couldn't pick out the characters and places from it this time, so I set up starter folios for you: {{folios}}."
+    },
+    "paste": {
+      "placeholder": "Paste your chapter here…",
+      "use": "Use this chapter",
+      "back": "Back",
+      "words_one": "{{count}} word",
+      "words_other": "{{count}} words"
+    },
+    "upload": {
+      "prompt": "Drop a Word, PDF or text file here",
+      "choose": "Choose a file",
+      "hint": "Up to 8 MB",
+      "reading": "Reading {{file}}…",
+      "back": "Back"
+    },
+    "attachment": {
+      "pasted": "📋 Pasted chapter · {{words}}",
+      "file": "📄 {{file}}"
+    },
+    "progress": {
+      "project": "Created {{title}}",
+      "readingChapter": "Reading your chapter",
+      "sketching": "Sketching your folios",
+      "hintsChapter": [
+        "🎭 Characters",
+        "🗺️ Places",
+        "📝 Notes"
+      ],
+      "hintsFresh": [
+        "🌍 Your world",
+        "📚 Folios",
+        "✨ Starter prompts"
+      ],
+      "notebooks_one": "{{count}} notebook",
+      "notebooks_other": "{{count}} notebooks",
+      "chapter": "Added {{title}} to your story",
+      "codex": "Turned on your Codex; it's reading {{title}}",
+      "done": "All set!"
+    },
+    "toProjects": "Go to my projects",
+    "errors": {
+      "titleRequired": "Please give your project a name.",
+      "nameRequired": "Please tell me your name."
+    }
+  }
+}

@@ -1,0 +1,1 @@
+ALTER TABLE public.map_canvas DROP CONSTRAINT IF EXISTS map_canvas_user_id_key;

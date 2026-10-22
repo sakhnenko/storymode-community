@@ -1,0 +1,1 @@
+ALTER TABLE public.story_chapter_drafts ADD COLUMN IF NOT EXISTS name TEXT;
